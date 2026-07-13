@@ -128,7 +128,7 @@
   .lang-dd{position:relative}
   .lang-cur{display:inline-flex;align-items:center;gap:.4em;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:.42em .6em;font:inherit;font-size:.8rem;font-weight:700;letter-spacing:.02em;cursor:pointer;transition:.15s}
   .lang-cur:hover{border-color:var(--accent)}
-  .lang-cur svg.flag{width:20px;height:14px;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+  .lang-cur .flag{width:20px;height:14px;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(0,0,0,.12);object-fit:cover}
   .lang-cur .chev{width:12px;height:12px;opacity:.55;transition:transform .2s}
   .lang-dd.open .lang-cur .chev{transform:rotate(180deg)}
   .lang-menu{position:absolute;top:calc(100% + 6px);right:0;min-width:150px;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:.3rem;opacity:0;visibility:hidden;transform:translateY(-4px);transition:.18s;z-index:60}
@@ -138,7 +138,7 @@
   .lang-opt{display:flex;align-items:center;gap:.6em;width:100%;border:0;background:none;color:var(--text);font:inherit;font-size:.88rem;font-weight:600;padding:.5em .6em;border-radius:8px;cursor:pointer;text-align:left}
   .lang-opt:hover{background:var(--bg2)}
   .lang-opt.on{color:var(--accent)}
-  .lang-opt svg.flag{width:20px;height:14px;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+  .lang-opt .flag{width:20px;height:14px;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(0,0,0,.12);object-fit:cover}
   .toggle{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text);cursor:pointer;display:grid;place-items:center;transition:.2s}
   .toggle:hover{border-color:var(--accent);color:var(--accent)}
   .toggle svg{width:19px;height:19px}
@@ -648,9 +648,9 @@
   }
   function setLang(l){lang=l;try{localStorage.setItem('xlang',l)}catch(e){}applyI18n();}
   var FLAGS={
-    hr:'<svg class="flag" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><rect width="20" height="4.67" fill="#ff0000"/><rect y="9.33" width="20" height="4.67" fill="#0093dd"/><rect x="7.3" y="4.1" width="5.4" height="5.8" fill="#fff"/><rect x="7.3" y="4.1" width="1.08" height="1.16" fill="#d80f16"/><rect x="9.46" y="4.1" width="1.08" height="1.16" fill="#d80f16"/><rect x="11.62" y="4.1" width="1.08" height="1.16" fill="#d80f16"/><rect x="8.38" y="5.26" width="1.08" height="1.16" fill="#d80f16"/><rect x="10.54" y="5.26" width="1.08" height="1.16" fill="#d80f16"/><rect x="7.3" y="6.42" width="1.08" height="1.16" fill="#d80f16"/><rect x="9.46" y="6.42" width="1.08" height="1.16" fill="#d80f16"/><rect x="11.62" y="6.42" width="1.08" height="1.16" fill="#d80f16"/><rect x="8.38" y="7.58" width="1.08" height="1.16" fill="#d80f16"/><rect x="10.54" y="7.58" width="1.08" height="1.16" fill="#d80f16"/><rect x="7.3" y="8.74" width="1.08" height="1.16" fill="#d80f16"/><rect x="9.46" y="8.74" width="1.08" height="1.16" fill="#d80f16"/><rect x="11.62" y="8.74" width="1.08" height="1.16" fill="#d80f16"/><rect x="7.3" y="4.1" width="5.4" height="5.8" fill="none" stroke="#c00" stroke-width=".22"/></svg>',
-    en:'<svg class="flag" viewBox="0 0 20 14"><rect width="20" height="14" fill="#012169"/><path d="M0 0L20 14M20 0L0 14" stroke="#fff" stroke-width="2.6"/><path d="M0 0L20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.2"/><rect x="8.2" width="3.6" height="14" fill="#fff"/><rect y="5.2" width="20" height="3.6" fill="#fff"/><rect x="9" width="2" height="14" fill="#c8102e"/><rect y="6" width="20" height="2" fill="#c8102e"/></svg>',
-    de:'<svg class="flag" viewBox="0 0 20 14"><rect width="20" height="14" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg>'
+    hr:'<img class="flag" src="/assets/flags/hr.webp" alt="" width="20" height="14">',
+    en:'<img class="flag" src="/assets/flags/en.webp" alt="" width="20" height="14">',
+    de:'<img class="flag" src="/assets/flags/de.webp" alt="" width="20" height="14">'
   };
   var LNAME={hr:'Hrvatski',en:'English',de:'Deutsch'},LCODE={hr:'HR',en:'EN',de:'DE'};
   var langDD=document.getElementById('langDD'),langCur=document.getElementById('langCur'),langMenu=document.getElementById('langMenu');

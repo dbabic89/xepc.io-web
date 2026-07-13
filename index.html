@@ -648,11 +648,11 @@
   }
   function setLang(l){lang=l;try{localStorage.setItem('xlang',l)}catch(e){}applyI18n();}
   var FLAGS={
-    hr:'<img class="flag" src="assets/flags/hr.webp" alt="" width="20" height="14">',
+    hr:'<img class="flag" src="assets/flags/bhs.webp" alt="" width="20" height="14">',
     en:'<img class="flag" src="assets/flags/en.webp" alt="" width="20" height="14">',
     de:'<img class="flag" src="assets/flags/de.webp" alt="" width="20" height="14">'
   };
-  var LNAME={hr:'Hrvatski',en:'English',de:'Deutsch'},LCODE={hr:'HR',en:'EN',de:'DE'};
+  var LNAME={hr:'BHS',en:'English',de:'Deutsch'},LCODE={hr:'BHS',en:'EN',de:'DE'};
   var langDD=document.getElementById('langDD'),langCur=document.getElementById('langCur'),langMenu=document.getElementById('langMenu');
   langMenu.innerHTML=['hr','en','de'].map(function(l){return '<button class="lang-opt" data-lang="'+l+'" role="option">'+FLAGS[l]+'<span>'+LNAME[l]+'</span></button>';}).join('');
   function renderLangCur(){langCur.innerHTML=FLAGS[lang]+'<span class="lc">'+LCODE[lang]+'</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>';}

@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="hr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>xepc.io — Izrada aplikacija i web stranica | BiH i Hrvatska</title>
+<meta name="description" content="Softverski studio iz Žepča (BiH). Izrada mobilnih i web aplikacija, web stranica, desktop softvera i AI rješenja za firme u BiH, Hrvatskoj i EU. Odgovaramo u 24 h.">
+<link rel="canonical" href="https://xepc.io/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0c0f1a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/icon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/assets/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="xepc.io">
+<meta property="og:locale" content="hr_HR">
+<meta property="og:url" content="https://xepc.io/">
+<meta property="og:title" content="xepc.io — Izrada aplikacija i web stranica | BiH i Hrvatska">
+<meta property="og:description" content="Softverski studio iz Žepča (BiH). Mobilne i web aplikacije, web stranice, desktop softver i AI rješenja za firme u BiH, Hrvatskoj i EU.">
+<meta property="og:image" content="https://xepc.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="xepc.io — Izrada aplikacija i web stranica | BiH i Hrvatska">
+<meta name="twitter:description" content="Softverski studio iz Žepča (BiH). Mobilne i web aplikacije, web stranice, desktop softver i AI rješenja.">
+<meta name="twitter:image" content="https://xepc.io/assets/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://xepc.io/#org",
+      "name": "xepc.io",
+      "legalName": "Kodit",
+      "url": "https://xepc.io/",
+      "logo": "https://xepc.io/assets/icon-512.png",
+      "image": "https://xepc.io/assets/og.png",
+      "email": "kontakt@xepc.io",
+      "description": "Softverski studio: izrada mobilnih i web aplikacija, web stranica, desktop softvera i AI rješenja za firme.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Žepče",
+        "addressCountry": "BA"
+      },
+      "areaServed": [
+        {"@type": "Country", "name": "Bosna i Hercegovina"},
+        {"@type": "Country", "name": "Hrvatska"},
+        {"@type": "Place", "name": "EU"}
+      ],
+      "knowsLanguage": ["hr", "en", "de"],
+      "sameAs": ["https://github.com/dbabic89"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Usluge razvoja softvera",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Izrada web stranica", "description": "Brze, moderne web stranice optimizirane za Google."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Izrada web aplikacija", "description": "Poslovni alati koji rade u browseru, bez instalacije."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Izrada mobilnih aplikacija", "description": "Android i iOS aplikacije iz jedne baze koda."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Izrada desktop aplikacija", "description": "Softver za Windows, macOS i Linux."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Backend i API razvoj", "description": "Serverski sustavi, baze podataka i integracije."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI rješenja", "description": "AI asistenti, automatizacija procesa i pametni izvještaji."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "UI/UX dizajn", "description": "Dizajn sučelja za web i mobilne aplikacije."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Održavanje i podrška", "description": "Nadogradnje, sigurnost i tehnička podrška."}}
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://xepc.io/#website",
+      "url": "https://xepc.io/",
+      "name": "xepc.io",
+      "publisher": {"@id": "https://xepc.io/#org"},
+      "inLanguage": "hr"
+    }
+  ]
+}
+</script>
+<script>
+  (function(){try{var t=localStorage.getItem('xtheme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+<style>
+  :root{
+    --grad:linear-gradient(120deg,#22d3ee,#8b5cf6);
+    --cyan:#22d3ee; --violet:#8b5cf6; --r:16px; --maxw:1160px;
+    --bg:#0c0f1a; --bg2:#10141f; --panel:#151a29; --panel2:#1a2033; --line:#242b40;
+    --text:#eef0f8; --body:#a7aec4; --muted:#7c839c; --accent:#818cf8; --accent-solid:#6366f1;
+    --field:#0c0f1a; --shadow:0 24px 50px -30px rgba(0,0,0,.7);
+    --logo-fg:#fff;
+  }
+  :root[data-theme="light"]{
+    --bg:#ffffff; --bg2:#f6f8fc; --panel:#ffffff; --panel2:#f2f5fa; --line:#e5e8f0;
+    --text:#0f172a; --body:#475569; --muted:#64748b; --accent:#6d28d9; --accent-solid:#4f46e5;
+    --field:#f6f8fc; --shadow:0 24px 50px -30px rgba(15,23,42,.22);
+    --logo-fg:#0f172a;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--body);font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .3s,color .3s}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+  h1,h2,h3{color:var(--text);line-height:1.12;margin:0;font-weight:800;letter-spacing:-.025em}
+  .gtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .btn{display:inline-flex;align-items:center;gap:.5em;padding:.85em 1.6em;border-radius:12px;font-weight:600;font-size:.97rem;transition:.2s;border:1px solid transparent;cursor:pointer}
+  .btn-primary{background:var(--accent-solid);color:#fff}
+  .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.08)}
+  .btn-grad{background:var(--grad);color:#0a0c16;font-weight:700}
+  .btn-grad:hover{transform:translateY(-2px)}
+  .btn-ghost{border-color:var(--line);color:var(--text);background:transparent}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:1rem}
+  .logo{display:inline-grid;grid-template-columns:auto auto;column-gap:.04em;font-size:1.35rem;font-weight:500;letter-spacing:-.01em;line-height:.9;background:transparent}
+  .logo .lg-word{grid-column:1;grid-row:1;color:var(--logo-fg);align-self:end}
+  .logo .lg-dot{grid-column:2;grid-row:1;justify-self:start;align-self:end;width:.22em;height:.22em;border-radius:50%;background:var(--accent);margin:0 0 .15em .13em;position:relative;z-index:2}
+  .logo .lg-box{grid-column:2;grid-row:2;justify-self:start;position:relative;display:inline-flex;align-items:center;margin-top:-.38em;padding:.02em .18em .1em .12em;color:var(--accent);line-height:1;font-weight:500}
+  .logo .lg-box::before{content:"";position:absolute;inset:0;border:.1em solid var(--accent);border-radius:.3em;
+    -webkit-mask:radial-gradient(circle .32em at .24em .12em,transparent 98%,#000 100%);
+    mask:radial-gradient(circle .32em at .24em .12em,transparent 98%,#000 100%)}
+  .nav-links{display:flex;gap:1.7rem;margin-left:1.8rem}
+  .nav-links a{color:var(--muted);font-size:.94rem;font-weight:500}
+  .nav-links a:hover{color:var(--text)}
+  .nav-right{display:flex;align-items:center;gap:.7rem;margin-left:auto}
+  .lang-dd{position:relative}
+  .lang-cur{display:inline-flex;align-items:center;gap:.4em;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:.42em .6em;font:inherit;font-size:.8rem;font-weight:700;letter-spacing:.02em;cursor:pointer;transition:.15s}
+  .lang-cur:hover{border-color:var(--accent)}
+  .lang-cur svg.flag{width:20px;height:14px;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+  .lang-cur .chev{width:12px;height:12px;opacity:.55;transition:transform .2s}
+  .lang-dd.open .lang-cur .chev{transform:rotate(180deg)}
+  .lang-menu{position:absolute;top:calc(100% + 6px);right:0;min-width:150px;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:.3rem;opacity:0;visibility:hidden;transform:translateY(-4px);transition:.18s;z-index:60}
+  .lang-dd.open .lang-menu,.lang-dd:hover .lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
+  .lang-dd:hover .lang-cur .chev{transform:rotate(180deg)}
+  .lang-menu::before{content:"";position:absolute;left:0;right:0;top:-8px;height:8px}
+  .lang-opt{display:flex;align-items:center;gap:.6em;width:100%;border:0;background:none;color:var(--text);font:inherit;font-size:.88rem;font-weight:600;padding:.5em .6em;border-radius:8px;cursor:pointer;text-align:left}
+  .lang-opt:hover{background:var(--bg2)}
+  .lang-opt.on{color:var(--accent)}
+  .lang-opt svg.flag{width:20px;height:14px;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+  .toggle{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text);cursor:pointer;display:grid;place-items:center;transition:.2s}
+  .toggle:hover{border-color:var(--accent);color:var(--accent)}
+  .toggle svg{width:19px;height:19px}
+  :root[data-theme="dark"] .i-sun{display:block}:root[data-theme="dark"] .i-moon{display:none}
+  :root[data-theme="light"] .i-sun{display:none}:root[data-theme="light"] .i-moon{display:block}
+  @media(max-width:880px){.nav-links{display:none}}
+  @media(max-width:560px){.lang-cur .lc{display:none}}
+  @media(max-width:440px){.nav-right .btn-primary{display:none}}
+
+  .hero{padding:clamp(75px,10vw,135px) 0 clamp(45px,7vw,80px);position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-240px;left:50%;transform:translateX(-50%);width:1000px;height:560px;background:radial-gradient(ellipse,color-mix(in srgb,var(--violet) 16%,transparent),transparent 68%);pointer-events:none}
+  .hero-in{position:relative;max-width:820px}
+  .hero h1{font-size:clamp(2.5rem,6.2vw,4.4rem);margin:.6rem 0 1.1rem}
+  .hero p.lead{font-size:clamp(1.05rem,2.2vw,1.28rem);color:var(--muted);max-width:600px;margin:0 0 2rem}
+  .hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+
+  section{padding:clamp(55px,8vw,100px) 0}
+  .alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sec-head{max-width:660px;margin-bottom:clamp(2.2rem,5vw,3.2rem)}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(1.8rem,4.2vw,2.7rem);margin:.6rem 0 .7rem}
+  .sec-head p{font-size:1.05rem;margin:0;color:var(--muted)}
+  .grid{display:grid;gap:1.3rem}
+
+  .prod-panel{background:var(--panel);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+  .pp-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.4rem 1.7rem;border-bottom:1px solid var(--line);background:var(--panel2)}
+  .pp-head .t{font-family:ui-monospace,Menlo,monospace;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .pp-head .legend{display:flex;gap:1rem;font-size:.78rem;color:var(--muted);flex-wrap:wrap}
+  .pp-head .legend b{color:var(--text);font-weight:600}
+  .dotb{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:.4em;vertical-align:middle}
+  .prow{display:grid;grid-template-columns:56px 1.5fr 2fr auto;gap:1.4rem;align-items:center;padding:1.5rem 1.7rem;border-bottom:1px solid var(--line);transition:.18s}
+  .prow:last-child{border-bottom:0}
+  .prow:hover{background:var(--panel2)}
+  .prow .mono{width:52px;height:52px;border-radius:14px;background:var(--grad);display:grid;place-items:center;color:#0a0c16;font-weight:800;font-size:1.15rem}
+  .prow .mono.soon{background:color-mix(in srgb,var(--accent) 22%,transparent);color:var(--accent)}
+  .prow .lead-col .k{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+  .prow .lead-col h3{font-size:1.18rem;margin:.2rem 0 0}
+  .prow .desc{color:var(--body);font-size:.94rem;margin:0 0 .6rem}
+  .chips{display:flex;gap:.4rem;flex-wrap:wrap}
+  .chip{font-size:.73rem;color:var(--muted);border:1px solid var(--line);border-radius:7px;padding:.24em .6em}
+  .status{display:inline-flex;align-items:center;font-size:.74rem;font-weight:700;letter-spacing:.04em;padding:.4em .8em;border-radius:999px;white-space:nowrap}
+  .status.live{color:#059669;background:color-mix(in srgb,#10b981 14%,transparent)}
+  :root[data-theme="dark"] .status.live{color:#5eead4}
+  .status.soon{color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,transparent)}
+  .status.plan{color:#b45309;background:color-mix(in srgb,#f59e0b 18%,transparent)}
+  :root[data-theme="dark"] .status.plan{color:#fbbf24}
+  @media(max-width:780px){.prow{grid-template-columns:44px 1fr;gap:1rem}.prow .mono{width:44px;height:44px}.prow .desc-wrap{grid-column:2}.prow .status{grid-column:2;justify-self:start}}
+
+  .svc-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .svc-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:1.6rem;transition:.2s}
+  .svc-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .svc-card .ic{width:46px;height:46px;border-radius:13px;background:var(--grad);display:grid;place-items:center;color:#0a0c16;font-weight:800;font-size:1.1rem;margin-bottom:.9rem}
+  .svc-card h3{font-size:1.18rem;margin:0 0 .45rem}
+  .svc-card p{margin:0;font-size:.93rem}
+  .svc-cta{text-align:center;margin-top:2.2rem}
+  .tech-head{text-align:center;max-width:640px;margin:clamp(3rem,6vw,4.5rem) auto clamp(1.6rem,3vw,2.2rem)}
+  .tech-head h3{font-size:clamp(1.4rem,3.2vw,2rem);margin:.5rem 0 0;color:var(--text);font-weight:800;letter-spacing:-.02em}
+  .team-head{max-width:660px;margin:clamp(2.8rem,5vw,3.6rem) 0 clamp(1.8rem,4vw,2.4rem)}
+  .team-head h3{font-size:clamp(1.4rem,3.2vw,2rem);margin:.5rem 0 .5rem;color:var(--text);font-weight:800;letter-spacing:-.02em}
+  .team-head p{color:var(--muted);margin:0;font-size:1.02rem}
+
+  .team-grid{grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:1.2rem}
+  .member{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.2rem;text-align:center;transition:.2s;position:relative}
+  .member:hover{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 16px 38px -16px color-mix(in srgb,var(--accent) 55%,transparent);z-index:6}
+  .avatar{width:100px;height:100px;border-radius:50%;margin:0 auto .8rem;background:var(--panel2);border:1px solid var(--line);display:grid;place-items:center;position:relative;cursor:pointer;transition:transform .5s cubic-bezier(.22,.61,.36,1),box-shadow .5s cubic-bezier(.22,.61,.36,1)}
+  .avatar:hover,.avatar.zoom{transform:scale(1.8);box-shadow:0 18px 40px -16px rgba(0,0,0,.4);z-index:30;transition-delay:.06s}
+  .avatar::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:2px solid transparent;background:var(--grad) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:.2s}
+  .avatar:hover::after,.avatar.zoom::after{opacity:1}
+  .avatar svg{width:50px;height:50px;color:var(--muted);opacity:.6}
+  .avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+  .member .nm{font-weight:700;color:var(--text);font-size:.98rem}
+  .member .rl{color:var(--accent);font-size:.82rem;font-weight:500;margin-top:.15rem}
+
+  .about{display:grid;grid-template-columns:auto 1fr;gap:2.2rem;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:clamp(1.8rem,4vw,3rem)}
+  .about .mark{display:inline-grid;justify-items:start;align-content:center;font-size:2.6rem;font-weight:500;color:var(--accent);letter-spacing:-.01em;line-height:.9;background:transparent}
+  .about .mark .mk-d{width:.22em;height:.22em;border-radius:50%;background:var(--accent);margin:0 0 .04em .13em;position:relative;z-index:2}
+  .about .mark .mk-b{position:relative;display:inline-flex;align-items:center;margin-top:-.27em;padding:.02em .18em .1em .12em;line-height:1}
+  .about .mark .mk-b::before{content:"";position:absolute;inset:0;border:.1em solid var(--accent);border-radius:.3em;
+    -webkit-mask:radial-gradient(circle .32em at .24em .12em,transparent 98%,#000 100%);
+    mask:radial-gradient(circle .32em at .24em .12em,transparent 98%,#000 100%)}
+  .about h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin:0 0 .6rem}
+  .about p{margin:0;max-width:660px}
+  @media(max-width:640px){.about{grid-template-columns:1fr}}
+
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;align-items:start}
+  .contact-info h2{font-size:clamp(1.8rem,4vw,2.5rem);margin:.5rem 0 .8rem}
+  .contact-info p{max-width:420px;color:var(--muted)}
+  form.cform{display:grid;gap:1rem;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:2rem}
+  .cform label{font-size:.85rem;font-weight:600;color:var(--text)}
+  .cform input,.cform textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:.8em 1em;font:inherit;color:var(--text);background:var(--field);margin-top:.35rem}
+  .cform input:focus,.cform textarea:focus{outline:2px solid var(--accent-solid);border-color:transparent}
+  .cform .ok{display:none;background:color-mix(in srgb,#10b981 12%,transparent);color:#059669;border:1px solid color-mix(in srgb,#10b981 30%,transparent);border-radius:10px;padding:.9em 1.1em;font-weight:600;font-size:.94rem}
+  :root[data-theme="dark"] .cform .ok{color:#5eead4}
+  @media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
+
+  .tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem}
+  .tech-col{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.4rem}
+  .tech-col h4{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 .9rem;font-weight:700}
+  .tech-col .items{display:flex;flex-wrap:wrap;gap:.45rem}
+  .tech-col .items span{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;color:var(--body);border:1px solid var(--line);border-radius:7px;padding:.28em .6em;background:var(--bg2)}
+
+  footer{border-top:1px solid var(--line);padding:2.6rem 0 2rem}
+  .foot-in{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:center}
+  .foot-links{display:flex;gap:1.6rem;flex-wrap:wrap}
+  .foot-links a{font-size:.9rem;color:var(--muted)}
+  .foot-links a:hover{color:var(--text)}
+
+  .pal-launcher{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:70;width:50px;height:50px;border-radius:14px;border:1px solid var(--line);background:var(--panel);color:var(--text);cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow);transition:.2s}
+  .pal-launcher:hover{transform:translateY(-50%) scale(1.06)}
+  .pal-launcher .g{width:22px;height:22px;border-radius:7px;background:var(--grad)}
+  .pal-panel{position:fixed;right:78px;top:50%;transform:translateY(-50%) translateX(12px);z-index:70;width:min(280px,calc(100vw - 100px));max-height:82vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:1.1rem;opacity:0;visibility:hidden;transition:.22s}
+  .pal-panel.open{opacity:1;visibility:visible;transform:translateY(-50%) translateX(0)}
+  .pal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem}
+  .pal-head .ti{font-weight:800;color:var(--text);font-size:1rem}
+  .pal-head .ti b{color:var(--accent);font-family:ui-monospace,Menlo,monospace;font-size:.8rem;margin-left:.4em}
+  .pal-close{background:none;border:0;color:var(--muted);font-size:1.4rem;cursor:pointer;line-height:1;padding:0 .2em}
+  .pal-close:hover{color:var(--text)}
+  .pal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem}
+  .pal-group{grid-column:1/-1;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:.7rem 0 .05rem;padding-top:.55rem;border-top:1px solid var(--line)}
+  .pal-group:first-child{border-top:0;padding-top:0;margin-top:0}
+  .sw{height:42px;border-radius:10px;border:2px solid transparent;cursor:pointer;position:relative;transition:.15s;padding:0}
+  .sw:hover{transform:scale(1.08)}
+  .sw.active{border-color:var(--text);box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--text)}
+  .sw .num{position:absolute;bottom:2px;right:4px;font-size:.6rem;font-weight:800;color:rgba(255,255,255,.85);text-shadow:0 1px 2px rgba(0,0,0,.5)}
+  .pal-foot{display:flex;align-items:center;gap:.5rem;margin-top:1rem;padding-top:.9rem;border-top:1px solid var(--line)}
+  .pal-foot span{font-size:.8rem;color:var(--muted);margin-right:auto}
+  .pal-foot button{flex:0 0 auto;padding:.4em .9em;border-radius:8px;border:1px solid var(--line);background:var(--bg2);color:var(--text);font:inherit;font-size:.82rem;font-weight:600;cursor:pointer}
+  .pal-foot button.on{border-color:var(--accent);color:var(--accent)}
+  @media(max-width:560px){.pal-launcher{top:auto;bottom:20px;transform:none}.pal-launcher:hover{transform:scale(1.06)}.pal-panel{top:auto;bottom:82px;right:16px;transform:translateY(12px);left:auto}.pal-panel.open{transform:translateY(0)}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="person" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4.4 0-9 2.2-9 5.5V22h18v-2.5C21 16.2 16.4 14 12 14Z"/></symbol>
+</svg>
+
+<button class="pal-launcher" id="palLauncher" aria-label="Kolor sheme" title="Kolor sheme"><span class="g"></span></button>
+<div class="pal-panel" id="palPanel">
+  <div class="pal-head"><span class="ti"><span data-i18n="pal_title">Kolor sheme</span> <b id="palCount">20</b></span><button class="pal-close" id="palClose" aria-label="Zatvori">×</button></div>
+  <div class="pal-grid" id="palGrid"></div>
+  <div class="pal-foot"><span id="palName">Lime Green</span><button data-set="dark" id="tDark">Dark</button><button data-set="light" id="tLight">Light</button></div>
+</div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#" aria-label="xepc.io"><span class="lg-word">xepc</span><span class="lg-dot"></span><span class="lg-box">ıo</span></a>
+    <nav class="nav-links">
+      <a href="#products" data-i18n="nav_products">Proizvodi</a><a href="#services" data-i18n="nav_services">Usluge</a><a href="#about" data-i18n="nav_about">O nama</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-dd" id="langDD">
+        <button class="lang-cur" id="langCur" aria-label="Jezik" aria-haspopup="listbox" aria-expanded="false"></button>
+        <div class="lang-menu" id="langMenu" role="listbox"></div>
+      </div>
+      <button class="toggle" id="themeBtn" aria-label="Promijeni temu" title="Promijeni temu">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <a class="btn btn-primary" href="#contact" data-i18n="nav_contact_btn">Kontaktiraj nas</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-in">
+    <span class="eyebrow" data-i18n="hero_eyebrow">Razvoj softvera i aplikacija — BiH i Hrvatska</span>
+    <h1 data-i18n-html="hero_h1">Softver koji <span class="gtext">pokreće tvoj posao</span>.</h1>
+    <p class="lead" data-i18n="hero_lead">Gotova rješenja za razne industrije — ili napravimo točno ono što tvoj posao treba. Radi na računalu, mobitelu i webu.</p>
+    <div class="hero-cta">
+      <a class="btn btn-grad" href="#products" data-i18n="hero_cta1">Naši proizvodi</a>
+      <a class="btn btn-ghost" href="#contact" data-i18n="hero_cta2">Ispričaj nam ideju</a>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="prod_eyebrow">Naši proizvodi</span>
+      <h2 data-i18n="prod_h2">Rješenja koja već rade</h2>
+      <p data-i18n="prod_p">Razvijamo i održavamo vlastite proizvode za različite industrije.</p>
+    </div>
+    <div class="prod-panel">
+      <div class="pp-head">
+        <span class="t">// portfolio</span>
+      </div>
+      <div id="prodrows">
+        <div class="prow"><div class="mono">◧</div><div class="lead-col"><div class="k">Poslovanje</div><h3>Poslovni sustav</h3></div><div class="desc-wrap"><p class="desc">Cjelovito upravljanje poslovanjem za male i srednje firme.</p><div class="chips"><span class="chip">Desktop</span><span class="chip">Web</span><span class="chip">Cloud</span></div></div><span class="status live">U PRODUKCIJI</span></div>
+        <div class="prow"><div class="mono">▤</div><div class="lead-col"><div class="k">Ugostiteljstvo</div><h3>Rješenje za ugostiteljstvo</h3></div><div class="desc-wrap"><p class="desc">Digitalni alat za moderne ugostiteljske objekte.</p><div class="chips"><span class="chip">Mobile</span><span class="chip">Web</span></div></div><span class="status live">U PRODUKCIJI</span></div>
+        <div class="prow"><div class="mono">◉</div><div class="lead-col"><div class="k">Turizam</div><h3>Aplikacija za istraživanje</h3></div><div class="desc-wrap"><p class="desc">Interaktivno iskustvo za otkrivanje sadržaja.</p><div class="chips"><span class="chip">Android</span><span class="chip">iOS</span><span class="chip">Web</span></div></div><span class="status live">U PRODUKCIJI</span></div>
+        <div class="prow"><div class="mono">✦</div><div class="lead-col"><div class="k">Događaji</div><h3>Platforma za događaje</h3></div><div class="desc-wrap"><p class="desc">Alati za organizaciju i planiranje događaja.</p><div class="chips"><span class="chip">Mobile</span><span class="chip">Web</span></div></div><span class="status plan">U PLANU</span></div>
+        <div class="prow"><div class="mono">◷</div><div class="lead-col"><div class="k">Rezervacije</div><h3>Sustav za rezervacije</h3></div><div class="desc-wrap"><p class="desc">Online zakazivanje za razne djelatnosti.</p><div class="chips"><span class="chip">Mobile</span><span class="chip">Web</span></div></div><span class="status plan">U PLANU</span></div>
+        <div class="prow"><div class="mono">⌂</div><div class="lead-col"><div class="k">Nekretnine</div><h3>Platforma za nekretnine</h3></div><div class="desc-wrap"><p class="desc">Digitalno rješenje za sektor nekretnina.</p><div class="chips"><span class="chip">Mobile</span><span class="chip">Web</span></div></div><span class="status plan">U PLANU</span></div>
+        <div class="prow"><div class="mono">♥</div><div class="lead-col"><div class="k">Lifestyle</div><h3>Društvena aplikacija</h3></div><div class="desc-wrap"><p class="desc">Mobilna aplikacija za osobnu organizaciju i dijeljenje.</p><div class="chips"><span class="chip">Android</span><span class="chip">iOS</span></div></div><span class="status plan">U PLANU</span></div>
+        <div class="prow"><div class="mono soon">+</div><div class="lead-col"><div class="k">Tvoja industrija</div><h3>Rješenje po mjeri</h3></div><div class="desc-wrap"><p class="desc">Ne vidiš svoju branšu? Napravimo aplikaciju upravo za tvoj posao.</p><div class="chips"><span class="chip">Web</span><span class="chip">Mobile</span><span class="chip">AI</span></div></div><span class="status soon">JAVI SE →</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="svc_eyebrow">Usluge</span>
+      <h2 data-i18n-html="svc_h2">Šta god trebaš — <span class="gtext">napravimo</span></h2>
+      <p data-i18n="svc_p">Od ideje do objave: dizajn, razvoj i održavanje, iz jedne ruke.</p>
+    </div>
+    <div class="grid svc-grid">
+      <div class="svc-card">
+        <div class="ic">⌗</div>
+        <h3 data-i18n="svc_web_t">Web stranice</h3>
+        <p data-i18n="svc_web_d">Brze i moderne stranice koje se lako pronalaze na Googleu — izlog tvog posla.</p>
+      </div>
+      <div class="svc-card">
+        <div class="ic">▣</div>
+        <h3 data-i18n="svc_webapp_t">Web aplikacije</h3>
+        <p data-i18n="svc_webapp_d">Alati koji rade u browseru, bez instalacije — dostupni s bilo kojeg uređaja.</p>
+      </div>
+      <div class="svc-card">
+        <div class="ic">▯</div>
+        <h3 data-i18n="svc_mobile_t">Mobilne aplikacije</h3>
+        <p data-i18n="svc_mobile_d">Android i iOS aplikacije — native osjećaj, jedna baza koda.</p>
+      </div>
+      <div class="svc-card">
+        <div class="ic">⌨</div>
+        <h3 data-i18n="svc_desktop_t">Desktop aplikacije</h3>
+        <p data-i18n="svc_desktop_d">Programi za Windows, macOS i Linux — za ozbiljan svakodnevni rad.</p>
+      </div>
+      <div class="svc-card">
+        <div class="ic">&lt;/&gt;</div>
+        <h3 data-i18n="svc_backend_t">Backend i API</h3>
+        <p data-i18n="svc_backend_d">Serverski sustavi, baze podataka i API-ji koji sve povezuju — sigurno i skalabilno.</p>
+      </div>
+      <div class="svc-card">
+        <div class="ic">✦</div>
+        <h3 data-i18n="svc_ai_t">AI rješenja</h3>
+        <p data-i18n="svc_ai_d">Pametni asistenti, automatizacija procesa i izvještaji — AI u tvojim procesima.</p>
+      </div>
+      <div class="svc-card">
+        <div class="ic">✎</div>
+        <h3 data-i18n="svc_design_t">UI/UX dizajn</h3>
+        <p data-i18n="svc_design_d">Sučelja koja izgledaju dobro i koriste se bez razmišljanja.</p>
+      </div>
+      <div class="svc-card">
+        <div class="ic">↻</div>
+        <h3 data-i18n="svc_support_t">Održavanje i podrška</h3>
+        <p data-i18n="svc_support_d">Nadogradnje, sigurnost i podrška — aplikacija živi i nakon objave.</p>
+      </div>
+    </div>
+    <div class="svc-cta"><a class="btn btn-grad" href="#contact" data-i18n="svc_cta">Ispričaj nam ideju →</a></div>
+    <div class="tech-head">
+      <span class="eyebrow" data-i18n="tech_eyebrow">Kako gradimo</span>
+      <h3 data-i18n="tech_h2">Tehnologije iza rješenja</h3>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-col"><h4 data-i18n="tech_col1">Mobilno & UI</h4><div class="items"><span>Kotlin Multiplatform</span><span>Jetpack Compose</span><span>Compose Multiplatform</span><span>SwiftUI</span><span>Material 3</span></div></div>
+      <div class="tech-col"><h4 data-i18n="tech_col2">Backend</h4><div class="items"><span>Kotlin</span><span>Ktor</span><span>PostgreSQL</span><span>Exposed</span><span>Valkey / Redis</span><span>REST API</span><span>WebSockets</span><span>JWT</span></div></div>
+      <div class="tech-col"><h4 data-i18n="tech_col3">Infrastruktura</h4><div class="items"><span>Docker</span><span>Cloudflare</span><span>S3 / R2</span><span>Caddy</span><span>Gradle</span><span>CI/CD</span></div></div>
+      <div class="tech-col"><h4 data-i18n="tech_col4">AI</h4><div class="items"><span>LLM integracije</span><span>AI asistenti</span><span>RAG</span><span>Automatizacija</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="alt">
+  <div class="wrap">
+    <div class="about">
+      <div class="mark"><span class="mk-d"></span><span class="mk-b">ıo</span></div>
+      <div>
+        <span class="eyebrow" data-i18n="about_eyebrow">O nama</span>
+        <h2 data-i18n="about_h2">Tko smo</h2>
+        <p data-i18n="about_p">xepc.io je softverski studio iz Žepča (BiH) za izradu mobilnih i web aplikacija, web stranica, desktop softvera i AI rješenja. Gradimo vlastite proizvode i rješenja po mjeri — brzo i direktno, bez posrednika. Radimo za klijente u BiH, Hrvatskoj i cijeloj EU.</p>
+      </div>
+    </div>
+    <div class="team-head">
+      <span class="eyebrow" data-i18n="team_eyebrow">Naš tim</span>
+      <h3 data-i18n="team_h2">Ljudi iza xepc.io</h3>
+      <p data-i18n="team_p">Kompletan tim — od uprave do juniora, dizajna, QA i podrške.</p>
+    </div>
+    <div class="grid team-grid" id="teamgrid">
+      <div class="member"><div class="avatar"><img src="roles/founder-ceo.webp" alt="Osnivač i direktor — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Osnivač i direktor</div></div>
+      <div class="member"><div class="avatar"><img src="roles/cto.webp" alt="Tehnički direktor — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Tehnički direktor</div></div>
+      <div class="member"><div class="avatar"><img src="roles/cfo.webp" alt="Financijski direktor — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Financijski direktor</div></div>
+      <div class="member"><div class="avatar"><img src="roles/product-manager.webp" alt="Voditelj proizvoda — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Voditelj proizvoda</div></div>
+      <div class="member"><div class="avatar"><img src="roles/project-manager.webp" alt="Voditelj projekta — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Voditelj projekta</div></div>
+      <div class="member"><div class="avatar"><img src="roles/backend-engineer.webp" alt="Backend inženjer — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Backend inženjer</div></div>
+      <div class="member"><div class="avatar"><img src="roles/frontend-engineer.webp" alt="Frontend inženjer — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Frontend inženjer</div></div>
+      <div class="member"><div class="avatar"><img src="roles/mobile-developer.webp" alt="Mobilni programer — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Mobilni programer</div></div>
+      <div class="member"><div class="avatar"><img src="roles/ai-engineer.webp" alt="AI inženjer — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">AI inženjer</div></div>
+      <div class="member"><div class="avatar"><img src="roles/devops-engineer.webp" alt="DevOps inženjer — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">DevOps inženjer</div></div>
+      <div class="member"><div class="avatar"><img src="roles/qa-engineer.webp" alt="QA inženjer — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">QA inženjer</div></div>
+      <div class="member"><div class="avatar"><img src="roles/uiux-designer.webp" alt="UI/UX dizajner — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">UI/UX dizajner</div></div>
+      <div class="member"><div class="avatar"><img src="roles/designer.webp" alt="Dizajner — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Dizajner</div></div>
+      <div class="member"><div class="avatar"><img src="roles/it-specialist.webp" alt="IT stručnjak — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">IT stručnjak</div></div>
+      <div class="member"><div class="avatar"><img src="roles/marketing-manager.webp" alt="Voditelj marketinga — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Voditelj marketinga</div></div>
+      <div class="member"><div class="avatar"><img src="roles/sales-manager.webp" alt="Voditelj prodaje — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Voditelj prodaje</div></div>
+      <div class="member"><div class="avatar"><img src="roles/legal-advisor.webp" alt="Pravni savjetnik — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Pravni savjetnik</div></div>
+      <div class="member"><div class="avatar"><img src="roles/customer-support.webp" alt="Korisnička podrška — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Korisnička podrška</div></div>
+      <div class="member"><div class="avatar"><img src="roles/office-manager.webp" alt="Voditelj ureda — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Voditelj ureda</div></div>
+      <div class="member"><div class="avatar"><img src="roles/maintenance-technician.webp" alt="Tehničar održavanja — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Tehničar održavanja</div></div>
+      <div class="member"><div class="avatar"><img src="roles/coffee-specialist.webp" alt="Specijalist za čaj — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Specijalist za čaj</div></div>
+      <div class="member"><div class="avatar"><img src="roles/janitor.webp" alt="Domar — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">Domar</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <span class="eyebrow" data-i18n="contact_eyebrow">Kontakt</span>
+      <h2 data-i18n="contact_h2">Javi nam se</h2>
+      <p data-i18n="contact_p">Odgovaramo u roku 24 sata — direktno na tvoj email. Bez obveza.</p>
+    </div>
+    <form class="cform" onsubmit="return sendMsg(this)">
+      <div><label><span data-i18n="form_name">Ime</span><input required name="name" data-i18n-ph="form_name_ph" placeholder="Tvoje ime"></label></div>
+      <div><label><span data-i18n="form_email">Email</span><input required type="email" name="email" data-i18n-ph="form_email_ph" placeholder="ti@firma.ba"></label></div>
+      <div><label><span data-i18n="form_msg">Poruka</span><textarea required name="msg" rows="5" data-i18n-ph="form_msg_ph" placeholder="Šta ti treba?"></textarea></label></div>
+      <button class="btn btn-grad" type="submit" data-i18n="form_btn">Pošalji poruku</button>
+      <div class="ok" id="ok" data-i18n="form_ok">Hvala! Poruka je poslana — odgovaramo u roku 24 h. ✓</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <a class="logo" href="#" aria-label="xepc.io"><span class="lg-word">xepc</span><span class="lg-dot"></span><span class="lg-box">ıo</span></a>
+    <div class="foot-links">
+      <a href="#products" data-i18n="nav_products">Proizvodi</a><a href="#services" data-i18n="nav_services">Usluge</a><a href="#about" data-i18n="nav_about">O nama</a><a href="mailto:kontakt@xepc.io">kontakt@xepc.io</a>
+    </div>
+    <span style="font-size:.85rem;color:var(--muted)" data-i18n="foot_copy">© 2026 xepc.io · Žepče, BiH — izrada aplikacija i web stranica za BiH, Hrvatsku i EU</span>
+  </div>
+</footer>
+
+<script>
+  var el=document.documentElement;
+
+  /* ---- i18n ---- */
+  var I18N={
+    hr:{
+      nav_products:"Proizvodi",nav_services:"Usluge",nav_team:"Tim",nav_about:"O nama",nav_contact_btn:"Kontaktiraj nas",
+      hero_eyebrow:"Razvoj softvera i aplikacija — BiH i Hrvatska",hero_h1:'Softver koji <span class="gtext">pokreće tvoj posao</span>.',
+      hero_lead:"Gotova rješenja za razne industrije — ili napravimo točno ono što tvoj posao treba. Radi na računalu, mobitelu i webu.",
+      hero_cta1:"Naši proizvodi",hero_cta2:"Ispričaj nam ideju",
+      prod_eyebrow:"Naši proizvodi",prod_h2:"Rješenja koja već rade",prod_p:"Razvijamo i održavamo vlastite proizvode za različite industrije.",
+      legend_live:"U produkciji",legend_plan:"U planu",legend_custom:"Po mjeri",
+      status_live:"U PRODUKCIJI",status_plan:"U PLANU",status_custom:"JAVI SE →",
+      p1_cat:"Poslovanje",p1_t:"Poslovni sustav",p1_d:"Cjelovito upravljanje poslovanjem za male i srednje firme.",
+      p2_cat:"Ugostiteljstvo",p2_t:"Rješenje za ugostiteljstvo",p2_d:"Digitalni alat za moderne ugostiteljske objekte.",
+      p3_cat:"Turizam",p3_t:"Aplikacija za istraživanje",p3_d:"Interaktivno iskustvo za otkrivanje sadržaja.",
+      p4_cat:"Događaji",p4_t:"Platforma za događaje",p4_d:"Alati za organizaciju i planiranje događaja.",
+      p5_cat:"Rezervacije",p5_t:"Sustav za rezervacije",p5_d:"Online zakazivanje za razne djelatnosti.",
+      p6_cat:"Nekretnine",p6_t:"Platforma za nekretnine",p6_d:"Digitalno rješenje za sektor nekretnina.",
+      p7_cat:"Lifestyle",p7_t:"Društvena aplikacija",p7_d:"Mobilna aplikacija za osobnu organizaciju i dijeljenje.",
+      p8_cat:"Tvoja industrija",p8_t:"Rješenje po mjeri",p8_d:"Ne vidiš svoju branšu? Napravimo aplikaciju upravo za tvoj posao.",
+      svc_eyebrow:"Usluge",svc_h2:'Šta god trebaš — <span class="gtext">napravimo</span>',svc_p:"Od ideje do objave: dizajn, razvoj i održavanje, iz jedne ruke.",
+      svc_web_t:"Web stranice",svc_web_d:"Brze i moderne stranice koje se lako pronalaze na Googleu — izlog tvog posla.",
+      svc_webapp_t:"Web aplikacije",svc_webapp_d:"Alati koji rade u browseru, bez instalacije — dostupni s bilo kojeg uređaja.",
+      svc_mobile_t:"Mobilne aplikacije",svc_mobile_d:"Android i iOS aplikacije — native osjećaj, jedna baza koda.",
+      svc_desktop_t:"Desktop aplikacije",svc_desktop_d:"Programi za Windows, macOS i Linux — za ozbiljan svakodnevni rad.",
+      svc_backend_t:"Backend i API",svc_backend_d:"Serverski sustavi, baze podataka i API-ji koji sve povezuju — sigurno i skalabilno.",
+      svc_ai_t:"AI rješenja",svc_ai_d:"Pametni asistenti, automatizacija procesa i izvještaji — AI u tvojim procesima.",
+      svc_design_t:"UI/UX dizajn",svc_design_d:"Sučelja koja izgledaju dobro i koriste se bez razmišljanja.",
+      svc_support_t:"Održavanje i podrška",svc_support_d:"Nadogradnje, sigurnost i podrška — aplikacija živi i nakon objave.",
+      svc_cta:"Ispričaj nam ideju →",
+      team_eyebrow:"Naš tim",team_h2:"Ljudi iza xepc.io",team_p:"Kompletan tim — od uprave do juniora, dizajna, QA i podrške.",
+      about_eyebrow:"O nama",about_h2:"Tko smo",about_p:"xepc.io je softverski studio iz Žepča (BiH) za izradu mobilnih i web aplikacija, web stranica, desktop softvera i AI rješenja. Gradimo vlastite proizvode i rješenja po mjeri — brzo i direktno, bez posrednika. Radimo za klijente u BiH, Hrvatskoj i cijeloj EU.",foot_copy:"© 2026 xepc.io · Žepče, BiH — izrada aplikacija i web stranica za BiH, Hrvatsku i EU",
+      contact_eyebrow:"Kontakt",contact_h2:"Javi nam se",contact_p:"Odgovaramo u roku 24 sata — direktno na tvoj email. Bez obveza.",
+      form_name:"Ime",form_email:"Email",form_msg:"Poruka",form_name_ph:"Tvoje ime",form_email_ph:"ti@firma.ba",form_msg_ph:"Šta ti treba?",form_btn:"Pošalji poruku",form_ok:"Otvorili smo tvoj email program s porukom — samo pošalji. Ako se nije otvorio, piši na kontakt@xepc.io.",
+      tech_eyebrow:"Kako gradimo",tech_h2:"Tehnologije iza rješenja",tech_p:"Moderni, provjereni stack — jedna baza koda za sve platforme.",
+      tech_col1:"Mobilno & UI",tech_col2:"Backend",tech_col3:"Infrastruktura",tech_col4:"AI",pal_title:"Kolor sheme",
+      role_ceo:"Osnivač i direktor",role_cto:"Tehnički direktor",role_cfo:"Financijski direktor",
+      role_pm:"Voditelj proizvoda",role_prm:"Voditelj projekta",role_be:"Backend inženjer",role_fe:"Frontend inženjer",
+      role_mob:"Mobilni programer",role_ai:"AI inženjer",role_devops:"DevOps inženjer",role_qa:"QA inženjer",
+      role_uiux:"UI/UX dizajner",role_des:"Dizajner",role_it:"IT stručnjak",role_mkt:"Voditelj marketinga",
+      role_sales:"Voditelj prodaje",role_legal:"Pravni savjetnik",role_support:"Korisnička podrška",
+      role_office:"Voditelj ureda",role_maint:"Tehničar održavanja",role_coffee:"Specijalist za čaj",role_jan:"Domar"
+    },
+    en:{
+      nav_products:"Products",nav_services:"Services",nav_team:"Team",nav_about:"About",nav_contact_btn:"Contact us",
+      hero_eyebrow:"Software & app development — Bosnia & Croatia",hero_h1:'Software that <span class="gtext">powers your business</span>.',
+      hero_lead:"Ready-made solutions for many industries — or we build exactly what your business needs. Works on desktop, mobile and web.",
+      hero_cta1:"Our products",hero_cta2:"Tell us your idea",
+      prod_eyebrow:"Our products",prod_h2:"Solutions already in use",prod_p:"We build and maintain our own products for different industries.",
+      legend_live:"Live",legend_plan:"Planned",legend_custom:"Custom",
+      status_live:"LIVE",status_plan:"PLANNED",status_custom:"GET IN TOUCH →",
+      p1_cat:"Business",p1_t:"Business system",p1_d:"End-to-end business management for small and mid-sized companies.",
+      p2_cat:"Hospitality",p2_t:"Hospitality solution",p2_d:"A digital tool for modern hospitality venues.",
+      p3_cat:"Tourism",p3_t:"Discovery app",p3_d:"An interactive experience for discovering content.",
+      p4_cat:"Events",p4_t:"Events platform",p4_d:"Tools for organizing and planning events.",
+      p5_cat:"Booking",p5_t:"Booking system",p5_d:"Online scheduling for many kinds of businesses.",
+      p6_cat:"Real estate",p6_t:"Real estate platform",p6_d:"A digital solution for the real-estate sector.",
+      p7_cat:"Lifestyle",p7_t:"Social app",p7_d:"A mobile app for personal organization and sharing.",
+      p8_cat:"Your industry",p8_t:"Custom solution",p8_d:"Don't see your industry? We'll build an app just for your business.",
+      svc_eyebrow:"Services",svc_h2:'Whatever you need — <span class="gtext">we build it</span>',svc_p:"From idea to launch: design, development and maintenance, from one team.",
+      svc_web_t:"Websites",svc_web_d:"Fast, modern websites that rank on Google — the storefront of your business.",
+      svc_webapp_t:"Web apps",svc_webapp_d:"Tools that run in the browser, no install — available from any device.",
+      svc_mobile_t:"Mobile apps",svc_mobile_d:"Android & iOS apps — native feel, one codebase.",
+      svc_desktop_t:"Desktop apps",svc_desktop_d:"Software for Windows, macOS and Linux — for serious daily work.",
+      svc_backend_t:"Backend & API",svc_backend_d:"Server systems, databases and APIs that connect everything — secure and scalable.",
+      svc_ai_t:"AI solutions",svc_ai_d:"Smart assistants, process automation and reporting — AI inside your processes.",
+      svc_design_t:"UI/UX design",svc_design_d:"Interfaces that look great and feel effortless to use.",
+      svc_support_t:"Maintenance & support",svc_support_d:"Updates, security and support — your app lives on after launch.",
+      svc_cta:"Tell us your idea →",
+      team_eyebrow:"Our team",team_h2:"The people behind xepc.io",team_p:"A full team — from leadership to juniors, design, QA and support.",
+      about_eyebrow:"About",about_h2:"Who we are",about_p:"xepc.io is a software studio from Žepče (Bosnia) building mobile and web apps, websites, desktop software and AI solutions. We build our own products and custom solutions — fast and direct, no middlemen. We work with clients across Bosnia, Croatia and the EU.",foot_copy:"© 2026 xepc.io · Žepče, Bosnia — app & website development for Bosnia, Croatia and the EU",
+      contact_eyebrow:"Contact",contact_h2:"Get in touch",contact_p:"We reply within 24 hours — straight to your email. No strings attached.",
+      form_name:"Name",form_email:"Email",form_msg:"Message",form_name_ph:"Your name",form_email_ph:"you@company.com",form_msg_ph:"What do you need?",form_btn:"Send message",form_ok:"We opened your email app with the message — just hit send. If it didn't open, write to kontakt@xepc.io.",
+      tech_eyebrow:"How we build",tech_h2:"Technology behind the solutions",tech_p:"A modern, proven stack — one codebase for all platforms.",
+      tech_col1:"Mobile & UI",tech_col2:"Backend",tech_col3:"Infrastructure",tech_col4:"AI",pal_title:"Color schemes",
+      role_ceo:"Founder & CEO",role_cto:"CTO",role_cfo:"CFO",
+      role_pm:"Product Manager",role_prm:"Project Manager",role_be:"Backend Engineer",role_fe:"Frontend Engineer",
+      role_mob:"Mobile App Developer",role_ai:"AI Engineer",role_devops:"DevOps Engineer",role_qa:"QA Engineer",
+      role_uiux:"UI/UX Designer",role_des:"Designer",role_it:"IT Specialist",role_mkt:"Marketing Manager",
+      role_sales:"Sales Manager",role_legal:"Legal Advisor",role_support:"Customer Support",
+      role_office:"Office Manager",role_maint:"Maintenance Technician",role_coffee:"Tea Specialist",role_jan:"Janitor"
+    },
+    de:{
+      nav_products:"Produkte",nav_services:"Leistungen",nav_team:"Team",nav_about:"Über uns",nav_contact_btn:"Kontakt",
+      hero_eyebrow:"Software- & App-Entwicklung — Bosnien & Kroatien",hero_h1:'Software, die <span class="gtext">Ihr Geschäft antreibt</span>.',
+      hero_lead:"Fertige Lösungen für viele Branchen — oder wir bauen genau das, was Ihr Unternehmen braucht. Für Desktop, Mobil und Web.",
+      hero_cta1:"Unsere Produkte",hero_cta2:"Erzählen Sie uns Ihre Idee",
+      prod_eyebrow:"Unsere Produkte",prod_h2:"Lösungen, die bereits laufen",prod_p:"Wir entwickeln und pflegen eigene Produkte für verschiedene Branchen.",
+      legend_live:"Live",legend_plan:"Geplant",legend_custom:"Individuell",
+      status_live:"LIVE",status_plan:"GEPLANT",status_custom:"KONTAKT →",
+      p1_cat:"Business",p1_t:"Business-System",p1_d:"Ganzheitliche Unternehmensverwaltung für kleine und mittlere Firmen.",
+      p2_cat:"Gastronomie",p2_t:"Gastronomie-Lösung",p2_d:"Ein digitales Werkzeug für moderne Gastronomiebetriebe.",
+      p3_cat:"Tourismus",p3_t:"Entdecker-App",p3_d:"Ein interaktives Erlebnis zum Entdecken von Inhalten.",
+      p4_cat:"Events",p4_t:"Event-Plattform",p4_d:"Werkzeuge zum Organisieren und Planen von Events.",
+      p5_cat:"Buchung",p5_t:"Buchungssystem",p5_d:"Online-Terminbuchung für viele Branchen.",
+      p6_cat:"Immobilien",p6_t:"Immobilien-Plattform",p6_d:"Eine digitale Lösung für den Immobiliensektor.",
+      p7_cat:"Lifestyle",p7_t:"Social-App",p7_d:"Eine mobile App für persönliche Organisation und zum Teilen.",
+      p8_cat:"Ihre Branche",p8_t:"Individuelle Lösung",p8_d:"Ihre Branche fehlt? Wir bauen eine App genau für Ihr Geschäft.",
+      svc_eyebrow:"Leistungen",svc_h2:'Was immer Sie brauchen — <span class="gtext">wir bauen es</span>',svc_p:"Von der Idee bis zum Launch: Design, Entwicklung und Wartung aus einer Hand.",
+      svc_web_t:"Webseiten",svc_web_d:"Schnelle, moderne Webseiten, die bei Google gefunden werden — das Schaufenster Ihres Geschäfts.",
+      svc_webapp_t:"Web-Apps",svc_webapp_d:"Tools, die im Browser laufen, ohne Installation — von jedem Gerät erreichbar.",
+      svc_mobile_t:"Mobile Apps",svc_mobile_d:"Android- & iOS-Apps — natives Gefühl, eine Codebasis.",
+      svc_desktop_t:"Desktop-Apps",svc_desktop_d:"Software für Windows, macOS und Linux — für ernsthafte tägliche Arbeit.",
+      svc_backend_t:"Backend & API",svc_backend_d:"Serversysteme, Datenbanken und APIs, die alles verbinden — sicher und skalierbar.",
+      svc_ai_t:"KI-Lösungen",svc_ai_d:"Intelligente Assistenten, Prozessautomatisierung und Berichte — KI in Ihren Prozessen.",
+      svc_design_t:"UI/UX-Design",svc_design_d:"Oberflächen, die gut aussehen und mühelos bedienbar sind.",
+      svc_support_t:"Wartung & Support",svc_support_d:"Updates, Sicherheit und Support — Ihre App lebt nach dem Launch weiter.",
+      svc_cta:"Erzählen Sie uns Ihre Idee →",
+      team_eyebrow:"Unser Team",team_h2:"Die Menschen hinter xepc.io",team_p:"Ein komplettes Team — von der Leitung bis zu Junioren, Design, QA und Support.",
+      about_eyebrow:"Über uns",about_h2:"Wer wir sind",about_p:"xepc.io ist ein Software-Studio aus Žepče (Bosnien) für mobile und Web-Apps, Webseiten, Desktop-Software und KI-Lösungen. Wir bauen eigene Produkte und individuelle Lösungen — schnell und direkt, ohne Zwischenhändler. Wir arbeiten für Kunden in Bosnien, Kroatien und der ganzen EU.",foot_copy:"© 2026 xepc.io · Žepče, Bosnien — App- & Webseiten-Entwicklung für Bosnien, Kroatien und die EU",
+      contact_eyebrow:"Kontakt",contact_h2:"Melden Sie sich",contact_p:"Wir antworten innerhalb von 24 Stunden — direkt an Ihre E-Mail. Unverbindlich.",
+      form_name:"Name",form_email:"E-Mail",form_msg:"Nachricht",form_name_ph:"Ihr Name",form_email_ph:"sie@firma.com",form_msg_ph:"Was brauchen Sie?",form_btn:"Nachricht senden",form_ok:"Wir haben Ihr E-Mail-Programm mit der Nachricht geöffnet — einfach senden. Falls nicht, schreiben Sie an kontakt@xepc.io.",
+      tech_eyebrow:"Wie wir bauen",tech_h2:"Technologie hinter den Lösungen",tech_p:"Ein moderner, bewährter Stack — eine Codebasis für alle Plattformen.",
+      tech_col1:"Mobil & UI",tech_col2:"Backend",tech_col3:"Infrastruktur",tech_col4:"KI",pal_title:"Farbschemen",
+      role_ceo:"Gründer & CEO",role_cto:"CTO",role_cfo:"CFO",
+      role_pm:"Produktmanager",role_prm:"Projektmanager",role_be:"Backend-Entwickler",role_fe:"Frontend-Entwickler",
+      role_mob:"Mobile-Entwickler",role_ai:"KI-Ingenieur",role_devops:"DevOps-Ingenieur",role_qa:"QA-Ingenieur",
+      role_uiux:"UI/UX-Designer",role_des:"Designer",role_it:"IT-Spezialist",role_mkt:"Marketing-Manager",
+      role_sales:"Vertriebsleiter",role_legal:"Rechtsberater",role_support:"Kundensupport",
+      role_office:"Büroleiter",role_maint:"Wartungstechniker",role_coffee:"Tee-Spezialist",role_jan:"Hausmeister"
+    }
+  };
+  var lang='hr'; try{lang=localStorage.getItem('xlang')||'hr';}catch(e){}
+  function t(k){return (I18N[lang]&&I18N[lang][k])||I18N.hr[k]||k;}
+
+  /* ---- products (broad, idea-safe) ---- */
+  var PRODUCTS=[
+    {m:'◧',s:'live',k:'p1'},{m:'▤',s:'live',k:'p2'},{m:'◉',s:'live',k:'p3'},
+    {m:'✦',s:'plan',k:'p4'},{m:'◷',s:'plan',k:'p5'},{m:'⌂',s:'plan',k:'p6'},
+    {m:'♥',s:'plan',k:'p7'},{m:'+',s:'custom',k:'p8'}
+  ];
+  var CHIPS={p1:['Desktop','Web','Cloud'],p2:['Mobile','Web'],p3:['Android','iOS','Web'],p4:['Mobile','Web'],p5:['Mobile','Web'],p6:['Mobile','Web'],p7:['Android','iOS'],p8:['Web','Mobile','AI']};
+  function statusLabel(s){return s==='live'?t('status_live'):s==='plan'?t('status_plan'):t('status_custom');}
+  function buildProducts(){
+    document.getElementById('prodrows').innerHTML=PRODUCTS.map(function(p){
+      var chips=CHIPS[p.k].map(function(c){return '<span class="chip">'+c+'</span>';}).join('');
+      var mono=p.s==='custom'?'mono soon':'mono';
+      var st=p.s==='custom'?'soon':p.s;
+      return '<div class="prow"><div class="'+mono+'">'+p.m+'</div>'
+        +'<div class="lead-col"><div class="k">'+t(p.k+'_cat')+'</div><h3>'+t(p.k+'_t')+'</h3></div>'
+        +'<div class="desc-wrap"><p class="desc">'+t(p.k+'_d')+'</p><div class="chips">'+chips+'</div></div>'
+        +'<span class="status '+st+'">'+statusLabel(p.s)+'</span></div>';
+    }).join('');
+  }
+
+  /* ---- team ---- */
+  var team=[
+    ["role_ceo","founder-ceo"],["role_cto","cto"],["role_cfo","cfo"],
+    ["role_pm","product-manager"],["role_prm","project-manager"],
+    ["role_be","backend-engineer"],["role_fe","frontend-engineer"],
+    ["role_mob","mobile-developer"],["role_ai","ai-engineer"],
+    ["role_devops","devops-engineer"],["role_qa","qa-engineer"],
+    ["role_uiux","uiux-designer"],["role_des","designer"],["role_it","it-specialist"],
+    ["role_mkt","marketing-manager"],["role_sales","sales-manager"],
+    ["role_legal","legal-advisor"],["role_support","customer-support"],
+    ["role_office","office-manager"],["role_maint","maintenance-technician"],
+    ["role_coffee","coffee-specialist"],["role_jan","janitor"]
+  ];
+  function buildTeam(){
+    document.getElementById('teamgrid').innerHTML=team.map(function(x){
+      return '<div class="member"><div class="avatar"><img src="roles/'+x[1]+'.webp" alt="'+t(x[0])+' — Dario Babić" loading="lazy" width="512" height="512"></div><div class="nm">Dario Babić</div><div class="rl">'+t(x[0])+'</div></div>';
+    }).join('');
+  }
+
+  function applyI18n(){
+    el.setAttribute('lang',lang);
+    document.querySelectorAll('[data-i18n]').forEach(function(n){n.textContent=t(n.getAttribute('data-i18n'));});
+    document.querySelectorAll('[data-i18n-html]').forEach(function(n){n.innerHTML=t(n.getAttribute('data-i18n-html'));});
+    document.querySelectorAll('[data-i18n-ph]').forEach(function(n){n.setAttribute('placeholder',t(n.getAttribute('data-i18n-ph')));});
+    buildProducts();
+    buildTeam();
+    renderLangCur();
+    langMenu.querySelectorAll('.lang-opt').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-lang')===lang);});
+  }
+  function setLang(l){lang=l;try{localStorage.setItem('xlang',l)}catch(e){}applyI18n();}
+  var FLAGS={
+    hr:'<svg class="flag" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><rect width="20" height="4.67" fill="#ff0000"/><rect y="9.33" width="20" height="4.67" fill="#0093dd"/><rect x="7.3" y="4.1" width="5.4" height="5.8" fill="#fff"/><rect x="7.3" y="4.1" width="1.08" height="1.16" fill="#d80f16"/><rect x="9.46" y="4.1" width="1.08" height="1.16" fill="#d80f16"/><rect x="11.62" y="4.1" width="1.08" height="1.16" fill="#d80f16"/><rect x="8.38" y="5.26" width="1.08" height="1.16" fill="#d80f16"/><rect x="10.54" y="5.26" width="1.08" height="1.16" fill="#d80f16"/><rect x="7.3" y="6.42" width="1.08" height="1.16" fill="#d80f16"/><rect x="9.46" y="6.42" width="1.08" height="1.16" fill="#d80f16"/><rect x="11.62" y="6.42" width="1.08" height="1.16" fill="#d80f16"/><rect x="8.38" y="7.58" width="1.08" height="1.16" fill="#d80f16"/><rect x="10.54" y="7.58" width="1.08" height="1.16" fill="#d80f16"/><rect x="7.3" y="8.74" width="1.08" height="1.16" fill="#d80f16"/><rect x="9.46" y="8.74" width="1.08" height="1.16" fill="#d80f16"/><rect x="11.62" y="8.74" width="1.08" height="1.16" fill="#d80f16"/><rect x="7.3" y="4.1" width="5.4" height="5.8" fill="none" stroke="#c00" stroke-width=".22"/></svg>',
+    en:'<svg class="flag" viewBox="0 0 20 14"><rect width="20" height="14" fill="#012169"/><path d="M0 0L20 14M20 0L0 14" stroke="#fff" stroke-width="2.6"/><path d="M0 0L20 14M20 0L0 14" stroke="#c8102e" stroke-width="1.2"/><rect x="8.2" width="3.6" height="14" fill="#fff"/><rect y="5.2" width="20" height="3.6" fill="#fff"/><rect x="9" width="2" height="14" fill="#c8102e"/><rect y="6" width="20" height="2" fill="#c8102e"/></svg>',
+    de:'<svg class="flag" viewBox="0 0 20 14"><rect width="20" height="14" fill="#000"/><rect y="4.67" width="20" height="4.66" fill="#dd0000"/><rect y="9.33" width="20" height="4.67" fill="#ffce00"/></svg>'
+  };
+  var LNAME={hr:'Hrvatski',en:'English',de:'Deutsch'},LCODE={hr:'HR',en:'EN',de:'DE'};
+  var langDD=document.getElementById('langDD'),langCur=document.getElementById('langCur'),langMenu=document.getElementById('langMenu');
+  langMenu.innerHTML=['hr','en','de'].map(function(l){return '<button class="lang-opt" data-lang="'+l+'" role="option">'+FLAGS[l]+'<span>'+LNAME[l]+'</span></button>';}).join('');
+  function renderLangCur(){langCur.innerHTML=FLAGS[lang]+'<span class="lc">'+LCODE[lang]+'</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>';}
+  langCur.addEventListener('click',function(e){e.stopPropagation();var o=langDD.classList.toggle('open');langCur.setAttribute('aria-expanded',o?'true':'false');});
+  langMenu.querySelectorAll('.lang-opt').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'));langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');});});
+  document.addEventListener('click',function(e){if(!langDD.contains(e.target)){langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');}});
+
+  // touch: tap slike = zoom toggle; tap izvan = zatvori. Miš koristi :hover.
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('.avatar');
+    document.querySelectorAll('.avatar.zoom').forEach(function(x){if(x!==a)x.classList.remove('zoom')});
+    if(a)a.classList.toggle('zoom');
+  });
+  function sendMsg(f){
+    if(window.event)window.event.preventDefault();
+    var n=f.name.value,e=f.email.value,m=f.msg.value;
+    location.href='mailto:kontakt@xepc.io?subject='+encodeURIComponent('Upit sa xepc.io — '+n)+'&body='+encodeURIComponent(m+'\n\n— '+n+' ('+e+')');
+    document.getElementById('ok').style.display='block';
+    return false}
+
+  /* ---- Color schemes ---- */
+  var SCHEMES=[
+    {n:"Aqua Violet",c1:"#22d3ee",c2:"#8b5cf6",s:"#6366f1",ad:"#818cf8",al:"#6d28d9"},
+    {n:"Indigo Sky",c1:"#4f46e5",c2:"#06b6d4",s:"#4f46e5",ad:"#818cf8",al:"#4338ca"},
+    {n:"Emerald Teal",c1:"#10b981",c2:"#06b6d4",s:"#059669",ad:"#34d399",al:"#047857"},
+    {n:"Sunset",c1:"#f97316",c2:"#ec4899",s:"#ea580c",ad:"#fb923c",al:"#c2410c"},
+    {n:"Crimson Rose",c1:"#e11d48",c2:"#fb7185",s:"#e11d48",ad:"#fb7185",al:"#be123c"},
+    {n:"Royal Purple",c1:"#7c3aed",c2:"#d946ef",s:"#7c3aed",ad:"#c084fc",al:"#6b21a8"},
+    {n:"Ocean Blue",c1:"#2563eb",c2:"#22d3ee",s:"#2563eb",ad:"#60a5fa",al:"#1d4ed8"},
+    {n:"Lime Green",c1:"#84cc16",c2:"#10b981",s:"#16a34a",ad:"#a3e635",al:"#4d7c0f"},
+    {n:"Amber Orange",c1:"#f59e0b",c2:"#f97316",s:"#d97706",ad:"#fbbf24",al:"#b45309"},
+    {n:"Teal Blue",c1:"#14b8a6",c2:"#3b82f6",s:"#0d9488",ad:"#2dd4bf",al:"#0f766e"},
+    {n:"Pink Purple",c1:"#ec4899",c2:"#a855f7",s:"#db2777",ad:"#f472b6",al:"#a21caf"},
+    {n:"Fire",c1:"#ef4444",c2:"#f97316",s:"#dc2626",ad:"#f87171",al:"#b91c1c"},
+    {n:"Sky Indigo",c1:"#0ea5e9",c2:"#6366f1",s:"#0284c7",ad:"#38bdf8",al:"#4338ca"},
+    {n:"Fresh Green",c1:"#22c55e",c2:"#a3e635",s:"#16a34a",ad:"#4ade80",al:"#15803d"},
+    {n:"Violet Blue",c1:"#8b5cf6",c2:"#3b82f6",s:"#7c3aed",ad:"#a78bfa",al:"#6d28d9"},
+    {n:"Peach",c1:"#fb7185",c2:"#fbbf24",s:"#f43f5e",ad:"#fda4af",al:"#be123c"},
+    {n:"Cyan Mint",c1:"#06b6d4",c2:"#10b981",s:"#0891b2",ad:"#22d3ee",al:"#0e7490"},
+    {n:"Magenta",c1:"#d946ef",c2:"#fb7185",s:"#c026d3",ad:"#e879f9",al:"#a21caf"},
+    {n:"Steel Blue",c1:"#3b82f6",c2:"#1d4ed8",s:"#2563eb",ad:"#60a5fa",al:"#1e40af"},
+    {n:"Gold Bronze",c1:"#eab308",c2:"#d97706",s:"#b45309",ad:"#fbbf24",al:"#92400e"}
+  ];
+  // --- generate 10 shades per color family, appended after the base 20 ---
+  var GROUPS=[{label:'Original',from:0,count:SCHEMES.length}];
+  function h2(n){n=Math.round(n);n=Math.max(0,Math.min(255,n)).toString(16);return n.length<2?'0'+n:n;}
+  function hslHex(h,s,l){
+    h=((h%360)+360)%360;s=Math.max(0,Math.min(100,s))/100;l=Math.max(0,Math.min(100,l))/100;
+    var c=(1-Math.abs(2*l-1))*s,x=c*(1-Math.abs((h/60)%2-1)),m=l-c/2,r,g,b;
+    if(h<60){r=c;g=x;b=0}else if(h<120){r=x;g=c;b=0}else if(h<180){r=0;g=c;b=x}
+    else if(h<240){r=0;g=x;b=c}else if(h<300){r=x;g=0;b=c}else{r=c;g=0;b=x}
+    return '#'+h2((r+m)*255)+h2((g+m)*255)+h2((b+m)*255);
+  }
+  function cl(v,a,b){return Math.max(a,Math.min(b,v));}
+  // 10 shades per color: [name, saturation, lightness]. Gradient = gentle same-hue sheen (barely visible).
+  var RECIPES=[
+    ['Pastelna',70,76],['Svijetla',82,66],['Živa',92,58],['Standard',88,50],['Zasićena',96,45],
+    ['Duboka',86,40],['Zagasita',50,48],['Prigušena',40,40],['Tamna',82,33],['Najtamnija',74,26]
+  ];
+  [['Žuta',48,6],['Narančasta',28,2],['Crvena',2,0],['Magenta',320,0],['Svijetlo zelena',96,4],['Tamno zelena',150,-6],['Tirkizna',178,0]].forEach(function(g){
+    var from=SCHEMES.length,H=g[1],off=g[2];
+    RECIPES.forEach(function(r){
+      var S=r[1],L=cl(r[2]+off,22,80);
+      SCHEMES.push({n:g[0]+' — '+r[0],
+        c1:hslHex(H,S,L),
+        c2:hslHex(H+6,S,cl(L-5,18,78)),
+        s:hslHex(H,Math.min(S,82),cl(L-10,30,46)),
+        ad:hslHex(H,Math.max(S,60),cl(L+12,52,76)),
+        al:hslHex(H,Math.max(S,55),cl(L-16,26,44))});
+    });
+    GROUPS.push({label:g[0],from:from,count:10});
+  });
+
+  var curScheme=7; // Lime Green — anchored default
+  function applyScheme(i){
+    var s=SCHEMES[i]; curScheme=i;
+    el.style.setProperty('--grad','linear-gradient(120deg,'+s.c1+','+s.c2+')');
+    el.style.setProperty('--cyan',s.c1);
+    el.style.setProperty('--violet',s.c2);
+    el.style.setProperty('--accent-solid',s.s);
+    el.style.setProperty('--accent', el.getAttribute('data-theme')==='light'?s.al:s.ad);
+    document.getElementById('palName').textContent=s.n;
+    document.querySelectorAll('.sw').forEach(function(b,j){b.classList.toggle('active',j===i)});
+    try{localStorage.setItem('xscheme',i)}catch(e){}
+  }
+  document.getElementById('palCount').textContent=SCHEMES.length;
+  document.getElementById('palGrid').innerHTML=GROUPS.map(function(g){
+    var sw='';
+    for(var i=g.from;i<g.from+g.count;i++){var s=SCHEMES[i];
+      sw+='<button class="sw" title="'+s.n+'" style="background:linear-gradient(120deg,'+s.c1+','+s.c2+')" data-i="'+i+'"><span class="num">'+(i+1)+'</span></button>';}
+    return '<div class="pal-group">'+g.label+'</div>'+sw;
+  }).join('');
+  document.querySelectorAll('.sw').forEach(function(b){b.addEventListener('click',function(){applyScheme(+b.dataset.i)})});
+
+  function setTheme(tm){el.setAttribute('data-theme',tm);try{localStorage.setItem('xtheme',tm)}catch(e){}
+    document.getElementById('tDark').classList.toggle('on',tm==='dark');
+    document.getElementById('tLight').classList.toggle('on',tm==='light');
+    applyScheme(curScheme);}
+  document.getElementById('themeBtn').addEventListener('click',function(){setTheme(el.getAttribute('data-theme')==='light'?'dark':'light')});
+  document.getElementById('tDark').addEventListener('click',function(){setTheme('dark')});
+  document.getElementById('tLight').addEventListener('click',function(){setTheme('light')});
+
+  var panel=document.getElementById('palPanel');
+  document.getElementById('palLauncher').addEventListener('click',function(){panel.classList.toggle('open')});
+  document.getElementById('palClose').addEventListener('click',function(){panel.classList.remove('open')});
+
+  // init
+  setTheme(el.getAttribute('data-theme')||'dark');
+  applyScheme(curScheme);
+  applyI18n();
+</script>
+</body>
+</html>

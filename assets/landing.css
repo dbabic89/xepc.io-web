@@ -109,3 +109,20 @@ ul.flist p{margin:.2rem 0 0;font-size:.93rem}
 .route h3{font-size:1.1rem;margin:0 0 .4rem}
 .route p{margin:0 0 .9rem;font-size:.93rem}
 .route .go{font-size:.85rem;font-weight:700;color:var(--accent)}
+
+/* language dropdown (shared with the home page) */
+.lang-dd{position:relative}
+.lang-cur{display:inline-flex;align-items:center;gap:.4em;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:.42em .6em;font:inherit;font-size:.8rem;font-weight:700;letter-spacing:.02em;cursor:pointer;transition:.15s}
+.lang-cur:hover{border-color:var(--accent)}
+.lang-cur .flag{width:20px;height:14px;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(0,0,0,.12);object-fit:cover}
+.lang-cur .chev{width:12px;height:12px;opacity:.55;transition:transform .2s}
+.lang-dd.open .lang-cur .chev{transform:rotate(180deg)}
+.lang-menu{position:absolute;top:calc(100% + 6px);right:0;min-width:150px;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:.3rem;opacity:0;visibility:hidden;transform:translateY(-4px);transition:.18s;z-index:60}
+.lang-dd.open .lang-menu,.lang-dd:hover .lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.lang-dd:hover .lang-cur .chev{transform:rotate(180deg)}
+.lang-menu::before{content:"";position:absolute;left:0;right:0;top:-8px;height:8px}
+.lang-opt{display:flex;align-items:center;gap:.6em;width:100%;border:0;background:none;color:var(--text);font:inherit;font-size:.88rem;font-weight:600;padding:.5em .6em;border-radius:8px;cursor:pointer;text-align:left}
+.lang-opt:hover{background:var(--bg2)}
+.lang-opt.on{color:var(--accent)}
+.lang-opt .flag{width:20px;height:14px;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(0,0,0,.12);object-fit:cover}
+@media(max-width:560px){.lang-cur .lc{display:none}}

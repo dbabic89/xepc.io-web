@@ -14,8 +14,15 @@ Static site for [xepc.io](https://xepc.io) — software studio (apps, websites, 
 - `robots.txt`, `sitemap.xml`, `_headers` (Cloudflare), `404.html`
 
 ## Deploy
-Push to `main` → Cloudflare Pages builds nothing, serves the repo root.
+Push to `main` → Cloudflare Pages runs `sh build.sh` and serves `dist/`.
 Custom domain: `xepc.io` (set in the Cloudflare Pages dashboard).
+
+Cloudflare Pages settings:
+- **Build command:** `sh build.sh`
+- **Build output directory:** `dist`
+
+`build.sh` copies only the publishable files into `dist/`. Serving the repo root
+would also expose `.git/`, which lets anyone reconstruct the full history.
 
 ## Regenerating icons
 ```sh

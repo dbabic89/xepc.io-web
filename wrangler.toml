@@ -6,6 +6,9 @@ compatibility_date = "2026-07-01"
 [assets]
 directory = "./dist"
 not_found_handling = "404-page"
+# Canonical URLs and the sitemap have no trailing slash; serve them directly
+# instead of 307-redirecting, so crawlers never take a redirect hop.
+html_handling = "drop-trailing-slash"
 
 # Static assets only — there is no Worker code to debug, so logs/traces are off.
 [observability]

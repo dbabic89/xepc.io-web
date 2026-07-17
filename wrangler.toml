@@ -6,3 +6,10 @@ compatibility_date = "2026-07-01"
 [assets]
 directory = "./dist"
 not_found_handling = "404-page"
+
+# Static assets only — there is no Worker code to debug, so logs/traces are off.
+[observability]
+enabled = false
+
+[observability.logs]
+enabled = false

@@ -14,15 +14,21 @@ Static site for [xepc.io](https://xepc.io) — software studio (apps, websites, 
 - `robots.txt`, `sitemap.xml`, `_headers` (Cloudflare), `404.html`
 
 ## Deploy
-Push to `main` → Cloudflare Pages runs `sh build.sh` and serves `dist/`.
-Custom domain: `xepc.io` (set in the Cloudflare Pages dashboard).
+Push to `main` → Cloudflare Workers Builds runs `sh build.sh`, then
+`npx wrangler deploy` uploads `dist/` (per `wrangler.toml`).
+Custom domain: `xepc.io`.
 
-Cloudflare Pages settings:
+Cloudflare Worker build configuration:
 - **Build command:** `sh build.sh`
-- **Build output directory:** `dist`
+- **Deploy command:** `npx wrangler deploy`
+- **Root directory:** `/`
 
-`build.sh` copies only the publishable files into `dist/`. Serving the repo root
-would also expose `.git/`, which lets anyone reconstruct the full history.
+The assets directory lives in `wrangler.toml`, not in the dashboard. `build.sh`
+copies only the publishable files into `dist/`; deploying the repo root instead
+would expose `.git/`, letting anyone reconstruct the full history.
+
+`name` in `wrangler.toml` must match the existing Worker, otherwise a second
+Worker is created and the custom domain keeps pointing at the old one.
 
 ## Regenerating icons
 ```sh

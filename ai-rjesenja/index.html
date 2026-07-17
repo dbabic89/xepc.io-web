@@ -6,6 +6,11 @@
 <title>AI rješenja za tvrtke — xepc.io | BiH i Hrvatska</title>
 <meta name="description" content="Integracija AI sustava u poslovne procese: upiti nad vlastitim podacima, obrada dokumenata, interna baza znanja, automatizacija i rad s povjerljivim podacima. Procjena izvedivosti i troška prije početka rada.">
 <link rel="canonical" href="https://xepc.io/ai-rjesenja">
+<link rel="alternate" hreflang="hr" href="https://xepc.io/ai-rjesenja">
+<link rel="alternate" hreflang="bs" href="https://xepc.io/ai-rjesenja">
+<link rel="alternate" hreflang="en" href="https://xepc.io/en/ai-rjesenja">
+<link rel="alternate" hreflang="de" href="https://xepc.io/de/ai-rjesenja">
+<link rel="alternate" hreflang="x-default" href="https://xepc.io/ai-rjesenja">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0c0f1a" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -90,8 +95,12 @@
     </nav>
     <div class="nav-right">
       <div class="lang-dd" id="langDD">
-        <button class="lang-cur" id="langCur" aria-label="Jezik" aria-haspopup="listbox" aria-expanded="false"></button>
-        <div class="lang-menu" id="langMenu" role="listbox"></div>
+        <button class="lang-cur" id="langCur" aria-label="Jezik" aria-haspopup="true" aria-expanded="false"><!--langcur--><img class="flag" src="/assets/flags/bhs.webp" alt="" width="20" height="14"><span class="lc">BHS</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><!--/langcur--></button>
+        <div class="lang-menu">
+          <a class="lang-opt on" data-l="hr" href="/ai-rjesenja"><img class="flag" src="/assets/flags/bhs.webp" alt="" width="20" height="14"><span>BHS</span></a>
+          <a class="lang-opt" data-l="en" href="/en/ai-rjesenja"><img class="flag" src="/assets/flags/en.webp" alt="" width="20" height="14"><span>English</span></a>
+          <a class="lang-opt" data-l="de" href="/de/ai-rjesenja"><img class="flag" src="/assets/flags/de.webp" alt="" width="20" height="14"><span>Deutsch</span></a>
+        </div>
       </div>
       <button class="toggle" id="themeBtn" aria-label="Promijeni temu" title="Promijeni temu">
         <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -226,118 +235,9 @@
     el.setAttribute('data-theme',t);try{localStorage.setItem('xtheme',t)}catch(e){}
   });
 
-  var I18N={
-    hr:{
-      nav_products:"Proizvodi",nav_services:"Usluge",nav_about:"O nama",nav_contact:"Kontaktirajte nas",
-      crumb_home:"Početna",crumb_here:"AI rješenja",
-      hero_eyebrow:"AI rješenja",hero_h1:'AI integriran u <span class="gtext">Vaše poslovne procese</span>.',
-      hero_lead:"Različiti AI sustavi imaju različite prednosti. Odabiremo onaj koji odgovara zadatku i integriramo ga u Vaše postojeće aplikacije i podatke. Procjenu izvedivosti i okvirnog troška dostavljamo prije početka rada.",
-      hero_cta1:"Zatražite procjenu →",hero_cta2:"Područja primjene",
-      which_eyebrow:"Koje AI koristimo",which_h2:"Odabir sustava prema zadatku",which_p:"Ne postoji jedan AI sustav optimalan za sve zadatke. Odabir temeljimo na tri kriterija: kvaliteti rezultata za konkretan zadatak, trošku u svakodnevnoj upotrebi te zahtjevima za zaštitu podataka.",
-      s1_d:"Generiranje teksta, odgovaranje na pitanja i analiza sadržaja. Široka primjena i visoka pouzdanost.",
-      s2_d:"Obrada opsežnih dokumenata i zadaci koji zahtijevaju dosljedno poštivanje zadanih pravila.",
-      s3_d:"Analiza slika i videozapisa te integracija s Google poslovnim okruženjem.",
-      s4_t:"Modeli na Vašem serveru",s4_by:"Llama, Mistral i slični",s4_d:"Izvođenje unutar Vaše infrastrukture. Podaci ne napuštaju tvrtku.",s4_c:"Zahtijeva odgovarajuću hardversku podršku, uz nižu kvalitetu rezultata u odnosu na komercijalne sustave. Isplativost procjenjujemo za svaki slučaj zasebno.",
-      s5_t:"Kombinacija više sustava",s5_by:"Prema zadatku",s5_d:"Rutinski zadaci izvode se na jeftinijim sustavima, složeni na naprednijima. Time se trošak zadržava u razumnim okvirima.",
-      uses_eyebrow:"Područja primjene",uses_h2:'Primjena uz <span class="gtext">Vaše podatke i sustave</span>',uses_p:"Gotovi alati pokrivaju općenite zadatke poput pisanja tekstova, sažimanja sastanaka ili jednostavne podrške na web stranici. Naš je fokus na rješenjima koja zahtijevaju pristup Vašim podacima i integraciju u Vaše poslovne sustave.",
-      u1_t:"Upiti nad vlastitim podacima",u1_d:"Postavljanje pitanja o poslovnim podacima u prirodnom jeziku, s odgovorima iz Vaše baze.",
-      u2_t:"Obrada dokumenata",u2_d:"Izdvajanje podataka iz računa, ugovora i otpremnica te njihov unos u sustav bez ručnog prepisivanja.",
-      u3_t:"Interna baza znanja",u3_d:"Odgovori na pitanja zaposlenika na temelju internih dokumenata, uputa i procedura.",
-      u4_t:"Automatizacija procesa",u4_d:"Automatizacija koraka specifičnih za Vaše poslovanje, koje standardni alati ne pokrivaju.",
-      u5_t:"Rad s povjerljivim podacima",u5_d:"Za podatke koji ne smiju napustiti tvrtku, AI sustav postavlja se unutar Vaše infrastrukture.",u5_c:"Zahtijeva odgovarajuću hardversku podršku. Isplativost procjenjujemo unaprijed.",
-      u6_t:"Analiza poslovanja",u6_d:"Analiza prodaje, planiranje nabave i uočavanje troškova na temelju povijesnih podataka.",u6_c:"Zahtijeva uredne povijesne podatke. U protivnom se prvo rješava priprema podataka.",
-      u7_t:"Specifični zahtjevi",u7_d:"Procesi za koje ne postoji gotovo rješenje. Izvedivost procjenjujemo na temelju Vašeg opisa.",
-      steps_eyebrow:"Postupak",steps_h2:"Način rada",
-      st1_t:"Analiza procesa",st1_d:"Pregled postojećeg procesa i utvrđivanje mjesta na kojima se gubi najviše vremena.",
-      st2_t:"Odabir sustava",st2_d:"Odabir AI sustava prema kvaliteti rezultata, trošku i zahtjevima za zaštitu podataka.",
-      st3_t:"Integracija",st3_d:"Ugradnja u postojeće aplikacije, bez uvođenja zasebnog alata.",
-      st4_t:"Praćenje i prilagodba",st4_d:"Mjerenje rezultata u radu i naknadna prilagodba rješenja.",
-      note:'<strong>Napomena.</strong> Ako se zadatak može riješiti jednostavnijim programskim rješenjem ili prilagodbom postojećih izvještaja, predložit ćemo to umjesto AI sustava. Ako procijenimo da traženo nije izvedivo na potrebnoj razini pouzdanosti, o tome Vas obavještavamo prije početka rada.',
-      cta_eyebrow:"Sljedeći korak",cta_h2:"Procjena za Vaš proces",cta_p:"Opišite proces koji želite unaprijediti. Dostavljamo procjenu izvedivosti, opsega i okvirnog troška.",cta_btn:"Kontaktirajte nas →",
-      foot_copy:"© 2026 xepc.io (Xepcio) · Žepče, BiH"
-    },
-    en:{
-      nav_products:"Products",nav_services:"Services",nav_about:"About",nav_contact:"Contact us",
-      crumb_home:"Home",crumb_here:"AI solutions",
-      hero_eyebrow:"AI solutions",hero_h1:'AI integrated into <span class="gtext">your business processes</span>.',
-      hero_lead:"Different AI systems have different strengths. We select the one that fits the task and integrate it with your existing applications and data. You receive an assessment of feasibility and approximate cost before work begins.",
-      hero_cta1:"Request an estimate →",hero_cta2:"Areas of use",
-      which_eyebrow:"Which AI we use",which_h2:"Choosing the system by task",which_p:"No single AI system is best at every task. We base the choice on three criteria: quality of results for the specific task, day-to-day running cost, and data protection requirements.",
-      s1_d:"Text generation, question answering and content analysis. Broad applicability and high reliability.",
-      s2_d:"Processing extensive documents and tasks that require consistently following set rules.",
-      s3_d:"Analysis of images and video, and integration with the Google business environment.",
-      s4_t:"Models on your server",s4_by:"Llama, Mistral and similar",s4_d:"Runs inside your infrastructure. Data never leaves the company.",s4_c:"Requires suitable hardware, and result quality is below that of commercial systems. We assess viability case by case.",
-      s5_t:"A combination of systems",s5_by:"By task",s5_d:"Routine tasks run on less expensive systems, complex ones on more capable systems. This keeps costs within reasonable bounds.",
-      uses_eyebrow:"Areas of use",uses_h2:'Working with <span class="gtext">your data and systems</span>',uses_p:"Ready-made tools cover general tasks such as writing text, summarising meetings or simple website support. Our focus is on solutions that require access to your data and integration into your business systems.",
-      u1_t:"Questions over your own data",u1_d:"Asking questions about business data in plain language, with answers drawn from your database.",
-      u2_t:"Document processing",u2_d:"Extracting data from invoices, contracts and delivery notes and entering it into the system without manual retyping.",
-      u3_t:"Internal knowledge base",u3_d:"Answers to employees' questions based on internal documents, instructions and procedures.",
-      u4_t:"Process automation",u4_d:"Automating steps specific to your business that standard tools do not cover.",
-      u5_t:"Working with confidential data",u5_d:"For data that must not leave the company, the AI system is installed within your infrastructure.",u5_c:"Requires suitable hardware. We assess viability in advance.",
-      u6_t:"Business analysis",u6_d:"Sales analysis, purchase planning and cost detection based on historical data.",u6_c:"Requires orderly historical data. Otherwise, data preparation comes first.",
-      u7_t:"Specific requirements",u7_d:"Processes with no ready-made solution. We assess feasibility from your description.",
-      steps_eyebrow:"Procedure",steps_h2:"How we work",
-      st1_t:"Process analysis",st1_d:"Reviewing the existing process and identifying where the most time is lost.",
-      st2_t:"System selection",st2_d:"Choosing the AI system by result quality, cost and data protection requirements.",
-      st3_t:"Integration",st3_d:"Building it into existing applications, without introducing a separate tool.",
-      st4_t:"Monitoring and adjustment",st4_d:"Measuring results in use and refining the solution afterwards.",
-      note:'<strong>Note.</strong> If the task can be solved with a simpler piece of software or by adapting existing reports, we will propose that instead of an AI system. If we judge that the request cannot be achieved at the required level of reliability, we tell you before work begins.',
-      cta_eyebrow:"Next step",cta_h2:"An estimate for your process",cta_p:"Describe the process you would like to improve. We will provide an assessment of feasibility, scope and approximate cost.",cta_btn:"Contact us →",
-      foot_copy:"© 2026 xepc.io (Xepcio) · Žepče, Bosnia and Herzegovina"
-    },
-    de:{
-      nav_products:"Produkte",nav_services:"Leistungen",nav_about:"Über uns",nav_contact:"Kontakt",
-      crumb_home:"Startseite",crumb_here:"KI-Lösungen",
-      hero_eyebrow:"KI-Lösungen",hero_h1:'KI, integriert in <span class="gtext">Ihre Geschäftsprozesse</span>.',
-      hero_lead:"Verschiedene KI-Systeme haben verschiedene Stärken. Wir wählen das zur Aufgabe passende und integrieren es in Ihre bestehenden Anwendungen und Daten. Eine Einschätzung von Machbarkeit und ungefähren Kosten erhalten Sie vor Beginn der Arbeit.",
-      hero_cta1:"Angebot anfordern →",hero_cta2:"Einsatzbereiche",
-      which_eyebrow:"Welche KI wir nutzen",which_h2:"Systemwahl nach Aufgabe",which_p:"Kein KI-System ist für alle Aufgaben optimal. Wir wählen nach drei Kriterien: Qualität der Ergebnisse für die konkrete Aufgabe, laufende Kosten im Alltag und Anforderungen an den Datenschutz.",
-      s1_d:"Texterstellung, Beantwortung von Fragen und Inhaltsanalyse. Breite Anwendbarkeit und hohe Zuverlässigkeit.",
-      s2_d:"Verarbeitung umfangreicher Dokumente und Aufgaben, die das konsequente Einhalten vorgegebener Regeln verlangen.",
-      s3_d:"Analyse von Bildern und Videos sowie Integration in die Google-Geschäftsumgebung.",
-      s4_t:"Modelle auf Ihrem Server",s4_by:"Llama, Mistral und ähnliche",s4_d:"Der Betrieb erfolgt in Ihrer Infrastruktur. Daten verlassen das Unternehmen nicht.",s4_c:"Erfordert passende Hardware; die Ergebnisqualität liegt unter der kommerzieller Systeme. Die Wirtschaftlichkeit prüfen wir im Einzelfall.",
-      s5_t:"Kombination mehrerer Systeme",s5_by:"Je nach Aufgabe",s5_d:"Routineaufgaben laufen auf günstigeren Systemen, komplexe auf leistungsfähigeren. So bleiben die Kosten in einem vernünftigen Rahmen.",
-      uses_eyebrow:"Einsatzbereiche",uses_h2:'Einsatz mit <span class="gtext">Ihren Daten und Systemen</span>',uses_p:"Fertige Werkzeuge decken allgemeine Aufgaben ab, etwa Texte schreiben, Besprechungen zusammenfassen oder einfache Website-Unterstützung. Unser Schwerpunkt liegt auf Lösungen, die Zugriff auf Ihre Daten und Integration in Ihre Geschäftssysteme erfordern.",
-      u1_t:"Fragen an die eigenen Daten",u1_d:"Fragen zu Geschäftsdaten in normaler Sprache, beantwortet aus Ihrer Datenbank.",
-      u2_t:"Dokumentenverarbeitung",u2_d:"Auslesen von Daten aus Rechnungen, Verträgen und Lieferscheinen und Übernahme ins System, ohne manuelles Abtippen.",
-      u3_t:"Interne Wissensdatenbank",u3_d:"Antworten auf Fragen der Mitarbeiter auf Basis interner Dokumente, Anleitungen und Abläufe.",
-      u4_t:"Prozessautomatisierung",u4_d:"Automatisierung von Schritten, die speziell zu Ihrem Geschäft gehören und von Standardwerkzeugen nicht abgedeckt werden.",
-      u5_t:"Arbeit mit vertraulichen Daten",u5_d:"Für Daten, die das Unternehmen nicht verlassen dürfen, wird das KI-System in Ihrer Infrastruktur eingerichtet.",u5_c:"Erfordert passende Hardware. Die Wirtschaftlichkeit prüfen wir vorab.",
-      u6_t:"Geschäftsanalyse",u6_d:"Verkaufsanalyse, Einkaufsplanung und Kostenerkennung auf Basis historischer Daten.",u6_c:"Erfordert geordnete historische Daten. Andernfalls steht zuerst die Datenaufbereitung an.",
-      u7_t:"Spezielle Anforderungen",u7_d:"Prozesse ohne fertige Lösung. Die Machbarkeit schätzen wir anhand Ihrer Beschreibung ein.",
-      steps_eyebrow:"Vorgehen",steps_h2:"Arbeitsweise",
-      st1_t:"Prozessanalyse",st1_d:"Durchsicht des bestehenden Prozesses und Ermittlung der Stellen mit dem größten Zeitverlust.",
-      st2_t:"Systemwahl",st2_d:"Wahl des KI-Systems nach Ergebnisqualität, Kosten und Datenschutzanforderungen.",
-      st3_t:"Integration",st3_d:"Einbau in bestehende Anwendungen, ohne ein separates Werkzeug einzuführen.",
-      st4_t:"Begleitung und Anpassung",st4_d:"Messung der Ergebnisse im Betrieb und anschließende Feinabstimmung der Lösung.",
-      note:'<strong>Hinweis.</strong> Lässt sich die Aufgabe mit einer einfacheren Programmlösung oder durch Anpassung bestehender Berichte erledigen, schlagen wir das anstelle eines KI-Systems vor. Halten wir das Gewünschte nicht für mit der nötigen Zuverlässigkeit umsetzbar, sagen wir Ihnen das vor Beginn der Arbeit.',
-      cta_eyebrow:"Nächster Schritt",cta_h2:"Eine Einschätzung für Ihren Prozess",cta_p:"Beschreiben Sie den Prozess, den Sie verbessern möchten. Sie erhalten eine Einschätzung von Machbarkeit, Umfang und ungefähren Kosten.",cta_btn:"Kontaktieren Sie uns →",
-      foot_copy:"© 2026 xepc.io (Xepcio) · Žepče, Bosnien und Herzegowina"
-    }
-  };
-  var lang='hr'; try{lang=localStorage.getItem('xlang')||'hr';}catch(e){}
-  function t(k){return (I18N[lang]&&I18N[lang][k])||I18N.hr[k]||k;}
-  var FLAGS={
-    hr:'<img class="flag" src="../assets/flags/bhs.webp" alt="" width="20" height="14">',
-    en:'<img class="flag" src="../assets/flags/en.webp" alt="" width="20" height="14">',
-    de:'<img class="flag" src="../assets/flags/de.webp" alt="" width="20" height="14">'
-  };
-  var LNAME={hr:'BHS',en:'English',de:'Deutsch'},LCODE={hr:'BHS',en:'EN',de:'DE'};
-  var langDD=document.getElementById('langDD'),langCur=document.getElementById('langCur'),langMenu=document.getElementById('langMenu');
-  langMenu.innerHTML=['hr','en','de'].map(function(l){return '<button class="lang-opt" data-lang="'+l+'" role="option">'+FLAGS[l]+'<span>'+LNAME[l]+'</span></button>';}).join('');
-  function renderLangCur(){langCur.innerHTML=FLAGS[lang]+'<span class="lc">'+LCODE[lang]+'</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>';}
-  function applyI18n(){
-    el.setAttribute('lang',lang);
-    document.querySelectorAll('[data-i18n]').forEach(function(n){n.textContent=t(n.getAttribute('data-i18n'));});
-    document.querySelectorAll('[data-i18n-html]').forEach(function(n){n.innerHTML=t(n.getAttribute('data-i18n-html'));});
-    renderLangCur();
-    langMenu.querySelectorAll('.lang-opt').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-lang')===lang);});
-  }
-  function setLang(l){lang=l;try{localStorage.setItem('xlang',l)}catch(e){}applyI18n();}
+  var langDD=document.getElementById('langDD'),langCur=document.getElementById('langCur');
   langCur.addEventListener('click',function(e){e.stopPropagation();var o=langDD.classList.toggle('open');langCur.setAttribute('aria-expanded',o?'true':'false');});
-  langMenu.querySelectorAll('.lang-opt').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'));langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');});});
-  document.addEventListener('click',function(e){if(!langDD.contains(e.target)){langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');}});
-  applyI18n();
+  document.addEventListener('click',function(){langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');});
 </script>
 </body>
 </html>

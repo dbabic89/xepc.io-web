@@ -6,6 +6,11 @@
 <title>Izrada mobilnih aplikacija (Android i iOS) — xepc.io</title>
 <meta name="description" content="Razvoj mobilnih aplikacija za Android i iOS. Objava na trgovinama, rad bez internetske veze i održavanje nakon objave. Softverski studio iz Žepča (BiH).">
 <link rel="canonical" href="https://xepc.io/izrada-mobilnih-aplikacija">
+<link rel="alternate" hreflang="hr" href="https://xepc.io/izrada-mobilnih-aplikacija">
+<link rel="alternate" hreflang="bs" href="https://xepc.io/izrada-mobilnih-aplikacija">
+<link rel="alternate" hreflang="en" href="https://xepc.io/en/izrada-mobilnih-aplikacija">
+<link rel="alternate" hreflang="de" href="https://xepc.io/de/izrada-mobilnih-aplikacija">
+<link rel="alternate" hreflang="x-default" href="https://xepc.io/izrada-mobilnih-aplikacija">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0c0f1a" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -63,8 +68,12 @@
     </nav>
     <div class="nav-right">
       <div class="lang-dd" id="langDD">
-        <button class="lang-cur" id="langCur" aria-label="Jezik" aria-haspopup="listbox" aria-expanded="false"></button>
-        <div class="lang-menu" id="langMenu" role="listbox"></div>
+        <button class="lang-cur" id="langCur" aria-label="Jezik" aria-haspopup="true" aria-expanded="false"><!--langcur--><img class="flag" src="/assets/flags/bhs.webp" alt="" width="20" height="14"><span class="lc">BHS</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><!--/langcur--></button>
+        <div class="lang-menu">
+          <a class="lang-opt on" data-l="hr" href="/izrada-mobilnih-aplikacija"><img class="flag" src="/assets/flags/bhs.webp" alt="" width="20" height="14"><span>BHS</span></a>
+          <a class="lang-opt" data-l="en" href="/en/izrada-mobilnih-aplikacija"><img class="flag" src="/assets/flags/en.webp" alt="" width="20" height="14"><span>English</span></a>
+          <a class="lang-opt" data-l="de" href="/de/izrada-mobilnih-aplikacija"><img class="flag" src="/assets/flags/de.webp" alt="" width="20" height="14"><span>Deutsch</span></a>
+        </div>
       </div>
       <button class="toggle" id="themeBtn" aria-label="Promijeni temu" title="Promijeni temu">
         <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -199,112 +208,9 @@
     el.setAttribute('data-theme',t);try{localStorage.setItem('xtheme',t)}catch(e){}
   });
 
-  var I18N={
-    hr:{
-      nav_products:"Proizvodi",nav_services:"Usluge",nav_about:"O nama",nav_contact:"Kontaktirajte nas",
-      crumb_home:"Početna",crumb_here:"Mobilne aplikacije",
-      hero_eyebrow:"Mobilne aplikacije",hero_h1:'Jedna aplikacija za <span class="gtext">Android i iOS</span>.',
-      hero_lead:"Aplikaciju za obje platforme razvijamo i objavljujemo usklađeno, uz niži trošak izrade i održavanja nego kod dva odvojena projekta.",
-      hero_cta1:"Zatražite procjenu →",hero_cta2:"Objava na trgovinama",
-      types_eyebrow:"Vrste aplikacija",types_h2:"Za koga se aplikacija radi",types_p:"Namjena određuje način objave i to treba li aplikacija raditi bez internetske veze.",
-      c1_t:"Za Vaše kupce",c1_d:"Javna aplikacija na trgovinama. Osim razvoja, tu su i objava, opis, snimke zaslona i naknadna ažuriranja koja trgovine ponovno provjeravaju.",
-      c2_t:"Za Vaše zaposlenike",c2_d:"Aplikacija za teren, skladište ili pogon. Ne mora ići na trgovine — može se dijeliti interno, čime otpada provjera i čekanje.",
-      c3_t:"Uz postojeći sustav",c3_d:"Mobilni pristup podacima iz sustava koji već koristite. Aplikacija je novo sučelje, a podaci ostaju na jednom mjestu.",
-      c4_t:"Rad bez internetske veze",c4_d:"Podaci se spremaju na uređaj i sinkroniziraju kad se veza vrati. Nužno za teren, podrume, skladišta i vozila.",
-      stores_eyebrow:"Što treba znati unaprijed",stores_h2:"Pravila trgovina i uređaja",stores_p:"Navedeno utječe na rokove i trošak, a dijelom je izvan naše kontrole. Zato o tome razgovaramo prije početka rada.",
-      r1_t:"Provjera na trgovinama",r1_d1:"Apple i Google svaku verziju provjeravaju prije objave, uključujući i ispravke. Aplikacija može biti odbijena zbog pravila koja se mijenjaju bez najave.",r1_d2:"Rokovi provjere nisu pod našom kontrolom i ne možemo ih jamčiti.",
-      r2_t:"Računi kod Applea i Googlea",r2_d1:"Aplikacija se objavljuje pod Vašim razvojnim računom, ne pod našim. Godišnja naknada plaća se izravno njima i nije dio naše cijene.",r2_d2:"Račun glasi na Vas, pa aplikacija ostaje Vaša.",
-      r3_t:"Naplata unutar aplikacije",r3_d1:"Ako se u aplikaciji nešto naplaćuje, trgovine zadržavaju svoj postotak i traže da se koristi njihov način plaćanja. Postoje i preduvjeti vezani uz zemlju u kojoj je tvrtka registrirana.",r3_d2:"Provjeravamo ih prije početka rada jer mogu promijeniti cijeli plan.",
-      r4_t:"Različiti uređaji",r4_d1:"Aplikacija mora raditi na rasponu veličina zaslona i starijim verzijama sustava. Dogovaramo unaprijed koliko unatrag idemo — svaka starija verzija povećava trošak testiranja.",
-      r5_t:"Održavanje nakon objave",r5_d1:"Android i iOS izdaju velike izmjene svake godine, pa aplikacija traži povremena ažuriranja da bi ostala u skladu s pravilima trgovina.",
-      both_eyebrow:"Obje platforme",both_h2:"Jedna aplikacija, obje platforme",both_p:"Aplikacija se razvija kao jedna cjelina, a objavljuje za Android i iOS.",
-      f1_t:"Niži trošak izrade i održavanja",f1_d:"Umjesto dva odvojena projekta razvija se i održava jedan, što smanjuje trošak izrade i svake kasnije izmjene.",
-      f2_t:"Verzije ostaju usklađene",f2_d:"Izmjene i ispravci objavljuju se na obje platforme istodobno, pa korisnici Androida i iPhonea uvijek imaju iste mogućnosti.",
-      f3_t:"Izgled prilagođen svakoj platformi",f3_d:"Android i iOS imaju različite navike korisnika, pa sučelje slijedi pravila svake platforme i djeluje prirodno na oba sustava.",
-      f4_t:"Spremno za proširenje",f4_d:"Ako kasnije zatreba web ili desktop verzija, veći dio posla već je napravljen, pa je proširenje znatno jeftinije od novog projekta.",
-      note:'<strong>Napomena.</strong> Ako je aplikacija zamišljena samo kao mobilni prikaz web stranice, jeftinije je i brže napraviti dobru web stranicu prilagođenu mobitelu. Mobilna aplikacija ima smisla kada trebate kameru, lokaciju, obavijesti, rad bez internetske veze ili prisutnost na trgovinama.',
-      cta_eyebrow:"Sljedeći korak",cta_h2:"Procjena za Vašu aplikaciju",cta_p:"Opišite kome je aplikacija namijenjena i što mora raditi u prvoj verziji. Dostavljamo procjenu opsega, faza i okvirnog troška.",cta_btn:"Kontaktirajte nas →",
-      foot_prog:"Programiranje",foot_web:"Web stranice",foot_mob:"Mobilne aplikacije",foot_custom:"Po mjeri",foot_ai:"AI",
-      foot_copy:"© 2026 xepc.io (Xepcio) · Žepče, BiH"
-    },
-    en:{
-      nav_products:"Products",nav_services:"Services",nav_about:"About",nav_contact:"Contact us",
-      crumb_home:"Home",crumb_here:"Mobile apps",
-      hero_eyebrow:"Mobile apps",hero_h1:'One application for <span class="gtext">Android and iOS</span>.',
-      hero_lead:"We develop and release the application for both platforms in step, at a lower build and maintenance cost than two separate projects.",
-      hero_cta1:"Request an estimate →",hero_cta2:"App store publication",
-      types_eyebrow:"App types",types_h2:"Who the application is for",types_p:"Its purpose determines how it is published and whether it needs to work without an internet connection.",
-      c1_t:"For your customers",c1_d:"A public application on the app stores. Beyond development, this includes publication, the store listing, screenshots and later updates, each reviewed again by the stores.",
-      c2_t:"For your employees",c2_d:"An application for field work, warehouses or production. It does not need to go to the stores — it can be distributed internally, avoiding review and waiting.",
-      c3_t:"Alongside an existing system",c3_d:"Mobile access to data from a system you already use. The application is a new interface; the data stays in one place.",
-      c4_t:"Working offline",c4_d:"Data is stored on the device and synchronised when the connection returns. Essential for field work, cellars, warehouses and vehicles.",
-      stores_eyebrow:"What to know in advance",stores_h2:"Store and device rules",stores_p:"The following affects deadlines and cost, and is partly outside our control. That is why we discuss it before work begins.",
-      r1_t:"Store review",r1_d1:"Apple and Google review every version before release, including fixes. An application can be rejected under rules that change without notice.",r1_d2:"Review times are not under our control and we cannot guarantee them.",
-      r2_t:"Apple and Google accounts",r2_d1:"The application is published under your developer account, not ours. The annual fee is paid directly to them and is not part of our price.",r2_d2:"The account is in your name, so the application remains yours.",
-      r3_t:"In-app payments",r3_d1:"If anything is sold inside the application, the stores keep their percentage and require their own payment system. There are also prerequisites tied to the country where the company is registered.",r3_d2:"We check them before work begins, because they can change the entire plan.",
-      r4_t:"Different devices",r4_d1:"The application has to work across a range of screen sizes and older system versions. We agree in advance how far back to support — every older version increases testing costs.",
-      r5_t:"Maintenance after release",r5_d1:"Android and iOS ship major changes every year, so the application needs occasional updates to stay in line with store rules.",
-      both_eyebrow:"Both platforms",both_h2:"One application, both platforms",both_p:"The application is developed as a single whole and released for Android and iOS.",
-      f1_t:"Lower build and maintenance cost",f1_d:"Instead of two separate projects, one is developed and maintained — reducing the cost of the build and of every later change.",
-      f2_t:"Versions stay in sync",f2_d:"Changes and fixes are released on both platforms at the same time, so Android and iPhone users always have the same features.",
-      f3_t:"A look native to each platform",f3_d:"Android and iOS users have different habits, so the interface follows each platform's conventions and feels natural on both.",
-      f4_t:"Ready to grow",f4_d:"If a web or desktop version is needed later, much of the work is already done, making the extension considerably cheaper than a new project.",
-      note:'<strong>Note.</strong> If the application is intended only as a mobile view of a website, a good mobile-friendly website is cheaper and faster to build. A mobile application makes sense when you need the camera, location, notifications, offline use or presence on the app stores.',
-      cta_eyebrow:"Next step",cta_h2:"An estimate for your application",cta_p:"Describe who the application is for and what it has to do in its first version. We will provide an estimate of scope, phases and approximate cost.",cta_btn:"Contact us →",
-      foot_prog:"Software development",foot_web:"Websites",foot_mob:"Mobile apps",foot_custom:"Custom",foot_ai:"AI",
-      foot_copy:"© 2026 xepc.io (Xepcio) · Žepče, Bosnia and Herzegovina"
-    },
-    de:{
-      nav_products:"Produkte",nav_services:"Leistungen",nav_about:"Über uns",nav_contact:"Kontakt",
-      crumb_home:"Startseite",crumb_here:"Mobile Apps",
-      hero_eyebrow:"Mobile Apps",hero_h1:'Eine Anwendung für <span class="gtext">Android und iOS</span>.',
-      hero_lead:"Wir entwickeln und veröffentlichen die Anwendung für beide Plattformen im Gleichschritt — mit geringeren Entwicklungs- und Wartungskosten als bei zwei getrennten Projekten.",
-      hero_cta1:"Angebot anfordern →",hero_cta2:"Veröffentlichung in den Stores",
-      types_eyebrow:"Arten von Apps",types_h2:"Für wen die App gedacht ist",types_p:"Der Zweck bestimmt die Art der Veröffentlichung und ob die App ohne Internetverbindung funktionieren muss.",
-      c1_t:"Für Ihre Kunden",c1_d:"Eine öffentliche App in den Stores. Neben der Entwicklung gehören dazu Veröffentlichung, Beschreibung, Screenshots und spätere Updates, die die Stores erneut prüfen.",
-      c2_t:"Für Ihre Mitarbeiter",c2_d:"Eine App für Außendienst, Lager oder Produktion. Sie muss nicht in die Stores — sie kann intern verteilt werden, ohne Prüfung und Wartezeit.",
-      c3_t:"Zu einem bestehenden System",c3_d:"Mobiler Zugriff auf Daten aus einem System, das Sie bereits nutzen. Die App ist eine neue Oberfläche; die Daten bleiben an einem Ort.",
-      c4_t:"Offline-Betrieb",c4_d:"Daten werden auf dem Gerät gespeichert und abgeglichen, sobald die Verbindung zurückkehrt. Unverzichtbar für Außendienst, Keller, Lager und Fahrzeuge.",
-      stores_eyebrow:"Vorab zu wissen",stores_h2:"Regeln der Stores und Geräte",stores_p:"Das Folgende beeinflusst Termine und Kosten und liegt teils außerhalb unserer Kontrolle. Deshalb besprechen wir es vor Beginn der Arbeit.",
-      r1_t:"Prüfung in den Stores",r1_d1:"Apple und Google prüfen jede Version vor der Veröffentlichung, auch Korrekturen. Eine App kann aufgrund von Regeln abgelehnt werden, die sich ohne Ankündigung ändern.",r1_d2:"Die Prüfzeiten liegen nicht in unserer Hand, wir können sie nicht garantieren.",
-      r2_t:"Konten bei Apple und Google",r2_d1:"Die App wird unter Ihrem Entwicklerkonto veröffentlicht, nicht unter unserem. Die Jahresgebühr zahlen Sie direkt an Apple bzw. Google; sie ist nicht Teil unseres Preises.",r2_d2:"Das Konto lautet auf Ihren Namen — die App bleibt Ihre.",
-      r3_t:"Zahlungen in der App",r3_d1:"Wird in der App etwas verkauft, behalten die Stores ihren Anteil und verlangen ihr eigenes Zahlungssystem. Es gibt zudem Voraussetzungen je nach Land der Firmenregistrierung.",r3_d2:"Wir prüfen sie vor Beginn der Arbeit, denn sie können den gesamten Plan ändern.",
-      r4_t:"Unterschiedliche Geräte",r4_d1:"Die App muss auf verschiedenen Bildschirmgrößen und älteren Systemversionen funktionieren. Wie weit zurück, vereinbaren wir vorab — jede ältere Version erhöht den Testaufwand.",
-      r5_t:"Wartung nach der Veröffentlichung",r5_d1:"Android und iOS bringen jedes Jahr große Änderungen, daher braucht die App gelegentliche Updates, um den Store-Regeln zu entsprechen.",
-      both_eyebrow:"Beide Plattformen",both_h2:"Eine Anwendung, beide Plattformen",both_p:"Die Anwendung wird als Ganzes entwickelt und für Android und iOS veröffentlicht.",
-      f1_t:"Geringere Entwicklungs- und Wartungskosten",f1_d:"Statt zwei getrennter Projekte wird eines entwickelt und gepflegt — das senkt die Kosten der Erstellung und jeder späteren Änderung.",
-      f2_t:"Versionen bleiben einheitlich",f2_d:"Änderungen und Korrekturen erscheinen auf beiden Plattformen gleichzeitig; Android- und iPhone-Nutzer haben stets dieselben Funktionen.",
-      f3_t:"Design passend zu jeder Plattform",f3_d:"Android und iOS haben unterschiedliche Nutzergewohnheiten; die Oberfläche folgt den Regeln der jeweiligen Plattform und wirkt auf beiden natürlich.",
-      f4_t:"Bereit für Erweiterungen",f4_d:"Wird später eine Web- oder Desktop-Version benötigt, ist ein Großteil der Arbeit bereits getan — die Erweiterung ist deutlich günstiger als ein neues Projekt.",
-      note:'<strong>Hinweis.</strong> Ist die App nur als mobile Ansicht einer Webseite gedacht, ist eine gute, mobil optimierte Webseite günstiger und schneller. Eine mobile App ist sinnvoll, wenn Sie Kamera, Standort, Benachrichtigungen, Offline-Betrieb oder Präsenz in den Stores benötigen.',
-      cta_eyebrow:"Nächster Schritt",cta_h2:"Eine Einschätzung für Ihre App",cta_p:"Beschreiben Sie, für wen die App gedacht ist und was sie in der ersten Version können muss. Sie erhalten eine Einschätzung von Umfang, Phasen und ungefähren Kosten.",cta_btn:"Kontaktieren Sie uns →",
-      foot_prog:"Softwareentwicklung",foot_web:"Webseiten",foot_mob:"Mobile Apps",foot_custom:"Individuell",foot_ai:"KI",
-      foot_copy:"© 2026 xepc.io (Xepcio) · Žepče, Bosnien und Herzegowina"
-    }
-  };
-  var lang='hr'; try{lang=localStorage.getItem('xlang')||'hr';}catch(e){}
-  function t(k){return (I18N[lang]&&I18N[lang][k])||I18N.hr[k]||k;}
-  var FLAGS={
-    hr:'<img class="flag" src="../assets/flags/bhs.webp" alt="" width="20" height="14">',
-    en:'<img class="flag" src="../assets/flags/en.webp" alt="" width="20" height="14">',
-    de:'<img class="flag" src="../assets/flags/de.webp" alt="" width="20" height="14">'
-  };
-  var LNAME={hr:'BHS',en:'English',de:'Deutsch'},LCODE={hr:'BHS',en:'EN',de:'DE'};
-  var langDD=document.getElementById('langDD'),langCur=document.getElementById('langCur'),langMenu=document.getElementById('langMenu');
-  langMenu.innerHTML=['hr','en','de'].map(function(l){return '<button class="lang-opt" data-lang="'+l+'" role="option">'+FLAGS[l]+'<span>'+LNAME[l]+'</span></button>';}).join('');
-  function renderLangCur(){langCur.innerHTML=FLAGS[lang]+'<span class="lc">'+LCODE[lang]+'</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>';}
-  function applyI18n(){
-    el.setAttribute('lang',lang);
-    document.querySelectorAll('[data-i18n]').forEach(function(n){n.textContent=t(n.getAttribute('data-i18n'));});
-    document.querySelectorAll('[data-i18n-html]').forEach(function(n){n.innerHTML=t(n.getAttribute('data-i18n-html'));});
-    renderLangCur();
-    langMenu.querySelectorAll('.lang-opt').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-lang')===lang);});
-  }
-  function setLang(l){lang=l;try{localStorage.setItem('xlang',l)}catch(e){}applyI18n();}
+  var langDD=document.getElementById('langDD'),langCur=document.getElementById('langCur');
   langCur.addEventListener('click',function(e){e.stopPropagation();var o=langDD.classList.toggle('open');langCur.setAttribute('aria-expanded',o?'true':'false');});
-  langMenu.querySelectorAll('.lang-opt').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'));langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');});});
-  document.addEventListener('click',function(e){if(!langDD.contains(e.target)){langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');}});
-  applyI18n();
+  document.addEventListener('click',function(){langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');});
 </script>
 </body>
 </html>

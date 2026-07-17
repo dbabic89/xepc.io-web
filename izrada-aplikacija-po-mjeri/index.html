@@ -6,6 +6,11 @@
 <title>Izrada aplikacija po mjeri — xepc.io | BiH i Hrvatska</title>
 <meta name="description" content="Interni poslovni sustavi razvijeni prema Vašim procesima: objedinjavanje podataka, prava pristupa, prijenos postojećih evidencija i integracije. Softverski studio iz Žepča (BiH).">
 <link rel="canonical" href="https://xepc.io/izrada-aplikacija-po-mjeri">
+<link rel="alternate" hreflang="hr" href="https://xepc.io/izrada-aplikacija-po-mjeri">
+<link rel="alternate" hreflang="bs" href="https://xepc.io/izrada-aplikacija-po-mjeri">
+<link rel="alternate" hreflang="en" href="https://xepc.io/en/izrada-aplikacija-po-mjeri">
+<link rel="alternate" hreflang="de" href="https://xepc.io/de/izrada-aplikacija-po-mjeri">
+<link rel="alternate" hreflang="x-default" href="https://xepc.io/izrada-aplikacija-po-mjeri">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0c0f1a" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -63,8 +68,12 @@
     </nav>
     <div class="nav-right">
       <div class="lang-dd" id="langDD">
-        <button class="lang-cur" id="langCur" aria-label="Jezik" aria-haspopup="listbox" aria-expanded="false"></button>
-        <div class="lang-menu" id="langMenu" role="listbox"></div>
+        <button class="lang-cur" id="langCur" aria-label="Jezik" aria-haspopup="true" aria-expanded="false"><!--langcur--><img class="flag" src="/assets/flags/bhs.webp" alt="" width="20" height="14"><span class="lc">BHS</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><!--/langcur--></button>
+        <div class="lang-menu">
+          <a class="lang-opt on" data-l="hr" href="/izrada-aplikacija-po-mjeri"><img class="flag" src="/assets/flags/bhs.webp" alt="" width="20" height="14"><span>BHS</span></a>
+          <a class="lang-opt" data-l="en" href="/en/izrada-aplikacija-po-mjeri"><img class="flag" src="/assets/flags/en.webp" alt="" width="20" height="14"><span>English</span></a>
+          <a class="lang-opt" data-l="de" href="/de/izrada-aplikacija-po-mjeri"><img class="flag" src="/assets/flags/de.webp" alt="" width="20" height="14"><span>Deutsch</span></a>
+        </div>
       </div>
       <button class="toggle" id="themeBtn" aria-label="Promijeni temu" title="Promijeni temu">
         <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -194,118 +203,9 @@
     el.setAttribute('data-theme',t);try{localStorage.setItem('xtheme',t)}catch(e){}
   });
 
-  var I18N={
-    hr:{
-      nav_products:"Proizvodi",nav_services:"Usluge",nav_about:"O nama",nav_contact:"Kontaktirajte nas",
-      crumb_home:"Početna",crumb_here:"Aplikacije po mjeri",
-      hero_eyebrow:"Aplikacije po mjeri",hero_h1:'Sustav koji prati <span class="gtext">Vaš način rada</span>.',
-      hero_lead:"Sustav po mjeri najčešće nastaje ondje gdje se posao vodi kroz nekoliko tablica, papirnatih evidencija i poruka. Podaci postoje, ali su razdvojeni, pa se cjelovita slika svaki put sastavlja ručno.",
-      hero_cta1:"Zatražite procjenu →",hero_cta2:"Kada se isplati",
-      unify_eyebrow:"Objedinjavanje",unify_h2:"Što sustav objedinjuje",unify_p:"Sustav preuzima evidencije koje se danas vode odvojeno i spaja ih na jedno mjesto.",
-      u1_t:"Evidencije iz tablica",u1_d:"Podaci koji se vode u tablicama prelaze u zajedničku bazu. Svi rade nad istim i ažurnim podacima, bez usklađivanja verzija između datoteka.",
-      u2_t:"Papirnate evidencije",u2_d:"Podatak se unosi jednom, na mjestu nastanka, i odmah je dostupan ostalima. Nema ponovnog prepisivanja u računalo.",
-      u3_t:"Odvojeni alati",u3_d:"Podaci iz više alata objedinjuju se na jednom mjestu. Ono što dobro radi može ostati u upotrebi i povezati se sa sustavom.",
-      u4_t:"Pravila procesa",u4_d:"Način rada zapisan je u samom sustavu, pa se posao može nastaviti neovisno o dostupnosti pojedine osobe.",
-      when_eyebrow:"Kada se isplati",when_h2:"Razvoj po mjeri opravdan je kada",when_p:"Gotova rješenja pokrivaju standardne procese i za njih su gotovo uvijek bolji izbor. Vlastiti sustav ima smisla u sljedećim slučajevima.",
-      c1_t:"Proces je Vaša prednost",c1_d:"Način rada koji Vas razlikuje od konkurencije. Gotov alat tražio bi prilagodbu tom alatu.",
-      c2_t:"Gotov alat pokriva dio posla",c2_d:"Postojeće rješenje pokriva dio posla, a za ostatak se i dalje koriste tablice sa strane.",
-      c3_t:"Potrebne su integracije",c3_d:"Sustav se mora povezati s knjigovodstvom, web trgovinom ili strojevima u pogonu, a gotovo rješenje to ne podržava.",
-      c4_t:"Podaci ne smiju van",c4_d:"Zbog povjerljivosti ili propisa podaci ne smiju biti pohranjeni kod strane usluge.",
-      c5_t:"Licence rastu s brojem ljudi",c5_d:"Naplata po korisniku mjesečno raste sa svakim zaposlenim. U nekom trenutku vlastito rješenje postaje jeftinije.",
-      c6_t:"Rješenje ne postoji",c6_d:"Tražili ste i niste našli ništa što pokriva ono što Vam treba.",
-      scope_eyebrow:"Opseg",scope_h2:"Što isporuka sadrži",scope_p:"Osim sučelja, isporuka obuhvaća i sljedeće.",
-      f1_t:"Korisnici i prava pristupa",f1_d:"Skladište, prodaja i uprava rade u istom sustavu, ali svaka uloga vidi svoj dio i mijenja samo ono za što ima ovlaštenje.",
-      f2_t:"Prijenos postojećih podataka",f2_d:"Postojeće tablice i evidencije prenose se u novi sustav. Priprema i čišćenje podataka redovito su dio posla, pa ih planiramo unaprijed.",
-      f3_t:"Povezivanje s onim što ostaje",f3_d:"Knjigovodstvo, web trgovina ili postojeći alati često ostaju u upotrebi. Sustav se povezuje s njima umjesto da se sve mijenja odjednom.",
-      f4_t:"Izvještaji koji odgovaraju na pitanja uprave",f4_d:"Brojke koje su Vam potrebne za odluke: koliko je naručeno, gdje kasni i što se ne isplati.",
-      f5_t:"Uvođenje korisnika u rad",f5_d:"Obuku i prijelazno razdoblje planiramo kao dio projekta, jer o prihvaćanju kod korisnika ovisi hoće li sustav zaživjeti.",
-      note:'<strong>Napomena.</strong> Za standardne procese poput knjigovodstva, elektroničke pošte ili osnovnog fakturiranja postoje provjerena gotova rješenja i njih ćemo predložiti. Razvoj po mjeri predlažemo samo kada procijenimo da razlika u odnosu na trošak postoji i da je mjerljiva. Ako iz razgovora zaključimo da se isplati kupiti gotovo rješenje, to ćemo Vam i reći.',
-      cta_eyebrow:"Sljedeći korak",cta_h2:"Procjena za Vaš proces",cta_p:"Opišite kako danas vodite posao i gdje najviše zapinje. Dostavljamo procjenu izvedivosti, opsega i okvirnog troška — te mišljenje isplati li se uopće razvoj.",cta_btn:"Kontaktirajte nas →",
-      foot_prog:"Programiranje",foot_web:"Web stranice",foot_mob:"Mobilne aplikacije",foot_custom:"Po mjeri",foot_ai:"AI",
-      foot_copy:"© 2026 xepc.io (Xepcio) · Žepče, BiH"
-    },
-    en:{
-      nav_products:"Products",nav_services:"Services",nav_about:"About",nav_contact:"Contact us",
-      crumb_home:"Home",crumb_here:"Custom applications",
-      hero_eyebrow:"Custom applications",hero_h1:'A system that follows <span class="gtext">the way you work</span>.',
-      hero_lead:"Custom systems usually arise where the business runs on several spreadsheets, paper records and messages. The data exists, but it is scattered, so the full picture has to be assembled by hand every time.",
-      hero_cta1:"Request an estimate →",hero_cta2:"When it pays off",
-      unify_eyebrow:"Bringing it together",unify_h2:"What the system unifies",unify_p:"The system takes over records that are currently kept separately and brings them into one place.",
-      u1_t:"Spreadsheet records",u1_d:"Data kept in spreadsheets moves into a shared database. Everyone works with the same up-to-date data, with no reconciling of versions between files.",
-      u2_t:"Paper records",u2_d:"Data is entered once, where it originates, and is immediately available to everyone else. No retyping into a computer.",
-      u3_t:"Separate tools",u3_d:"Data from several tools is brought together in one place. What already works well can stay in use and connect to the system.",
-      u4_t:"Process rules",u4_d:"The way of working is written into the system itself, so the work can continue regardless of any one person's availability.",
-      when_eyebrow:"When it pays off",when_h2:"Custom development is justified when",when_p:"Ready-made products cover standard processes and are almost always the better choice for them. A system of your own makes sense in the following cases.",
-      c1_t:"Your process is your advantage",c1_d:"A way of working that sets you apart from competitors. A ready-made tool would require adapting to that tool.",
-      c2_t:"A ready-made tool covers only part",c2_d:"The existing product covers part of the work, while spreadsheets are still used on the side for the rest.",
-      c3_t:"Integrations are needed",c3_d:"The system has to connect to accounting, a web shop or machines on the floor, and the ready-made product does not support it.",
-      c4_t:"Data must stay in-house",c4_d:"For reasons of confidentiality or regulation, data may not be stored with a third-party service.",
-      c5_t:"Licences grow with headcount",c5_d:"Monthly per-user pricing rises with every employee. At some point a system of your own becomes cheaper.",
-      c6_t:"No product exists",c6_d:"You have searched and found nothing that covers what you need.",
-      scope_eyebrow:"Scope",scope_h2:"What the delivery includes",scope_p:"Beyond the interface, the delivery also covers the following.",
-      f1_t:"Users and access rights",f1_d:"Warehouse, sales and management work in the same system, but each role sees its own part and changes only what it is authorised to.",
-      f2_t:"Migration of existing data",f2_d:"Existing spreadsheets and records are transferred into the new system. Preparing and cleaning the data is regularly part of the work, so we plan it in advance.",
-      f3_t:"Connecting to what remains",f3_d:"Accounting, a web shop or existing tools often stay in use. The system connects to them rather than replacing everything at once.",
-      f4_t:"Reports that answer management's questions",f4_d:"The numbers you need for decisions: what has been ordered, where delays are and what does not pay off.",
-      f5_t:"User onboarding",f5_d:"Training and a transition period are planned as part of the project, because user acceptance determines whether the system takes hold.",
-      note:'<strong>Note.</strong> For standard processes such as accounting, e-mail or basic invoicing there are proven ready-made products, and we will recommend them. We propose custom development only when we judge that the difference relative to the cost exists and is measurable. If the conversation leads us to conclude that buying a ready-made product pays off, we will tell you exactly that.',
-      cta_eyebrow:"Next step",cta_h2:"An estimate for your process",cta_p:"Describe how you run the work today and where it gets stuck most. We will provide an estimate of feasibility, scope and approximate cost — along with our view on whether development pays off at all.",cta_btn:"Contact us →",
-      foot_prog:"Software development",foot_web:"Websites",foot_mob:"Mobile apps",foot_custom:"Custom",foot_ai:"AI",
-      foot_copy:"© 2026 xepc.io (Xepcio) · Žepče, Bosnia and Herzegovina"
-    },
-    de:{
-      nav_products:"Produkte",nav_services:"Leistungen",nav_about:"Über uns",nav_contact:"Kontakt",
-      crumb_home:"Startseite",crumb_here:"Individuelle Anwendungen",
-      hero_eyebrow:"Individuelle Anwendungen",hero_h1:'Ein System, das <span class="gtext">Ihrer Arbeitsweise folgt</span>.',
-      hero_lead:"Individuelle Systeme entstehen meist dort, wo das Geschäft über mehrere Tabellen, Papierunterlagen und Nachrichten läuft. Die Daten existieren, sind aber verstreut — das Gesamtbild muss jedes Mal von Hand zusammengesetzt werden.",
-      hero_cta1:"Angebot anfordern →",hero_cta2:"Wann es sich lohnt",
-      unify_eyebrow:"Zusammenführung",unify_h2:"Was das System zusammenführt",unify_p:"Das System übernimmt Aufzeichnungen, die heute getrennt geführt werden, und bündelt sie an einem Ort.",
-      u1_t:"Tabellen",u1_d:"Daten aus Tabellen wandern in eine gemeinsame Datenbank. Alle arbeiten mit denselben aktuellen Daten, ohne Abgleich von Dateiversionen.",
-      u2_t:"Papierunterlagen",u2_d:"Daten werden einmal erfasst, dort wo sie entstehen, und sind sofort für alle verfügbar. Kein erneutes Abtippen am Computer.",
-      u3_t:"Getrennte Werkzeuge",u3_d:"Daten aus mehreren Werkzeugen werden an einem Ort gebündelt. Was gut funktioniert, kann in Gebrauch bleiben und angebunden werden.",
-      u4_t:"Prozessregeln",u4_d:"Die Arbeitsweise ist im System selbst hinterlegt — die Arbeit läuft weiter, unabhängig von der Verfügbarkeit einzelner Personen.",
-      when_eyebrow:"Wann es sich lohnt",when_h2:"Individuelle Entwicklung ist berechtigt, wenn",when_p:"Fertige Produkte decken Standardprozesse ab und sind dafür fast immer die bessere Wahl. Ein eigenes System ist in folgenden Fällen sinnvoll.",
-      c1_t:"Ihr Prozess ist Ihr Vorteil",c1_d:"Eine Arbeitsweise, die Sie vom Wettbewerb unterscheidet. Ein fertiges Werkzeug würde die Anpassung an dieses Werkzeug verlangen.",
-      c2_t:"Fertiges Produkt deckt nur einen Teil ab",c2_d:"Das vorhandene Produkt deckt einen Teil der Arbeit ab; für den Rest laufen weiterhin Tabellen nebenher.",
-      c3_t:"Anbindungen sind nötig",c3_d:"Das System muss mit Buchhaltung, Webshop oder Maschinen verbunden werden, und das fertige Produkt unterstützt das nicht.",
-      c4_t:"Daten dürfen nicht nach außen",c4_d:"Aus Gründen der Vertraulichkeit oder von Vorschriften dürfen Daten nicht bei einem fremden Dienst liegen.",
-      c5_t:"Lizenzen wachsen mit der Belegschaft",c5_d:"Monatliche Preise pro Nutzer steigen mit jedem Mitarbeiter. Ab einem Punkt ist die eigene Lösung günstiger.",
-      c6_t:"Es gibt kein passendes Produkt",c6_d:"Sie haben gesucht und nichts gefunden, das abdeckt, was Sie benötigen.",
-      scope_eyebrow:"Umfang",scope_h2:"Was die Lieferung umfasst",scope_p:"Neben der Oberfläche umfasst die Lieferung auch Folgendes.",
-      f1_t:"Benutzer und Zugriffsrechte",f1_d:"Lager, Vertrieb und Geschäftsleitung arbeiten im selben System, doch jede Rolle sieht ihren Teil und ändert nur, wozu sie berechtigt ist.",
-      f2_t:"Übernahme bestehender Daten",f2_d:"Bestehende Tabellen und Aufzeichnungen werden in das neue System übernommen. Vorbereitung und Bereinigung der Daten gehören regelmäßig dazu und werden vorab eingeplant.",
-      f3_t:"Anbindung an das, was bleibt",f3_d:"Buchhaltung, Webshop oder vorhandene Werkzeuge bleiben oft in Gebrauch. Das System wird mit ihnen verbunden, statt alles auf einmal zu ersetzen.",
-      f4_t:"Berichte, die Fragen der Geschäftsleitung beantworten",f4_d:"Die Zahlen, die Sie für Entscheidungen brauchen: was bestellt ist, wo es Verzögerungen gibt und was sich nicht rechnet.",
-      f5_t:"Einführung der Nutzer",f5_d:"Schulung und Übergangszeit sind Teil des Projekts, denn von der Akzeptanz der Nutzer hängt ab, ob sich das System durchsetzt.",
-      note:'<strong>Hinweis.</strong> Für Standardprozesse wie Buchhaltung, E-Mail oder einfache Rechnungsstellung gibt es bewährte fertige Produkte, und diese empfehlen wir. Individuelle Entwicklung schlagen wir nur vor, wenn der Unterschied im Verhältnis zu den Kosten vorhanden und messbar ist. Kommen wir im Gespräch zum Schluss, dass sich der Kauf eines fertigen Produkts lohnt, sagen wir Ihnen genau das.',
-      cta_eyebrow:"Nächster Schritt",cta_h2:"Eine Einschätzung für Ihren Prozess",cta_p:"Beschreiben Sie, wie Sie heute arbeiten und wo es am meisten hakt. Sie erhalten eine Einschätzung von Machbarkeit, Umfang und ungefähren Kosten — und unsere Meinung, ob sich die Entwicklung überhaupt lohnt.",cta_btn:"Kontaktieren Sie uns →",
-      foot_prog:"Softwareentwicklung",foot_web:"Webseiten",foot_mob:"Mobile Apps",foot_custom:"Individuell",foot_ai:"KI",
-      foot_copy:"© 2026 xepc.io (Xepcio) · Žepče, Bosnien und Herzegowina"
-    }
-  };
-  var lang='hr'; try{lang=localStorage.getItem('xlang')||'hr';}catch(e){}
-  function t(k){return (I18N[lang]&&I18N[lang][k])||I18N.hr[k]||k;}
-  var FLAGS={
-    hr:'<img class="flag" src="../assets/flags/bhs.webp" alt="" width="20" height="14">',
-    en:'<img class="flag" src="../assets/flags/en.webp" alt="" width="20" height="14">',
-    de:'<img class="flag" src="../assets/flags/de.webp" alt="" width="20" height="14">'
-  };
-  var LNAME={hr:'BHS',en:'English',de:'Deutsch'},LCODE={hr:'BHS',en:'EN',de:'DE'};
-  var langDD=document.getElementById('langDD'),langCur=document.getElementById('langCur'),langMenu=document.getElementById('langMenu');
-  langMenu.innerHTML=['hr','en','de'].map(function(l){return '<button class="lang-opt" data-lang="'+l+'" role="option">'+FLAGS[l]+'<span>'+LNAME[l]+'</span></button>';}).join('');
-  function renderLangCur(){langCur.innerHTML=FLAGS[lang]+'<span class="lc">'+LCODE[lang]+'</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>';}
-  function applyI18n(){
-    el.setAttribute('lang',lang);
-    document.querySelectorAll('[data-i18n]').forEach(function(n){n.textContent=t(n.getAttribute('data-i18n'));});
-    document.querySelectorAll('[data-i18n-html]').forEach(function(n){n.innerHTML=t(n.getAttribute('data-i18n-html'));});
-    renderLangCur();
-    langMenu.querySelectorAll('.lang-opt').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-lang')===lang);});
-  }
-  function setLang(l){lang=l;try{localStorage.setItem('xlang',l)}catch(e){}applyI18n();}
+  var langDD=document.getElementById('langDD'),langCur=document.getElementById('langCur');
   langCur.addEventListener('click',function(e){e.stopPropagation();var o=langDD.classList.toggle('open');langCur.setAttribute('aria-expanded',o?'true':'false');});
-  langMenu.querySelectorAll('.lang-opt').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'));langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');});});
-  document.addEventListener('click',function(e){if(!langDD.contains(e.target)){langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');}});
-  applyI18n();
+  document.addEventListener('click',function(){langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');});
 </script>
 </body>
 </html>

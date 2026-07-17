@@ -6,6 +6,11 @@
 <title>Izrada web stranica — xepc.io | BiH i Hrvatska</title>
 <meta name="description" content="Izrada brzih web stranica prilagođenih svim uređajima, s optimizacijom za pretraživače uključenom u cijenu. Preuzimamo dizajn, izradu, postavljanje na domenu i održavanje.">
 <link rel="canonical" href="https://xepc.io/izrada-web-stranica">
+<link rel="alternate" hreflang="hr" href="https://xepc.io/izrada-web-stranica">
+<link rel="alternate" hreflang="bs" href="https://xepc.io/izrada-web-stranica">
+<link rel="alternate" hreflang="en" href="https://xepc.io/en/izrada-web-stranica">
+<link rel="alternate" hreflang="de" href="https://xepc.io/de/izrada-web-stranica">
+<link rel="alternate" hreflang="x-default" href="https://xepc.io/izrada-web-stranica">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0c0f1a" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -63,8 +68,12 @@
     </nav>
     <div class="nav-right">
       <div class="lang-dd" id="langDD">
-        <button class="lang-cur" id="langCur" aria-label="Jezik" aria-haspopup="listbox" aria-expanded="false"></button>
-        <div class="lang-menu" id="langMenu" role="listbox"></div>
+        <button class="lang-cur" id="langCur" aria-label="Jezik" aria-haspopup="true" aria-expanded="false"><!--langcur--><img class="flag" src="/assets/flags/bhs.webp" alt="" width="20" height="14"><span class="lc">BHS</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg><!--/langcur--></button>
+        <div class="lang-menu">
+          <a class="lang-opt on" data-l="hr" href="/izrada-web-stranica"><img class="flag" src="/assets/flags/bhs.webp" alt="" width="20" height="14"><span>BHS</span></a>
+          <a class="lang-opt" data-l="en" href="/en/izrada-web-stranica"><img class="flag" src="/assets/flags/en.webp" alt="" width="20" height="14"><span>English</span></a>
+          <a class="lang-opt" data-l="de" href="/de/izrada-web-stranica"><img class="flag" src="/assets/flags/de.webp" alt="" width="20" height="14"><span>Deutsch</span></a>
+        </div>
       </div>
       <button class="toggle" id="themeBtn" aria-label="Promijeni temu" title="Promijeni temu">
         <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -197,112 +206,9 @@
     el.setAttribute('data-theme',t);try{localStorage.setItem('xtheme',t)}catch(e){}
   });
 
-  var I18N={
-    hr:{
-      nav_products:"Proizvodi",nav_services:"Usluge",nav_about:"O nama",nav_contact:"Kontaktirajte nas",
-      crumb_home:"Početna",crumb_here:"Izrada web stranica",
-      hero_eyebrow:"Izrada web stranica",hero_h1:'Stranica koja se <span class="gtext">brzo otvara</span> i lako pronalazi.',
-      hero_lead:"Brzina učitavanja odlučuje hoće li posjetitelj ostati na stranici i utječe na položaj u Googleovim rezultatima. Stranice izrađujemo tako da se otvaraju gotovo trenutačno, na svim uređajima.",
-      hero_cta1:"Zatražite procjenu →",hero_cta2:"Zašto je brzina važna",
-      types_eyebrow:"Vrste stranica",types_h2:"Što izrađujemo",types_p:"Opseg određuje broj stranica i količina sadržaja, a ne tehnologija — pristup je isti za sve.",
-      c1_t:"Prezentacijska stranica",c1_d:"Djelatnost, usluge, reference i kontakt. Osnova za pronalaženje putem pretraživača i prvi dojam o tvrtki.",
-      c2_t:"Landing stranica",c2_d:"Jedna usluga ili proizvod, s jasnim pozivom na kontakt. Koristi se uz oglasnu kampanju ili za ciljanje jednog pojma u pretraživaču.",
-      c3_t:"Katalog proizvoda",c3_d:"Pregled ponude s pretragom i filtriranjem. Bez naplate putem stranice — upit ide na e-poštu ili telefon.",
-      c4_t:"Višejezična stranica",c4_d:"Zasebna verzija stranice za svaki jezik, postavljena tako da pretraživači svakom tržištu prikazuju ispravnu jezičnu verziju.",
-      speed_eyebrow:"Brzina",speed_h2:"Zašto je brzina važna",speed_p:"Brzina učitavanja izravno utječe na broj upita sa stranice i na položaj u rezultatima pretrage.",
-      f1_t:"Posjetitelji ostaju na stranici",f1_d:"Sporu stranicu posjetitelj napusti prije nego što vidi sadržaj. Naše se stranice otvaraju gotovo trenutačno, i na mobilnoj mreži.",
-      f2_t:"Bolji položaj na Googleu",f2_d:"Google brzinu učitavanja uzima u obzir pri rangiranju, posebno na mobilnim uređajima.",
-      f3_t:"Jednako brza iz svake zemlje",f3_d:"Posjetitelj iz Sarajeva, Zagreba ili Münchena dobiva stranicu s njemu najbliže lokacije, pa učitavanje ostaje kratko neovisno o tome odakle dolazi.",
-      f4_t:"Bez obavijesti o kolačićima",f4_d:"Analitika koju koristimo ne postavlja kolačiće, pa posjetitelja ne dočekuje obavijest o privatnosti nego sadržaj.",
-      seo_eyebrow:"Optimizacija za pretraživače",seo_h2:"Uključeno u izradu",seo_p:"Navedeno je dio izrade i ne naplaćuje se zasebno.",
-      r1_t:"Naslov i opis",r1_d:"Svaka stranica ima vlastiti naslov i opis pisan prema pojmovima koje Vaši kupci stvarno upisuju. To je tekst koji se vidi u rezultatima pretrage i odlučuje hoće li netko kliknuti.",
-      r2_t:"Strukturirani podaci",r2_d:"Podaci o tvrtki, djelatnosti, lokaciji i uslugama označeni su tako da ih Google čita izravno. Time se povećava mogućnost prikaza u lokalnim rezultatima i na karti.",
-      r3_t:"Mapa stranice",r3_d:"Popis svih stranica predaje se Googleu, čime se ubrzava uvrštavanje u rezultate pretrage.",
-      r4_t:"Prilagodba uređajima",r4_d:"Stranica radi jednako na mobitelu, tabletu i računalu. Google indeksira mobilnu verziju, pa je ona odlučujuća.",
-      r5_t:"Postavljanje u rad",r5_d1:"Domena, hosting, sigurnosni certifikat i prijava pretraživačima.",r5_d2:"Pristupni podaci glase na Vas.",
-      note:'<strong>Napomena.</strong> Za jednostavnu jednostraničnu prezentaciju postoje platforme za samostalnu izradu uz znatno manji trošak i njih ćemo predložiti ako je to dovoljno. Izrada ima smisla kada su potrebni vlastiti dizajn, povezivanje s postojećim sustavima, više jezika ili ozbiljnija optimizacija za pretraživače. Sadržaj i fotografije očekujemo od Vas; ako ih nemate, dogovaramo ih zasebno.',
-      cta_eyebrow:"Sljedeći korak",cta_h2:"Procjena za Vašu stranicu",cta_p:"Napišite čime se bavite, koliko stranica očekujete i tko su Vaši kupci. Dostavljamo prijedlog strukture i okvirni trošak.",cta_btn:"Kontaktirajte nas →",
-      foot_prog:"Programiranje",foot_web:"Web stranice",foot_mob:"Mobilne aplikacije",foot_custom:"Po mjeri",foot_ai:"AI",
-      foot_copy:"© 2026 xepc.io (Xepcio) · Žepče, BiH"
-    },
-    en:{
-      nav_products:"Products",nav_services:"Services",nav_about:"About",nav_contact:"Contact us",
-      crumb_home:"Home",crumb_here:"Website development",
-      hero_eyebrow:"Website development",hero_h1:'A website that <span class="gtext">loads fast</span> and is easy to find.',
-      hero_lead:"Loading speed decides whether a visitor stays and affects your position in Google results. We build websites that open almost instantly, on every device.",
-      hero_cta1:"Request an estimate →",hero_cta2:"Why speed matters",
-      types_eyebrow:"Website types",types_h2:"What we build",types_p:"Scope is defined by the number of pages and the amount of content, not by technology — the approach is the same for all.",
-      c1_t:"Company website",c1_d:"Your line of business, services, references and contact. The basis for being found through search engines and a first impression of the company.",
-      c2_t:"Landing page",c2_d:"One service or product, with a clear call to contact. Used alongside an advertising campaign or to target a single search term.",
-      c3_t:"Product catalogue",c3_d:"An overview of your offer with search and filtering. No payments through the site — inquiries arrive by e-mail or phone.",
-      c4_t:"Multilingual website",c4_d:"A separate version of the site for each language, set up so that search engines show each market the correct language version.",
-      speed_eyebrow:"Speed",speed_h2:"Why speed matters",speed_p:"Loading speed directly affects the number of inquiries from the site and your position in search results.",
-      f1_t:"Visitors stay on the site",f1_d:"A slow site is abandoned before its content is even seen. Our sites open almost instantly, including on mobile networks.",
-      f2_t:"A better position on Google",f2_d:"Google takes loading speed into account for ranking, especially on mobile devices.",
-      f3_t:"Equally fast from any country",f3_d:"A visitor from Sarajevo, Zagreb or Munich receives the site from the location nearest to them, so loading stays short wherever they are.",
-      f4_t:"No cookie banner",f4_d:"The analytics we use set no cookies, so visitors are greeted by your content rather than a privacy notice.",
-      seo_eyebrow:"Search engine optimisation",seo_h2:"Included in the build",seo_p:"The following is part of the build and is not charged separately.",
-      r1_t:"Title and description",r1_d:"Every page has its own title and description written around the terms your customers actually search for. This is the text shown in search results, and it decides whether someone clicks.",
-      r2_t:"Structured data",r2_d:"Information about your company, line of business, location and services is marked up so Google can read it directly. This increases the chance of appearing in local results and on the map.",
-      r3_t:"Sitemap",r3_d:"A list of all pages is submitted to Google, which speeds up inclusion in search results.",
-      r4_t:"Works on every device",r4_d:"The site works equally well on phones, tablets and computers. Google indexes the mobile version, so it is the one that counts.",
-      r5_t:"Going live",r5_d1:"Domain, hosting, security certificate and registration with search engines.",r5_d2:"The access credentials are issued in your name.",
-      note:'<strong>Note.</strong> For a simple one-page presentation there are do-it-yourself platforms at a much lower cost, and we will recommend them if they are sufficient. A custom build makes sense when you need your own design, connections to existing systems, several languages or more serious search engine optimisation. We expect the content and photographs from you; if you do not have them, we arrange them separately.',
-      cta_eyebrow:"Next step",cta_h2:"An estimate for your website",cta_p:"Tell us what you do, how many pages you expect and who your customers are. We will provide a proposed structure and an approximate cost.",cta_btn:"Contact us →",
-      foot_prog:"Software development",foot_web:"Websites",foot_mob:"Mobile apps",foot_custom:"Custom",foot_ai:"AI",
-      foot_copy:"© 2026 xepc.io (Xepcio) · Žepče, Bosnia and Herzegovina"
-    },
-    de:{
-      nav_products:"Produkte",nav_services:"Leistungen",nav_about:"Über uns",nav_contact:"Kontakt",
-      crumb_home:"Startseite",crumb_here:"Webseiten-Erstellung",
-      hero_eyebrow:"Webseiten-Erstellung",hero_h1:'Eine Webseite, die <span class="gtext">schnell lädt</span> und leicht gefunden wird.',
-      hero_lead:"Die Ladegeschwindigkeit entscheidet, ob ein Besucher bleibt, und beeinflusst die Position in den Google-Ergebnissen. Wir bauen Webseiten, die sich auf jedem Gerät nahezu sofort öffnen.",
-      hero_cta1:"Angebot anfordern →",hero_cta2:"Warum Geschwindigkeit zählt",
-      types_eyebrow:"Arten von Webseiten",types_h2:"Was wir erstellen",types_p:"Den Umfang bestimmen Seitenzahl und Inhalt, nicht die Technik — der Ansatz ist für alle gleich.",
-      c1_t:"Unternehmensseite",c1_d:"Tätigkeit, Leistungen, Referenzen und Kontakt. Die Grundlage, um über Suchmaschinen gefunden zu werden, und der erste Eindruck Ihres Unternehmens.",
-      c2_t:"Landingpage",c2_d:"Eine Leistung oder ein Produkt, mit klarer Aufforderung zur Kontaktaufnahme. Eingesetzt zusammen mit einer Werbekampagne oder für einen einzelnen Suchbegriff.",
-      c3_t:"Produktkatalog",c3_d:"Übersicht des Angebots mit Suche und Filtern. Ohne Bezahlung über die Seite — Anfragen kommen per E-Mail oder Telefon.",
-      c4_t:"Mehrsprachige Webseite",c4_d:"Eine eigene Version der Seite je Sprache, so eingerichtet, dass Suchmaschinen jedem Markt die richtige Sprachversion anzeigen.",
-      speed_eyebrow:"Geschwindigkeit",speed_h2:"Warum Geschwindigkeit zählt",speed_p:"Die Ladegeschwindigkeit wirkt sich direkt auf die Zahl der Anfragen über die Seite und auf die Position in den Suchergebnissen aus.",
-      f1_t:"Besucher bleiben auf der Seite",f1_d:"Eine langsame Seite wird verlassen, bevor ihr Inhalt zu sehen ist. Unsere Seiten öffnen sich nahezu sofort, auch im Mobilfunknetz.",
-      f2_t:"Bessere Position bei Google",f2_d:"Google berücksichtigt die Ladegeschwindigkeit beim Ranking, besonders auf Mobilgeräten.",
-      f3_t:"Gleich schnell aus jedem Land",f3_d:"Ein Besucher aus Sarajevo, Zagreb oder München erhält die Seite vom nächstgelegenen Standort — das Laden bleibt kurz, egal woher er kommt.",
-      f4_t:"Kein Cookie-Banner",f4_d:"Die von uns eingesetzte Analytik setzt keine Cookies; Besucher werden von Ihrem Inhalt empfangen, nicht von einem Datenschutzhinweis.",
-      seo_eyebrow:"Suchmaschinenoptimierung",seo_h2:"Im Preis enthalten",seo_p:"Das Folgende ist Teil jeder Erstellung und wird nicht gesondert berechnet.",
-      r1_t:"Titel und Beschreibung",r1_d:"Jede Seite erhält einen eigenen Titel und eine eigene Beschreibung, formuliert nach den Begriffen, die Ihre Kunden tatsächlich suchen. Dieser Text erscheint in den Suchergebnissen und entscheidet über den Klick.",
-      r2_t:"Strukturierte Daten",r2_d:"Angaben zu Unternehmen, Tätigkeit, Standort und Leistungen sind so ausgezeichnet, dass Google sie direkt liest. Das erhöht die Chance auf lokale Ergebnisse und die Anzeige auf der Karte.",
-      r3_t:"Sitemap",r3_d:"Eine Liste aller Seiten wird an Google übermittelt, was die Aufnahme in die Suchergebnisse beschleunigt.",
-      r4_t:"Für jedes Gerät",r4_d:"Die Seite funktioniert auf Handy, Tablet und Computer gleichermaßen. Google indexiert die mobile Version — sie ist entscheidend.",
-      r5_t:"Inbetriebnahme",r5_d1:"Domain, Hosting, Sicherheitszertifikat und Anmeldung bei den Suchmaschinen.",r5_d2:"Die Zugangsdaten lauten auf Ihren Namen.",
-      note:'<strong>Hinweis.</strong> Für eine einfache einseitige Präsentation gibt es Baukasten-Plattformen zu deutlich geringeren Kosten; wenn das ausreicht, empfehlen wir sie. Eine individuelle Erstellung ist sinnvoll bei eigenem Design, Anbindung an bestehende Systeme, mehreren Sprachen oder ernsthafter Suchmaschinenoptimierung. Inhalte und Fotos erwarten wir von Ihnen; falls nicht vorhanden, vereinbaren wir sie gesondert.',
-      cta_eyebrow:"Nächster Schritt",cta_h2:"Eine Einschätzung für Ihre Webseite",cta_p:"Beschreiben Sie Ihre Tätigkeit, den erwarteten Umfang und Ihre Kunden. Sie erhalten einen Strukturvorschlag und die ungefähren Kosten.",cta_btn:"Kontaktieren Sie uns →",
-      foot_prog:"Softwareentwicklung",foot_web:"Webseiten",foot_mob:"Mobile Apps",foot_custom:"Individuell",foot_ai:"KI",
-      foot_copy:"© 2026 xepc.io (Xepcio) · Žepče, Bosnien und Herzegowina"
-    }
-  };
-  var lang='hr'; try{lang=localStorage.getItem('xlang')||'hr';}catch(e){}
-  function t(k){return (I18N[lang]&&I18N[lang][k])||I18N.hr[k]||k;}
-  var FLAGS={
-    hr:'<img class="flag" src="../assets/flags/bhs.webp" alt="" width="20" height="14">',
-    en:'<img class="flag" src="../assets/flags/en.webp" alt="" width="20" height="14">',
-    de:'<img class="flag" src="../assets/flags/de.webp" alt="" width="20" height="14">'
-  };
-  var LNAME={hr:'BHS',en:'English',de:'Deutsch'},LCODE={hr:'BHS',en:'EN',de:'DE'};
-  var langDD=document.getElementById('langDD'),langCur=document.getElementById('langCur'),langMenu=document.getElementById('langMenu');
-  langMenu.innerHTML=['hr','en','de'].map(function(l){return '<button class="lang-opt" data-lang="'+l+'" role="option">'+FLAGS[l]+'<span>'+LNAME[l]+'</span></button>';}).join('');
-  function renderLangCur(){langCur.innerHTML=FLAGS[lang]+'<span class="lc">'+LCODE[lang]+'</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>';}
-  function applyI18n(){
-    el.setAttribute('lang',lang);
-    document.querySelectorAll('[data-i18n]').forEach(function(n){n.textContent=t(n.getAttribute('data-i18n'));});
-    document.querySelectorAll('[data-i18n-html]').forEach(function(n){n.innerHTML=t(n.getAttribute('data-i18n-html'));});
-    renderLangCur();
-    langMenu.querySelectorAll('.lang-opt').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-lang')===lang);});
-  }
-  function setLang(l){lang=l;try{localStorage.setItem('xlang',l)}catch(e){}applyI18n();}
+  var langDD=document.getElementById('langDD'),langCur=document.getElementById('langCur');
   langCur.addEventListener('click',function(e){e.stopPropagation();var o=langDD.classList.toggle('open');langCur.setAttribute('aria-expanded',o?'true':'false');});
-  langMenu.querySelectorAll('.lang-opt').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'));langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');});});
-  document.addEventListener('click',function(e){if(!langDD.contains(e.target)){langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');}});
-  applyI18n();
+  document.addEventListener('click',function(){langDD.classList.remove('open');langCur.setAttribute('aria-expanded','false');});
 </script>
 </body>
 </html>

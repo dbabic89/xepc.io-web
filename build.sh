@@ -18,4 +18,7 @@ for d in */; do
   cp "$d/index.html" "dist/$d"
 done
 
+# Static EN/DE variants + sitemap with hreflang alternates.
+node scripts/build-locales.mjs
+
 echo "dist/ ready: $(find dist -type f | wc -l | tr -d ' ') files"

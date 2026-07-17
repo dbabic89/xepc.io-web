@@ -1,0 +1,482 @@
+{
+ "index": {
+  "en": {
+   "title": "xepc.io — Software & App Development | Bosnia & Croatia",
+   "desc": "Software and app development — a software studio from Žepče (Bosnia and Herzegovina). Mobile and web applications, websites, desktop software and AI solutions for companies in Bosnia, Croatia and the EU. We respond within 24 hours.",
+   "ogDesc": "Software and app development — a software studio from Žepče (Bosnia and Herzegovina). Mobile and web applications, websites, desktop software and AI solutions for companies in Bosnia, Croatia and the EU.",
+   "twDesc": "Software and app development — a software studio from Žepče (Bosnia and Herzegovina). Mobile and web applications, websites, desktop software and AI solutions.",
+   "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "ProfessionalService",
+      "@id": "https://xepc.io/#org",
+      "name": "xepc.io",
+      "alternateName": ["Xepcio", "xepcio", "Kodit Xepcio"],
+      "legalName": "Kodit",
+      "url": "https://xepc.io/",
+      "logo": "https://xepc.io/assets/icon-512.png",
+      "image": "https://xepc.io/assets/og.png",
+      "email": "contact@xepc.io",
+      "description": "Software and app development: mobile and web applications, websites, desktop software and AI solutions for companies in Bosnia and Herzegovina, Croatia and the EU.",
+      "slogan": "Software that powers your business",
+      "address": {"@type": "PostalAddress", "addressLocality": "Žepče", "addressCountry": "BA"},
+      "areaServed": [
+       {"@type": "Country", "name": "Bosnia and Herzegovina"},
+       {"@type": "Country", "name": "Croatia"},
+       {"@type": "Place", "name": "EU"}
+      ],
+      "knowsLanguage": ["hr", "en", "de"],
+      "sameAs": ["https://github.com/dbabic89"],
+      "hasOfferCatalog": {
+       "@type": "OfferCatalog",
+       "name": "Software development services",
+       "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website development", "description": "Fast, modern websites optimised for search engines."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web application development", "description": "Business tools that run in the browser, without installation."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mobile app development", "description": "Applications for Android and iOS, including store publication and post-launch support."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Desktop application development", "description": "Software for Windows, macOS and Linux."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Backend & API development", "description": "Server systems, databases and integrations."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI solutions", "description": "Integration of AI systems into business processes and existing applications."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "UI/UX design", "description": "Interface design for web and mobile applications."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Maintenance & support", "description": "Updates, security patches and technical support."}}
+       ]
+      }
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://xepc.io/en#website",
+      "url": "https://xepc.io/en",
+      "name": "xepc.io",
+      "publisher": {"@id": "https://xepc.io/#org"},
+      "inLanguage": "en"
+     }
+    ]
+   }
+  },
+  "de": {
+   "title": "xepc.io — Software- & App-Entwicklung | Bosnien & Kroatien",
+   "desc": "Software- und App-Entwicklung — ein Software-Studio aus Žepče (Bosnien und Herzegowina). Mobile und Web-Anwendungen, Webseiten, Desktop-Software und KI-Lösungen für Unternehmen in Bosnien, Kroatien und der EU. Antwort innerhalb von 24 Stunden.",
+   "ogDesc": "Software- und App-Entwicklung — ein Software-Studio aus Žepče (Bosnien und Herzegowina). Mobile und Web-Anwendungen, Webseiten, Desktop-Software und KI-Lösungen für Unternehmen in Bosnien, Kroatien und der EU.",
+   "twDesc": "Software- und App-Entwicklung — ein Software-Studio aus Žepče (Bosnien und Herzegowina). Mobile und Web-Anwendungen, Webseiten, Desktop-Software und KI-Lösungen.",
+   "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "ProfessionalService",
+      "@id": "https://xepc.io/#org",
+      "name": "xepc.io",
+      "alternateName": ["Xepcio", "xepcio", "Kodit Xepcio"],
+      "legalName": "Kodit",
+      "url": "https://xepc.io/",
+      "logo": "https://xepc.io/assets/icon-512.png",
+      "image": "https://xepc.io/assets/og.png",
+      "email": "contact@xepc.io",
+      "description": "Software- und App-Entwicklung: mobile und Web-Anwendungen, Webseiten, Desktop-Software und KI-Lösungen für Unternehmen in Bosnien und Herzegowina, Kroatien und der EU.",
+      "slogan": "Software, die Ihr Geschäft antreibt",
+      "address": {"@type": "PostalAddress", "addressLocality": "Žepče", "addressCountry": "BA"},
+      "areaServed": [
+       {"@type": "Country", "name": "Bosnien und Herzegowina"},
+       {"@type": "Country", "name": "Kroatien"},
+       {"@type": "Place", "name": "EU"}
+      ],
+      "knowsLanguage": ["hr", "en", "de"],
+      "sameAs": ["https://github.com/dbabic89"],
+      "hasOfferCatalog": {
+       "@type": "OfferCatalog",
+       "name": "Leistungen der Softwareentwicklung",
+       "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Erstellung von Webseiten", "description": "Schnelle, moderne Webseiten, optimiert für Suchmaschinen."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Entwicklung von Web-Anwendungen", "description": "Geschäftsanwendungen im Browser, ohne Installation."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Entwicklung mobiler Apps", "description": "Apps für Android und iOS, einschließlich Veröffentlichung in den Stores und Betreuung nach dem Start."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Entwicklung von Desktop-Anwendungen", "description": "Software für Windows, macOS und Linux."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Backend- & API-Entwicklung", "description": "Serversysteme, Datenbanken und Integrationen."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "KI-Lösungen", "description": "Integration von KI-Systemen in Geschäftsprozesse und bestehende Anwendungen."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "UI/UX-Design", "description": "Gestaltung von Oberflächen für Web- und Mobil-Anwendungen."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wartung & Support", "description": "Updates, Sicherheitsaktualisierungen und technischer Support."}}
+       ]
+      }
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://xepc.io/de#website",
+      "url": "https://xepc.io/de",
+      "name": "xepc.io",
+      "publisher": {"@id": "https://xepc.io/#org"},
+      "inLanguage": "de"
+     }
+    ]
+   }
+  }
+ },
+ "programiranje": {
+  "en": {
+   "title": "Software Development — xepc.io | Bosnia & Croatia",
+   "desc": "Development of web, mobile and desktop applications and server systems. Software studio from Žepče (Bosnia and Herzegovina). Phased work, versions you can try out and a written cost estimate before work begins.",
+   "ogDesc": "Development of web, mobile and desktop applications and server systems. Phased work, cost estimate before work begins.",
+   "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "@id": "https://xepc.io/en/programiranje#service",
+      "name": "Software development",
+      "serviceType": "Software development",
+      "description": "Development of web, mobile and desktop applications and server systems, working in phases with a cost estimate before work begins.",
+      "provider": {
+       "@type": "ProfessionalService",
+       "name": "xepc.io",
+       "url": "https://xepc.io/",
+       "address": {"@type": "PostalAddress", "addressLocality": "Žepče", "addressCountry": "BA"}
+      },
+      "areaServed": [
+       {"@type": "Country", "name": "Bosnia and Herzegovina"},
+       {"@type": "Country", "name": "Croatia"},
+       {"@type": "Place", "name": "EU"}
+      ],
+      "availableLanguage": ["hr", "en", "de"]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://xepc.io/en"},
+       {"@type": "ListItem", "position": 2, "name": "Software development", "item": "https://xepc.io/en/programiranje"}
+      ]
+     }
+    ]
+   }
+  },
+  "de": {
+   "title": "Softwareentwicklung — xepc.io | Bosnien & Kroatien",
+   "desc": "Entwicklung von Web-, Mobil- und Desktop-Anwendungen sowie Serversystemen. Software-Studio aus Žepče (Bosnien und Herzegowina). Arbeit in Phasen, testbare Versionen und schriftliche Kosteneinschätzung vor Beginn.",
+   "ogDesc": "Entwicklung von Web-, Mobil- und Desktop-Anwendungen sowie Serversystemen. Arbeit in Phasen, Kosteneinschätzung vor Beginn.",
+   "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "@id": "https://xepc.io/de/programiranje#service",
+      "name": "Softwareentwicklung",
+      "serviceType": "Softwareentwicklung",
+      "description": "Entwicklung von Web-, Mobil- und Desktop-Anwendungen sowie Serversystemen, in Phasen und mit Kosteneinschätzung vor Beginn der Arbeit.",
+      "provider": {
+       "@type": "ProfessionalService",
+       "name": "xepc.io",
+       "url": "https://xepc.io/",
+       "address": {"@type": "PostalAddress", "addressLocality": "Žepče", "addressCountry": "BA"}
+      },
+      "areaServed": [
+       {"@type": "Country", "name": "Bosnien und Herzegowina"},
+       {"@type": "Country", "name": "Kroatien"},
+       {"@type": "Place", "name": "EU"}
+      ],
+      "availableLanguage": ["hr", "en", "de"]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://xepc.io/de"},
+       {"@type": "ListItem", "position": 2, "name": "Softwareentwicklung", "item": "https://xepc.io/de/programiranje"}
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "izrada-web-stranica": {
+  "en": {
+   "title": "Website Development — xepc.io | Fast, SEO-Ready Websites",
+   "desc": "Fast websites adapted to all devices, with search engine optimisation included in the price. We handle design, build, domain setup and maintenance.",
+   "ogDesc": "Fast websites with search engine optimisation included in the price.",
+   "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "@id": "https://xepc.io/en/izrada-web-stranica#service",
+      "name": "Website development",
+      "serviceType": "Website development",
+      "description": "Development of fast, search-engine-optimised websites, including domain setup and hosting.",
+      "provider": {
+       "@type": "ProfessionalService",
+       "name": "xepc.io",
+       "url": "https://xepc.io/",
+       "address": {"@type": "PostalAddress", "addressLocality": "Žepče", "addressCountry": "BA"}
+      },
+      "areaServed": [
+       {"@type": "Country", "name": "Bosnia and Herzegovina"},
+       {"@type": "Country", "name": "Croatia"},
+       {"@type": "Place", "name": "EU"}
+      ],
+      "availableLanguage": ["hr", "en", "de"]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://xepc.io/en"},
+       {"@type": "ListItem", "position": 2, "name": "Website development", "item": "https://xepc.io/en/izrada-web-stranica"}
+      ]
+     }
+    ]
+   }
+  },
+  "de": {
+   "title": "Webseiten-Erstellung — xepc.io | Schnelle Webseiten mit SEO",
+   "desc": "Schnelle Webseiten für alle Geräte, Suchmaschinenoptimierung im Preis enthalten. Wir übernehmen Design, Erstellung, Einrichtung der Domain und Wartung.",
+   "ogDesc": "Schnelle Webseiten, Suchmaschinenoptimierung im Preis enthalten.",
+   "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "@id": "https://xepc.io/de/izrada-web-stranica#service",
+      "name": "Webseiten-Erstellung",
+      "serviceType": "Webseiten-Erstellung",
+      "description": "Erstellung schneller, suchmaschinenoptimierter Webseiten, einschließlich Einrichtung von Domain und Hosting.",
+      "provider": {
+       "@type": "ProfessionalService",
+       "name": "xepc.io",
+       "url": "https://xepc.io/",
+       "address": {"@type": "PostalAddress", "addressLocality": "Žepče", "addressCountry": "BA"}
+      },
+      "areaServed": [
+       {"@type": "Country", "name": "Bosnien und Herzegowina"},
+       {"@type": "Country", "name": "Kroatien"},
+       {"@type": "Place", "name": "EU"}
+      ],
+      "availableLanguage": ["hr", "en", "de"]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://xepc.io/de"},
+       {"@type": "ListItem", "position": 2, "name": "Webseiten-Erstellung", "item": "https://xepc.io/de/izrada-web-stranica"}
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "izrada-mobilnih-aplikacija": {
+  "en": {
+   "title": "Mobile App Development (Android & iOS) — xepc.io",
+   "desc": "Mobile app development for Android and iOS. Store publication, offline use and maintenance after release. Software studio from Žepče (Bosnia and Herzegovina).",
+   "ogDesc": "One application for Android and iOS, including store publication and maintenance after release.",
+   "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "@id": "https://xepc.io/en/izrada-mobilnih-aplikacija#service",
+      "name": "Mobile app development",
+      "serviceType": "Mobile app development",
+      "description": "Development of mobile applications for Android and iOS, including store publication and maintenance after release.",
+      "provider": {
+       "@type": "ProfessionalService",
+       "name": "xepc.io",
+       "url": "https://xepc.io/",
+       "address": {"@type": "PostalAddress", "addressLocality": "Žepče", "addressCountry": "BA"}
+      },
+      "areaServed": [
+       {"@type": "Country", "name": "Bosnia and Herzegovina"},
+       {"@type": "Country", "name": "Croatia"},
+       {"@type": "Place", "name": "EU"}
+      ],
+      "availableLanguage": ["hr", "en", "de"]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://xepc.io/en"},
+       {"@type": "ListItem", "position": 2, "name": "Mobile apps", "item": "https://xepc.io/en/izrada-mobilnih-aplikacija"}
+      ]
+     }
+    ]
+   }
+  },
+  "de": {
+   "title": "App-Entwicklung (Android & iOS) — xepc.io",
+   "desc": "Entwicklung mobiler Apps für Android und iOS. Veröffentlichung in den Stores, Offline-Betrieb und Wartung nach dem Start. Software-Studio aus Žepče (Bosnien und Herzegowina).",
+   "ogDesc": "Eine Anwendung für Android und iOS, einschließlich Veröffentlichung in den Stores und Wartung nach dem Start.",
+   "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "@id": "https://xepc.io/de/izrada-mobilnih-aplikacija#service",
+      "name": "Entwicklung mobiler Apps",
+      "serviceType": "Entwicklung mobiler Apps",
+      "description": "Entwicklung mobiler Apps für Android und iOS, einschließlich Veröffentlichung in den Stores und Wartung nach dem Start.",
+      "provider": {
+       "@type": "ProfessionalService",
+       "name": "xepc.io",
+       "url": "https://xepc.io/",
+       "address": {"@type": "PostalAddress", "addressLocality": "Žepče", "addressCountry": "BA"}
+      },
+      "areaServed": [
+       {"@type": "Country", "name": "Bosnien und Herzegowina"},
+       {"@type": "Country", "name": "Kroatien"},
+       {"@type": "Place", "name": "EU"}
+      ],
+      "availableLanguage": ["hr", "en", "de"]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://xepc.io/de"},
+       {"@type": "ListItem", "position": 2, "name": "Mobile Apps", "item": "https://xepc.io/de/izrada-mobilnih-aplikacija"}
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "izrada-aplikacija-po-mjeri": {
+  "en": {
+   "title": "Custom Business Applications — xepc.io",
+   "desc": "Internal business systems built around your processes: unified data, access rights, migration of existing records and integrations. Software studio from Žepče (Bosnia and Herzegovina).",
+   "ogDesc": "Internal business systems that replace spreadsheets, paper records and disconnected tools.",
+   "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "@id": "https://xepc.io/en/izrada-aplikacija-po-mjeri#service",
+      "name": "Custom business applications",
+      "serviceType": "Business application development",
+      "description": "Development of internal business systems built around a company's processes, including migration of existing data and integrations with existing tools.",
+      "provider": {
+       "@type": "ProfessionalService",
+       "name": "xepc.io",
+       "url": "https://xepc.io/",
+       "address": {"@type": "PostalAddress", "addressLocality": "Žepče", "addressCountry": "BA"}
+      },
+      "areaServed": [
+       {"@type": "Country", "name": "Bosnia and Herzegovina"},
+       {"@type": "Country", "name": "Croatia"},
+       {"@type": "Place", "name": "EU"}
+      ],
+      "availableLanguage": ["hr", "en", "de"]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://xepc.io/en"},
+       {"@type": "ListItem", "position": 2, "name": "Custom applications", "item": "https://xepc.io/en/izrada-aplikacija-po-mjeri"}
+      ]
+     }
+    ]
+   }
+  },
+  "de": {
+   "title": "Individuelle Business-Anwendungen — xepc.io",
+   "desc": "Interne Systeme nach Ihren Prozessen: gebündelte Daten, Zugriffsrechte, Übernahme bestehender Aufzeichnungen und Anbindungen. Software-Studio aus Žepče (Bosnien und Herzegowina).",
+   "ogDesc": "Interne Systeme, die Tabellen, Papier und nicht verbundene Werkzeuge ersetzen.",
+   "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "@id": "https://xepc.io/de/izrada-aplikacija-po-mjeri#service",
+      "name": "Individuelle Business-Anwendungen",
+      "serviceType": "Entwicklung von Geschäftsanwendungen",
+      "description": "Entwicklung interner Systeme nach den Prozessen des Unternehmens, einschließlich Übernahme bestehender Daten und Anbindung vorhandener Werkzeuge.",
+      "provider": {
+       "@type": "ProfessionalService",
+       "name": "xepc.io",
+       "url": "https://xepc.io/",
+       "address": {"@type": "PostalAddress", "addressLocality": "Žepče", "addressCountry": "BA"}
+      },
+      "areaServed": [
+       {"@type": "Country", "name": "Bosnien und Herzegowina"},
+       {"@type": "Country", "name": "Kroatien"},
+       {"@type": "Place", "name": "EU"}
+      ],
+      "availableLanguage": ["hr", "en", "de"]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://xepc.io/de"},
+       {"@type": "ListItem", "position": 2, "name": "Individuelle Anwendungen", "item": "https://xepc.io/de/izrada-aplikacija-po-mjeri"}
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "ai-rjesenja": {
+  "en": {
+   "title": "AI Solutions for Companies — xepc.io",
+   "desc": "Integrating AI into business processes: questions over your own data, document processing, an internal knowledge base, automation and confidential data. Feasibility and cost assessment before work begins.",
+   "ogDesc": "Integration of AI systems into business processes and existing applications. Feasibility and cost assessment before work begins.",
+   "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "@id": "https://xepc.io/en/ai-rjesenja#service",
+      "name": "AI solutions",
+      "serviceType": "AI system integration",
+      "description": "Integrating AI systems into business processes: questions over your own data, document processing, an internal knowledge base, automation and work with confidential data.",
+      "provider": {
+       "@type": "ProfessionalService",
+       "name": "xepc.io",
+       "url": "https://xepc.io/",
+       "address": {"@type": "PostalAddress", "addressLocality": "Žepče", "addressCountry": "BA"}
+      },
+      "areaServed": [
+       {"@type": "Country", "name": "Bosnia and Herzegovina"},
+       {"@type": "Country", "name": "Croatia"},
+       {"@type": "Place", "name": "EU"}
+      ],
+      "availableLanguage": ["hr", "en", "de"]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://xepc.io/en"},
+       {"@type": "ListItem", "position": 2, "name": "AI solutions", "item": "https://xepc.io/en/ai-rjesenja"}
+      ]
+     }
+    ]
+   }
+  },
+  "de": {
+   "title": "KI-Lösungen für Unternehmen — xepc.io",
+   "desc": "KI in Geschäftsprozessen: Fragen an eigene Daten, Dokumentenverarbeitung, interne Wissensdatenbank, Automatisierung und vertrauliche Daten. Machbarkeits- und Kosteneinschätzung vor Beginn der Arbeit.",
+   "ogDesc": "Integration von KI-Systemen in Geschäftsprozesse und bestehende Anwendungen. Einschätzung von Machbarkeit und Kosten vor Beginn.",
+   "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Service",
+      "@id": "https://xepc.io/de/ai-rjesenja#service",
+      "name": "KI-Lösungen",
+      "serviceType": "Integration von KI-Systemen",
+      "description": "Integration von KI-Systemen in Geschäftsprozesse: Fragen an eigene Daten, Dokumentenverarbeitung, interne Wissensdatenbank, Automatisierung und Arbeit mit vertraulichen Daten.",
+      "provider": {
+       "@type": "ProfessionalService",
+       "name": "xepc.io",
+       "url": "https://xepc.io/",
+       "address": {"@type": "PostalAddress", "addressLocality": "Žepče", "addressCountry": "BA"}
+      },
+      "areaServed": [
+       {"@type": "Country", "name": "Bosnien und Herzegowina"},
+       {"@type": "Country", "name": "Kroatien"},
+       {"@type": "Place", "name": "EU"}
+      ],
+      "availableLanguage": ["hr", "en", "de"]
+     },
+     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://xepc.io/de"},
+       {"@type": "ListItem", "position": 2, "name": "KI-Lösungen", "item": "https://xepc.io/de/ai-rjesenja"}
+      ]
+     }
+    ]
+   }
+  }
+ }
+}

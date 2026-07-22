@@ -97,14 +97,14 @@
   "role_devops": "DevOps inženjer",
   "role_qa": "QA inženjer",
   "role_uiux": "UI/UX dizajner",
-  "role_des": "Dizajner",
   "role_it": "IT stručnjak",
   "role_mkt": "Voditelj marketinga",
   "role_sales": "Voditelj prodaje",
   "role_legal": "Pravni savjetnik",
   "role_support": "Korisnička podrška",
   "role_office": "Voditelj ureda",
-  "role_maint": "Tehničar održavanja"
+  "role_maint": "Tehničar održavanja",
+  "role_janitor": "Čistač"
  },
  "en": {
   "nav_products": "Products",
@@ -204,14 +204,14 @@
   "role_devops": "DevOps Engineer",
   "role_qa": "QA Engineer",
   "role_uiux": "UI/UX Designer",
-  "role_des": "Designer",
   "role_it": "IT Specialist",
   "role_mkt": "Marketing Manager",
   "role_sales": "Sales Manager",
   "role_legal": "Legal Advisor",
   "role_support": "Customer Support",
   "role_office": "Office Manager",
-  "role_maint": "Maintenance Technician"
+  "role_maint": "Maintenance Technician",
+  "role_janitor": "Janitor"
  },
  "de": {
   "nav_products": "Produkte",
@@ -311,13 +311,13 @@
   "role_devops": "DevOps-Ingenieur",
   "role_qa": "QA-Ingenieur",
   "role_uiux": "UI/UX-Designer",
-  "role_des": "Designer",
   "role_it": "IT-Spezialist",
   "role_mkt": "Marketing-Manager",
   "role_sales": "Vertriebsleiter",
   "role_legal": "Rechtsberater",
   "role_support": "Kundensupport",
   "role_office": "Büroleiter",
-  "role_maint": "Wartungstechniker"
+  "role_maint": "Wartungstechniker",
+  "role_janitor": "Hausmeister"
  }
 }

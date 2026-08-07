@@ -126,3 +126,9 @@ ul.flist p{margin:.2rem 0 0;font-size:.93rem}
 .lang-opt.on{color:var(--accent)}
 .lang-opt .flag{width:20px;height:14px;border-radius:2px;display:block;box-shadow:0 0 0 1px rgba(0,0,0,.12);object-fit:cover}
 @media(max-width:560px){.lang-cur .lc{display:none}}
+
+/* footer social icons */
+.foot-social{display:flex;gap:.6rem}
+.foot-social a{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);transition:.15s}
+.foot-social a:hover{color:var(--accent);border-color:var(--accent)}
+.foot-social svg{width:17px;height:17px}

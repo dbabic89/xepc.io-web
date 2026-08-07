@@ -27,7 +27,7 @@
        {"@type": "Place", "name": "EU"}
       ],
       "knowsLanguage": ["hr", "en", "de"],
-      "sameAs": ["https://github.com/dbabic89"],
+      "sameAs": ["https://github.com/dbabic89", "https://www.linkedin.com/company/135266620", "https://www.facebook.com/profile.php?id=61591815514296"],
       "hasOfferCatalog": {
        "@type": "OfferCatalog",
        "name": "Software development services",
@@ -81,7 +81,7 @@
        {"@type": "Place", "name": "EU"}
       ],
       "knowsLanguage": ["hr", "en", "de"],
-      "sameAs": ["https://github.com/dbabic89"],
+      "sameAs": ["https://github.com/dbabic89", "https://www.linkedin.com/company/135266620", "https://www.facebook.com/profile.php?id=61591815514296"],
       "hasOfferCatalog": {
        "@type": "OfferCatalog",
        "name": "Leistungen der Softwareentwicklung",

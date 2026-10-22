@@ -29,14 +29,10 @@ const CHEV = '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentC
 const ATTR_SWAPS = {
   en: [
     ['aria-label="Jezik"', 'aria-label="Language"'],
-    ['aria-label="Promijeni temu" title="Promijeni temu"', 'aria-label="Toggle theme" title="Toggle theme"'],
-    ['aria-label="Sheme boja" title="Sheme boja"', 'aria-label="Color schemes" title="Color schemes"'],
     ['aria-label="Zatvori"', 'aria-label="Close"'],
   ],
   de: [
     ['aria-label="Jezik"', 'aria-label="Sprache"'],
-    ['aria-label="Promijeni temu" title="Promijeni temu"', 'aria-label="Design wechseln" title="Design wechseln"'],
-    ['aria-label="Sheme boja" title="Sheme boja"', 'aria-label="Farbschemata" title="Farbschemata"'],
     ['aria-label="Zatvori"', 'aria-label="Schließen"'],
   ],
 };
@@ -73,6 +69,9 @@ function transform(html, slug, lang, dict, meta) {
     `<script type="application/ld+json">\n${JSON.stringify(meta.jsonld, null, 2)}\n</script>`
   );
 
+  // internal links marked data-ll point at the HR source path; keep them inside the language
+  html = html.replace(/<a\b[^>]*\bdata-ll\b[^>]*>/g, tag => tag.replace(/href="\/([^"]*)"/, (m, rest) => `href="/${lang}${rest ? (rest.startsWith("#") ? "" : "/") + rest : ""}"`));
+
   // content: data-i18n / data-i18n-html text nodes
   html = html.replace(
     /(<([a-zA-Z0-9]+)\b[^>]*?\bdata-i18n(?:-html)?="([A-Za-z0-9_]+)"[^>]*>)([\s\S]*?)(<\/\2>)/g,
@@ -102,7 +101,6 @@ function transform(html, slug, lang, dict, meta) {
     html = html.replace(/(href|src)="\.\.\/assets\//g, '$1="../../assets/');
   } else {
     html = html.replace(/(href|src)="assets\//g, '$1="../assets/');
-    html = html.replace(/src="roles\//g, 'src="../roles/');
   }
 
   // attribute-level label translations

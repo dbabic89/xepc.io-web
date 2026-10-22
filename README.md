@@ -3,15 +3,16 @@
 Static site for [xepc.io](https://xepc.io) — software studio (apps, websites, AI solutions).
 
 ## Stack
-- Plain static HTML/CSS/JS — no build step
+- Plain static HTML/CSS/JS, assembled into `dist/` by `sh build.sh`
 - Hosted on Cloudflare Pages (connected to this repo, auto-deploy on push to `main`)
-- Client-side i18n (hr default, en, de), theme (dark/light) and color-scheme switcher
+- i18n: hr default, en, de (static copies generated at build time)
 
 ## Structure
 - `index.html` — the whole site (SEO meta + JSON-LD structured data in `<head>`)
-- `roles/` — team photos (WebP, 512px)
 - `assets/` — favicon/icons, OG image (`og.svg` → `og.png` via `rsvg-convert`)
 - `robots.txt`, `sitemap.xml`, `_headers` (Cloudflare), `404.html`
+
+The site is light-theme only. Internal links carry `data-ll` and are rewritten per language by `scripts/build-locales.mjs`; `scripts/check-links.mjs` checks links. CSS references get a `?v=<hash>` at build time, because `/assets/*` is cached immutable for a year.
 
 ## Deploy
 Push to `main` → Cloudflare Workers Builds runs `sh build.sh`, then

@@ -17,7 +17,7 @@ No search-volume numbers appear anywhere: no source in this research showed any.
 
 Cannibalisation warning: "izrada softvera po narudžbi" (programiranje) and "izrada softvera po mjeri" (po-mjeri) return nearly the same top results (evolva.hr, magicmarinac.hr, dotsoft.hr, prolink.hr, syntax.ba). Google may treat them as one intent. Mitigation used here: programiranje targets the "developer for hire, any platform" intent; po-mjeri targets "internal business system"; the two link to each other. Whether this separation works is unverifiable before the pages are indexed.
 
-Copy rules applied to every title/description/H1 below: no buzzwords, no exclamation marks, no emoji, no invented numbers or clients. Claims reused from the current site: "Odgovaramo u 24 sata", "rad u fazama", "pisana procjena troška prije početka", "SEO optimizacija u cijeni", "objava u trgovinama, rad bez interneta, održavanje".
+Copy rules applied to every title/description/H1 below: no buzzwords, no exclamation marks, no emoji, no invented numbers or clients. Claims reused from the current site: "Odgovaramo u najkraćem mogućem roku", "rad u fazama", "pisana procjena troška prije početka", "SEO optimizacija u cijeni", "objava u trgovinama, rad bez interneta, održavanje".
 Wording: "firma/firme" is used instead of "tvrtka" in titles because BiH queries use "firma" (AC: "ai automatizacija za firme", "ai chatbot za firmu"); the body copy can use tvrtka in HR and firma/preduzeće in BS variants (BS "preduzeće" got no AC evidence, see AI page).
 
 ---
@@ -34,7 +34,7 @@ Wording: "firma/firme" is used instead of "tvrtka" in titles because BiH queries
 - EN: custom software development, custom software development company, software development studio (AC shows "software development studio" mostly university results; use "custom software development").
 - DE: individuelle Softwareentwicklung, maßgeschneiderte Software, Softwareentwicklung Kosten.
 - Title (45): `Izrada softvera i aplikacija | xepc.io, Žepče`
-- Description (154): `Softverski studio iz Žepča. Izrada softvera po mjeri, web stranica, mobilnih aplikacija i AI integracije za firme u BiH i Hrvatskoj. Odgovaramo u 24 sata.`
+- Description (154): `Softverski studio iz Žepča. Izrada softvera po mjeri, web stranica, mobilnih aplikacija i AI integracije za firme u BiH i Hrvatskoj. Odgovaramo u najkraćem mogućem roku.`
 - H1: `Izrada softvera i aplikacija za firme u BiH i Hrvatskoj`
 
 Evidence:

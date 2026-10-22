@@ -2,9 +2,9 @@
  "index": {
   "en": {
    "title": "Custom Software and App Development | xepc.io, Žepče",
-   "desc": "Software studio from Žepče. Custom software, websites, mobile apps and AI integration for companies in Bosnia and Herzegovina and Croatia. We reply within 24 hours.",
-   "ogDesc": "Software studio from Žepče. Custom software, websites, mobile apps and AI integration for companies in Bosnia and Herzegovina and Croatia. We reply within 24 hours.",
-   "twDesc": "Software studio from Žepče. Custom software, websites, mobile apps and AI integration for companies in Bosnia and Herzegovina and Croatia. We reply within 24 hours.",
+   "desc": "Software studio from Žepče. Custom software, websites, mobile apps and AI integration for companies in Bosnia and Herzegovina and Croatia. We reply as soon as possible.",
+   "ogDesc": "Software studio from Žepče. Custom software, websites, mobile apps and AI integration for companies in Bosnia and Herzegovina and Croatia. We reply as soon as possible.",
+   "twDesc": "Software studio from Žepče. Custom software, websites, mobile apps and AI integration for companies in Bosnia and Herzegovina and Croatia. We reply as soon as possible.",
    "jsonld": {
     "@context": "https://schema.org",
     "@graph": [
@@ -151,9 +151,9 @@
   },
   "de": {
    "title": "Individuelle Softwareentwicklung und Apps | xepc.io, Žepče",
-   "desc": "Softwarestudio aus Žepče. Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen in Bosnien und Herzegowina und Kroatien. Antwort innerhalb von 24 Stunden.",
-   "ogDesc": "Softwarestudio aus Žepče. Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen in Bosnien und Herzegowina und Kroatien. Antwort innerhalb von 24 Stunden.",
-   "twDesc": "Softwarestudio aus Žepče. Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen in Bosnien und Herzegowina und Kroatien. Antwort innerhalb von 24 Stunden.",
+   "desc": "Softwarestudio aus Žepče. Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen in Bosnien und Herzegowina und Kroatien. Antwort so schnell wie möglich.",
+   "ogDesc": "Softwarestudio aus Žepče. Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen in Bosnien und Herzegowina und Kroatien. Antwort so schnell wie möglich.",
+   "twDesc": "Softwarestudio aus Žepče. Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen in Bosnien und Herzegowina und Kroatien. Antwort so schnell wie möglich.",
    "jsonld": {
     "@context": "https://schema.org",
     "@graph": [

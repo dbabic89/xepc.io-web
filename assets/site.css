@@ -59,6 +59,7 @@ svg.mi{width:22px;height:22px;flex:none}
 .v3-win .mn .r.h s{background:#d0d7e2}
 .v3-s{padding:46px 48px 4px}
 .v3-s>h2{font-size:22px;font-weight:700;letter-spacing:-.015em;margin-bottom:16px}
+.v3-more-h{margin:30px 0 4px;font-size:15px;font-weight:600;color:#4a5160}
 .v3-more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
 .v3-more li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 14px;padding:12px 0;border-top:1px solid #e1e4e9}
 .v3-more b{font-weight:600}

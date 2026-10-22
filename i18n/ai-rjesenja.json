@@ -80,7 +80,7 @@
     "get_note": "Ako procijenimo da traženo nije izvedivo na potrebnoj razini pouzdanosti, o tome Vas obavještavamo prije početka rada.",
     "rel_custom_t": "Aplikacije po mjeri",
     "rel_custom_d": "Cjelovita poslovna aplikacija izrađena za jednu tvrtku.",
-    "contact_p": "Opišite proces koji želite unaprijediti. Na upite odgovaramo u roku od 24 sata."
+    "contact_p": "Opišite proces koji želite unaprijediti. Na upite odgovaramo u najkraćem mogućem roku."
   },
   "en": {
     "nav_products": "Products",
@@ -163,7 +163,7 @@
     "get_note": "If we judge that what you ask for is not feasible at the required level of reliability, we tell you before work starts.",
     "rel_custom_t": "Custom applications",
     "rel_custom_d": "A complete business application built for one company.",
-    "contact_p": "Describe the process you want to improve. We reply to enquiries within 24 hours."
+    "contact_p": "Describe the process you want to improve. We reply to enquiries as soon as possible."
   },
   "de": {
     "nav_products": "Produkte",
@@ -246,6 +246,6 @@
     "get_note": "Halten wir das Gewünschte auf dem nötigen Zuverlässigkeitsniveau nicht für machbar, sagen wir Ihnen das vor Arbeitsbeginn.",
     "rel_custom_t": "Maßgeschneiderte Anwendungen",
     "rel_custom_d": "Eine vollständige Geschäftsanwendung für ein einzelnes Unternehmen.",
-    "contact_p": "Beschreiben Sie den Prozess, den Sie verbessern möchten. Anfragen beantworten wir innerhalb von 24 Stunden."
+    "contact_p": "Beschreiben Sie den Prozess, den Sie verbessern möchten. Anfragen beantworten wir so schnell wie möglich."
   }
 }

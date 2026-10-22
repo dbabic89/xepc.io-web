@@ -65,7 +65,7 @@
     "rel3_d": "Gotov poslovni sustav za zalihe, proizvodnju, prodaju, plaćanja i knjigovodstvo.",
     "note_h2": "Kada programiranje ima smisla",
     "note_p": "Ako postoji gotovo rješenje koje pokriva Vaše potrebe, predložit ćemo ga umjesto razvoja. Programiranje ima smisla kada gotova rješenja traže da promijenite način rada, kada nedostaje povezivanje s postojećim sustavima ili kada trošak licenci po korisniku nadmaši trošak vlastitog rješenja.",
-    "contact_p": "Opišite što Vam je potrebno. Na upite odgovaramo u roku od 24 sata, a zatim dostavljamo pisanu procjenu."
+    "contact_p": "Opišite što Vam je potrebno. Na upite odgovaramo u najkraćem mogućem roku, a zatim dostavljamo pisanu procjenu."
   },
   "en": {
     "nav_products": "Products",
@@ -133,7 +133,7 @@
     "rel3_d": "A ready-made business system for stock, production, sales, payments and accounting.",
     "note_h2": "When custom programming makes sense",
     "note_p": "If a ready-made solution covers your needs, we will suggest it instead of developing anything. Programming makes sense when ready-made solutions force you to change the way you work, when links to existing systems are missing, or when per-user licence costs exceed the cost of your own solution.",
-    "contact_p": "Describe what you need. We reply to enquiries within 24 hours and then send a written estimate."
+    "contact_p": "Describe what you need. We reply to enquiries as soon as possible and then send a written estimate."
   },
   "de": {
     "nav_products": "Produkte",
@@ -201,6 +201,6 @@
     "rel3_d": "Ein fertiges Geschäftssystem für Lager, Produktion, Verkauf, Zahlungen und Buchhaltung.",
     "note_h2": "Wann Programmierung im Auftrag sinnvoll ist",
     "note_p": "Wenn eine fertige Lösung Ihren Bedarf abdeckt, schlagen wir sie anstelle einer Entwicklung vor. Programmierung lohnt sich, wenn fertige Lösungen eine Änderung Ihrer Arbeitsweise verlangen, wenn die Anbindung an bestehende Systeme fehlt oder wenn die Lizenzkosten pro Nutzer die Kosten einer eigenen Lösung übersteigen.",
-    "contact_p": "Beschreiben Sie, was Sie brauchen. Anfragen beantworten wir innerhalb von 24 Stunden und senden anschließend eine schriftliche Schätzung."
+    "contact_p": "Beschreiben Sie, was Sie brauchen. Anfragen beantworten wir so schnell wie möglich und senden anschließend eine schriftliche Schätzung."
   }
 }

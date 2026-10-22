@@ -74,7 +74,7 @@
     "ex_p": "Maqo je naš vlastiti poslovni sustav. Na jednom mjestu drži zalihe, proizvodnju, prodaju, plaćanja i knjigovodstvo, a vodi poslovanje na računalu i mobitelu.",
     "rel_ai_t": "AI rješenja",
     "rel_ai_d": "AI u postojećim aplikacijama.",
-    "contact_p": "Opišite kako danas vodite posao i gdje najviše zapinje. Na upite odgovaramo u roku od 24 sata."
+    "contact_p": "Opišite kako danas vodite posao i gdje najviše zapinje. Na upite odgovaramo u najkraćem mogućem roku."
   },
   "en": {
     "nav_products": "Products",
@@ -151,7 +151,7 @@
     "ex_p": "Maqo is our own business system. It keeps stock, production, sales, payments and accounting in one place, and runs a business on the computer and the phone.",
     "rel_ai_t": "AI solutions",
     "rel_ai_d": "AI in existing applications.",
-    "contact_p": "Describe how you run the work today and where it gets stuck most. We reply to enquiries within 24 hours."
+    "contact_p": "Describe how you run the work today and where it gets stuck most. We reply to enquiries as soon as possible."
   },
   "de": {
     "nav_products": "Produkte",
@@ -228,6 +228,6 @@
     "ex_p": "Maqo ist unser eigenes Betriebssystem. Es führt Lager, Produktion, Verkauf, Zahlungen und Buchhaltung an einem Ort und führt den Betrieb am Computer und auf dem Handy.",
     "rel_ai_t": "KI-Lösungen",
     "rel_ai_d": "KI in bestehenden Anwendungen.",
-    "contact_p": "Beschreiben Sie, wie Sie heute arbeiten und wo es am meisten hakt. Anfragen beantworten wir innerhalb von 24 Stunden."
+    "contact_p": "Beschreiben Sie, wie Sie heute arbeiten und wo es am meisten hakt. Anfragen beantworten wir so schnell wie möglich."
   }
 }

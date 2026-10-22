@@ -75,7 +75,7 @@
     "rel3_d": "Poslovni sustav koji vodi poslovanje na računalu i mobitelu.",
     "note_h2": "Kada mobilna aplikacija ima smisla",
     "note_p": "Ako je aplikacija zamišljena samo kao mobilni prikaz web stranice, jeftinije je i brže napraviti dobru web stranicu prilagođenu mobitelu. Mobilna aplikacija ima smisla kada trebate kameru, lokaciju, obavijesti, rad bez internetske veze ili prisutnost na trgovinama.",
-    "contact_p": "Opišite kome je aplikacija namijenjena i što mora raditi u prvoj verziji. Na upite odgovaramo u roku od 24 sata."
+    "contact_p": "Opišite kome je aplikacija namijenjena i što mora raditi u prvoj verziji. Na upite odgovaramo u najkraćem mogućem roku."
   },
   "en": {
     "nav_products": "Products",
@@ -153,7 +153,7 @@
     "rel3_d": "A business system that runs the business on a computer and a phone.",
     "note_h2": "When a mobile app makes sense",
     "note_p": "If the app is meant only as a mobile view of a website, it is cheaper and faster to build a good website that works on mobile. A mobile app makes sense when you need the camera, location, notifications, offline use or a presence on the stores.",
-    "contact_p": "Describe who the app is for and what it must do in the first version. We reply to enquiries within 24 hours."
+    "contact_p": "Describe who the app is for and what it must do in the first version. We reply to enquiries as soon as possible."
   },
   "de": {
     "nav_products": "Produkte",
@@ -231,6 +231,6 @@
     "rel3_d": "Ein Geschäftssystem, das den Betrieb am Computer und auf dem Handy abbildet.",
     "note_h2": "Wann eine mobile App sinnvoll ist",
     "note_p": "Wenn die App nur als mobile Ansicht einer Website gedacht ist, ist es günstiger und schneller, eine gute, für Mobilgeräte ausgelegte Website zu bauen. Eine mobile App lohnt sich, wenn Sie Kamera, Standort, Benachrichtigungen, Offline-Betrieb oder Präsenz in den Stores brauchen.",
-    "contact_p": "Beschreiben Sie, für wen die App gedacht ist und was sie in der ersten Version leisten muss. Anfragen beantworten wir innerhalb von 24 Stunden."
+    "contact_p": "Beschreiben Sie, für wen die App gedacht ist und was sie in der ersten Version leisten muss. Anfragen beantworten wir so schnell wie möglich."
   }
 }

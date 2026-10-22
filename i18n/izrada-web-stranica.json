@@ -64,7 +64,7 @@
     "rel2_d": "Web aplikacije, serverski dio i povezivanje sustava po narudžbi.",
     "note_h2": "Kada izrada ima smisla",
     "note_p": "Za jednostavnu jednostraničnu prezentaciju postoje platforme za samostalnu izradu uz znatno manji trošak i njih ćemo predložiti ako je to dovoljno. Izrada ima smisla kada su potrebni vlastiti dizajn, povezivanje s postojećim sustavima, više jezika ili ozbiljnija optimizacija za pretraživače.",
-    "contact_p": "Napišite čime se bavite, koliko stranica očekujete i tko su Vaši kupci. Na upite odgovaramo u roku od 24 sata."
+    "contact_p": "Napišite čime se bavite, koliko stranica očekujete i tko su Vaši kupci. Na upite odgovaramo u najkraćem mogućem roku."
   },
   "en": {
     "nav_products": "Products",
@@ -131,7 +131,7 @@
     "rel2_d": "Web applications, the server side and connections between systems, built to order.",
     "note_h2": "When a custom site makes sense",
     "note_p": "For a simple one-page presentation there are do-it-yourself platforms at a much lower cost, and we will suggest them if that is enough. A custom build makes sense when you need your own design, links to existing systems, several languages or more serious search engine optimisation.",
-    "contact_p": "Write what your business does, how many pages you expect and who your customers are. We reply to enquiries within 24 hours."
+    "contact_p": "Write what your business does, how many pages you expect and who your customers are. We reply to enquiries as soon as possible."
   },
   "de": {
     "nav_products": "Produkte",
@@ -198,6 +198,6 @@
     "rel2_d": "Webanwendungen, Serverseite und Systemanbindung im Auftrag.",
     "note_h2": "Wann eine eigene Website sinnvoll ist",
     "note_p": "Für eine einfache einseitige Präsentation gibt es Baukasten-Plattformen zu deutlich geringeren Kosten; wir schlagen sie vor, wenn das genügt. Eine eigene Umsetzung lohnt sich, wenn Sie ein eigenes Design, die Anbindung an bestehende Systeme, mehrere Sprachen oder eine anspruchsvollere Suchmaschinenoptimierung brauchen.",
-    "contact_p": "Schreiben Sie, was Ihr Unternehmen tut, wie viele Seiten Sie erwarten und wer Ihre Kunden sind. Anfragen beantworten wir innerhalb von 24 Stunden."
+    "contact_p": "Schreiben Sie, was Ihr Unternehmen tut, wie viele Seiten Sie erwarten und wer Ihre Kunden sind. Anfragen beantworten wir so schnell wie möglich."
   }
 }

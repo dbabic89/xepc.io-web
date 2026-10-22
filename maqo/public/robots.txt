@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maqo.xepc.io/sitemap.xml

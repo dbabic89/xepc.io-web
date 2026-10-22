@@ -1,0 +1,21 @@
+name = "maqo-download"
+main = "src/worker.js"
+compatibility_date = "2026-09-01"
+
+# Custom domain: attached to this Worker on the first deploy.
+routes = [{ pattern = "maqo.xepc.io", custom_domain = true }]
+
+# The download page (maqo/public) is served as static assets. Only /latest.json
+# and /download/* run Worker code; everything else falls through to the assets.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/latest.json", "/download/*"]
+
+# Secret (not stored here): GITHUB_TOKEN, set with `npx wrangler secret put GITHUB_TOKEN`.
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true

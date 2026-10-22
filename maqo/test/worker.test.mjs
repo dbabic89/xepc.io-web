@@ -150,7 +150,7 @@ describe('download', () => {
   it('does not serve a stale file after a new release', async () => {
     await call('/download/android')
     releases = [release('android-v1.4.0', '2026-10-20T10:00:00Z', [asset(20, 'Maqo-1.4.0.apk')])]
-    cacheStore.delete('https://maqo.xepc.io/_cache/release-state')
+    cacheStore.delete('https://maqo.xepc.io/_cache/release-state-v2')
     const response = await call('/download/android')
     assert.match(response.headers.get('Content-Disposition'), /Maqo-1\.4\.0\.apk/)
     assert.ok(calls.some((c) => c.url.endsWith('/releases/assets/20')))
@@ -184,6 +184,178 @@ describe('download', () => {
     const response = await call('/download/android', { method: 'POST' })
     assert.equal(response.status, 405)
     assert.deepEqual(await response.json(), { error: 'method_not_allowed' })
+  })
+})
+
+describe('releases.json', () => {
+  it('lists every release newest first with both desktop assets in one entry', async () => {
+    const response = await call('/releases.json')
+    assert.equal(response.status, 200)
+    assert.match(response.headers.get('Cache-Control'), /max-age=600/)
+    const { releases: list } = await response.json()
+    assert.deepEqual(
+      list.map((r) => `${r.platform}-${r.version}`),
+      ['desktop-2.1.0', 'desktop-2.0.0', 'android-1.2.0', 'android-1.0.0'],
+    )
+    assert.deepEqual(list[0], {
+      platform: 'desktop',
+      version: '2.1.0',
+      publishedAt: '2026-10-12T10:00:00Z',
+      notes: '',
+      assets: [
+        { key: 'macos', size: 5, sha256: SHA },
+        { key: 'windows', size: 5, sha256: SHA },
+      ],
+    })
+    assert.deepEqual(Object.keys(list[1].assets[0]), ['key', 'size', 'sha256'])
+  })
+
+  it('keeps the release body as notes and a missing digest as null', async () => {
+    releases = [release('android-v1.0.0', '2026-10-01T10:00:00Z', [asset(1, 'Maqo-1.0.0.apk', { digest: null })], { body: 'Fixes' })]
+    const { releases: list } = await (await call('/releases.json')).json()
+    assert.equal(list[0].notes, 'Fixes')
+    assert.equal(list[0].assets[0].sha256, null)
+  })
+
+  it('sorts by SemVer, not by text or date, and puts desktop before android for one version', async () => {
+    releases = [
+      release('android-v1.9.0', '2026-10-20T10:00:00Z', [asset(1, 'a.apk')]),
+      release('android-v1.10.0', '2026-10-01T10:00:00Z', [asset(2, 'b.apk')]),
+      release('desktop-v1.10.0', '2026-10-01T10:00:00Z', [asset(3, 'c.dmg')]),
+    ]
+    const { releases: list } = await (await call('/releases.json')).json()
+    assert.deepEqual(
+      list.map((r) => `${r.platform}-${r.version}`),
+      ['desktop-1.10.0', 'android-1.10.0', 'android-1.9.0'],
+    )
+  })
+
+  it('skips drafts, prereleases, bad tags and releases without a matching asset', async () => {
+    releases = [
+      release('android-v1.0.0', '2026-10-01T10:00:00Z', [asset(1, 'a.apk')]),
+      release('android-v1.1.0', null, [asset(2, 'b.apk')], { draft: true }),
+      release('android-v1.2.0', '2026-10-02T10:00:00Z', [asset(3, 'c.apk')], { prerelease: true }),
+      release('android-v1.3.0-beta', '2026-10-03T10:00:00Z', [asset(4, 'd.apk')]),
+      release('android-v1.4', '2026-10-03T10:00:00Z', [asset(5, 'e.apk')]),
+      release('ios-v1.0.0', '2026-10-03T10:00:00Z', [asset(6, 'f.ipa')]),
+      release('android-v1.5.0', '2026-10-04T10:00:00Z', [asset(7, 'g.apk', { state: 'starter' })]),
+      release('desktop-v2.0.0', '2026-10-05T10:00:00Z', [asset(8, 'h.zip')]),
+    ]
+    const { releases: list } = await (await call('/releases.json')).json()
+    assert.deepEqual(list.map((r) => r.version), ['1.0.0'])
+  })
+
+  it('follows pages until a short page', async () => {
+    const page1 = Array.from({ length: 100 }, (_, i) =>
+      release(`android-v1.0.${i}`, '2026-10-01T10:00:00Z', [asset(1000 + i, `Maqo-1.0.${i}.apk`)]),
+    )
+    const page2 = [release('android-v2.0.0', '2026-10-02T10:00:00Z', [asset(9, 'Maqo-2.0.0.apk')])]
+    const requested = []
+    globalThis.fetch = async (input) => {
+      const url = typeof input === 'string' ? input : input.url
+      requested.push(url)
+      const page = Number(new URL(url).searchParams.get('page'))
+      return new Response(JSON.stringify(page === 1 ? page1 : page2), { status: 200 })
+    }
+    const { releases: list } = await (await call('/releases.json')).json()
+    assert.equal(list.length, 101)
+    assert.equal(list[0].version, '2.0.0')
+    assert.equal(requested.length, 2)
+    assert.ok(requested.every((url) => url.includes('per_page=100')))
+  })
+
+  it('stops after 10 pages', async () => {
+    let fetched = 0
+    globalThis.fetch = async () => {
+      fetched += 1
+      const base = fetched * 1000
+      return new Response(
+        JSON.stringify(Array.from({ length: 100 }, (_, i) => release(`android-v1.${fetched}.${i}`, '2026-10-01T10:00:00Z', [asset(base + i, 'x.apk')]))),
+        { status: 200 },
+      )
+    }
+    const { releases: list } = await (await call('/releases.json')).json()
+    assert.equal(fetched, 10)
+    assert.equal(list.length, 1000)
+  })
+
+  it('answers 502 when a later page fails', async () => {
+    let fetched = 0
+    globalThis.fetch = async () => {
+      fetched += 1
+      if (fetched === 2) return new Response('boom', { status: 500 })
+      return new Response(JSON.stringify(Array.from({ length: 100 }, (_, i) => release(`android-v1.0.${i}`, null, [asset(i, 'x.apk')]))), { status: 200 })
+    }
+    const response = await call('/releases.json')
+    assert.equal(response.status, 502)
+    assert.deepEqual(await response.json(), { error: 'upstream_unavailable' })
+  })
+
+  it('supports HEAD, rejects other methods and needs the token', async () => {
+    const head = await call('/releases.json', { method: 'HEAD' })
+    assert.equal(head.status, 200)
+    assert.equal(await head.text(), '')
+    const post = await call('/releases.json', { method: 'POST' })
+    assert.equal(post.status, 405)
+    const unconfigured = await call('/releases.json', { env: {} })
+    assert.equal(unconfigured.status, 500)
+    assert.deepEqual(await unconfigured.json(), { error: 'not_configured' })
+  })
+})
+
+describe('versioned download', () => {
+  it('streams an older version through the same asset-cache path', async () => {
+    const response = await call('/download/android/1.0.0')
+    assert.equal(response.status, 200)
+    assert.equal(await response.text(), 'BINARY')
+    assert.equal(response.headers.get('Content-Disposition'), 'attachment; filename="Maqo-1.0.0.apk"')
+    assert.ok(calls.some((c) => c.url.endsWith('/releases/assets/1')))
+    assert.ok(cacheStore.has('https://maqo.xepc.io/_cache/asset/1'))
+    const second = await call('/download/android/1.0.0')
+    assert.equal(await second.text(), 'BINARY')
+    assert.equal(calls.filter((c) => c.url.endsWith('/releases/assets/1')).length, 1)
+  })
+
+  it('picks the asset of the requested key within a desktop release', async () => {
+    const response = await call('/download/windows/2.0.0')
+    assert.equal(response.headers.get('Content-Disposition'), 'attachment; filename="Maqo-2.0.0.msi"')
+    assert.ok(calls.some((c) => c.url.endsWith('/releases/assets/5')))
+  })
+
+  it('HEAD returns headers without fetching the asset', async () => {
+    const response = await call('/download/macos/2.0.0', { method: 'HEAD' })
+    assert.equal(response.status, 200)
+    assert.equal(response.headers.get('Content-Disposition'), 'attachment; filename="Maqo-2.0.0.dmg"')
+    assert.equal(calls.some((c) => c.url.includes('/releases/assets/')), false)
+  })
+
+  it('answers 404 not_published for an unknown version', async () => {
+    for (const path of ['/download/android/9.9.9', '/download/android/1.3.0', '/download/windows/1.0.0']) {
+      const response = await call(path)
+      assert.equal(response.status, 404, path)
+      assert.deepEqual(await response.json(), { error: 'not_published' })
+    }
+  })
+
+  it('answers 404 not_published for a malformed version or path', async () => {
+    for (const path of [
+      '/download/android/1.0',
+      '/download/android/v1.0.0',
+      '/download/android/1.0.0-beta',
+      '/download/android/latest',
+      '/download/android/',
+      '/download/android/1.0.0/extra',
+      '/download/linux/1.0.0',
+    ]) {
+      const response = await call(path)
+      assert.equal(response.status, 404, path)
+      assert.deepEqual(await response.json(), { error: 'not_published' })
+    }
+  })
+
+  it('leaves /download/<key> on the newest version', async () => {
+    const response = await call('/download/android')
+    assert.match(response.headers.get('Content-Disposition'), /Maqo-1\.2\.0\.apk/)
   })
 })
 

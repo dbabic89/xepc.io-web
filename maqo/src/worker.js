@@ -1,6 +1,8 @@
 // maqo-download: public update manifest + download proxy for a private GitHub releases repo.
-//   GET /latest.json          -> { android|macos|windows: { version, url, size, sha256, publishedAt } }
-//   GET|HEAD /download/<key>  -> streams the current binary of that platform
+//   GET /latest.json                  -> { android|macos|windows: { version, url, size, sha256, publishedAt } }
+//   GET /releases.json                -> { releases: [ { platform, version, publishedAt, notes, assets } ] }
+//   GET|HEAD /download/<key>          -> streams the current binary of that platform
+//   GET|HEAD /download/<key>/<version> -> streams that exact version's binary
 // Everything else is served from the static assets binding (the download page).
 // The GitHub token, the repository name and GitHub URLs never appear in a response or a log line.
 
@@ -17,10 +19,22 @@ const PLATFORMS = {
   windows: { prefix: 'desktop-v', ext: 'msi' },
 }
 
+// Tag families: PLATFORMS grouped by tag prefix (macos + windows share `desktop-v`).
+const PLATFORM_FAMILIES = [
+  { prefix: 'android-v', platform: 'android' },
+  { prefix: 'desktop-v', platform: 'desktop' },
+]
+
 const STATE_TTL_SECONDS = 600 // release state (and latest.json) edge cache
 const ASSET_TTL_SECONDS = 2592000 // stored binaries; the key is the asset id, so never stale
 const CLIENT_DOWNLOAD_MAX_AGE = 300 // /download/<key> URL is constant, so clients must not hold it long
 const SEMVER = /^\d+\.\d+\.\d+$/
+const RELEASES_PAGE_SIZE = 100
+const RELEASES_MAX_PAGES = 10
+// Order of releases that share a version in /releases.json.
+const PLATFORM_ORDER = ['desktop', 'android']
+// Bumped whenever the shape of the cached state changes, so an old cached shape is never read.
+const STATE_CACHE_PATH = '/_cache/release-state-v2'
 
 export default {
   async fetch(request, env, ctx) {
@@ -30,6 +44,10 @@ export default {
       if (path === '/latest.json') {
         if (!isReadMethod(request)) return methodNotAllowed()
         return await handleLatest(request, env, ctx)
+      }
+      if (path === '/releases.json') {
+        if (!isReadMethod(request)) return methodNotAllowed()
+        return await handleReleases(request, env, ctx)
       }
       if (path === '/download' || path.startsWith('/download/')) {
         if (!isReadMethod(request)) return methodNotAllowed()
@@ -74,48 +92,56 @@ function githubHeaders(env, accept) {
 
 // ---- release state ---------------------------------------------------------------------------
 
-// Newest non-draft release per tag prefix -> state[key] = { version, assetId, size, sha256, publishedAt }.
-// A key is absent when its release has no matching asset.
+// Every published release (no draft, no prerelease, tag `<prefix>X.Y.Z`, at least one matching uploaded asset):
+//   { releases: [ { platform, version, publishedAt, notes, assets: [ { key, assetId, size, sha256 } ] } ] }
+// sorted newest version first, then by PLATFORM_ORDER. `platform` is the tag family (desktop|android), `key` the
+// download key (macos|windows|android). The asset ids stay in the state only; /releases.json does not expose them.
 export function buildState(releases) {
-  const state = {}
-  const newestByPrefix = {}
+  const entries = []
   for (const release of Array.isArray(releases) ? releases : []) {
-    if (!release || release.draft || typeof release.tag_name !== 'string') continue
-    const prefix = Object.values(PLATFORMS)
-      .map((platform) => platform.prefix)
-      .find((candidate) => release.tag_name.startsWith(candidate))
-    if (!prefix) continue
-    const version = release.tag_name.slice(prefix.length)
+    if (!release || release.draft || release.prerelease || typeof release.tag_name !== 'string') continue
+    const family = PLATFORM_FAMILIES.find((candidate) => release.tag_name.startsWith(candidate.prefix))
+    if (!family) continue
+    const version = release.tag_name.slice(family.prefix.length)
     if (!SEMVER.test(version)) continue
-    const current = newestByPrefix[prefix]
-    if (!current || releaseTime(release) > releaseTime(current.release)) {
-      newestByPrefix[prefix] = { release, version }
+    const assets = []
+    for (const [key, platform] of Object.entries(PLATFORMS)) {
+      if (platform.prefix !== family.prefix) continue
+      const asset = (release.assets || []).find(
+        (candidate) =>
+          candidate &&
+          typeof candidate.name === 'string' &&
+          candidate.name.toLowerCase().endsWith(`.${platform.ext}`) &&
+          (candidate.state === undefined || candidate.state === 'uploaded'),
+      )
+      if (!asset || asset.id === undefined || asset.id === null) continue
+      assets.push({
+        key,
+        assetId: asset.id,
+        size: typeof asset.size === 'number' ? asset.size : null,
+        sha256: parseDigest(asset.digest),
+      })
     }
+    if (assets.length === 0) continue
+    entries.push({
+      platform: family.platform,
+      version,
+      publishedAt: release.published_at || release.created_at || null,
+      notes: typeof release.body === 'string' ? release.body : '',
+      assets,
+    })
   }
-  for (const [key, platform] of Object.entries(PLATFORMS)) {
-    const newest = newestByPrefix[platform.prefix]
-    if (!newest) continue
-    const asset = (newest.release.assets || []).find(
-      (candidate) =>
-        typeof candidate.name === 'string' &&
-        candidate.name.toLowerCase().endsWith(`.${platform.ext}`) &&
-        (candidate.state === undefined || candidate.state === 'uploaded'),
-    )
-    if (!asset || asset.id === undefined || asset.id === null) continue
-    state[key] = {
-      version: newest.version,
-      assetId: asset.id,
-      size: typeof asset.size === 'number' ? asset.size : null,
-      sha256: parseDigest(asset.digest),
-      publishedAt: newest.release.published_at || newest.release.created_at || null,
-    }
-  }
-  return state
+  entries.sort((a, b) => compareVersions(b.version, a.version) || PLATFORM_ORDER.indexOf(a.platform) - PLATFORM_ORDER.indexOf(b.platform))
+  return { releases: entries }
 }
 
-function releaseTime(release) {
-  const time = Date.parse(release.published_at || release.created_at || '')
-  return Number.isNaN(time) ? 0 : time
+function compareVersions(a, b) {
+  const left = a.split('.').map(Number)
+  const right = b.split('.').map(Number)
+  for (let index = 0; index < 3; index++) {
+    if (left[index] !== right[index]) return left[index] - right[index]
+  }
+  return 0
 }
 
 function parseDigest(digest) {
@@ -124,9 +150,21 @@ function parseDigest(digest) {
   return match ? match[1].toLowerCase() : null
 }
 
+// The newest release that has an asset for `key`, or the one at exactly `version` when given.
+function findAsset(state, key, version) {
+  for (const release of state.releases) {
+    if (version !== undefined && release.version !== version) continue
+    const asset = release.assets.find((candidate) => candidate.key === key)
+    if (asset) return { ...asset, version: release.version, publishedAt: release.publishedAt }
+  }
+  return null
+}
+
 function manifestFrom(state) {
   const manifest = {}
-  for (const [key, entry] of Object.entries(state)) {
+  for (const key of Object.keys(PLATFORMS)) {
+    const entry = findAsset(state, key)
+    if (!entry) continue
     manifest[key] = {
       version: entry.version,
       url: `${PUBLIC_ORIGIN}/download/${key}`,
@@ -138,21 +176,40 @@ function manifestFrom(state) {
   return manifest
 }
 
+function releasesFrom(state) {
+  return {
+    releases: state.releases.map((release) => ({
+      platform: release.platform,
+      version: release.version,
+      publishedAt: release.publishedAt,
+      notes: release.notes,
+      assets: release.assets.map((asset) => ({ key: asset.key, size: asset.size, sha256: asset.sha256 })),
+    })),
+  }
+}
+
 // Cached for STATE_TTL_SECONDS at the edge. Returns null when GitHub cannot be reached.
 async function loadState(env, ctx) {
   const cache = caches.default
-  const cacheKey = new Request(`${PUBLIC_ORIGIN}/_cache/release-state`)
+  const cacheKey = new Request(`${PUBLIC_ORIGIN}${STATE_CACHE_PATH}`)
   const hit = await cache.match(cacheKey)
   if (hit) return hit.json()
 
-  const response = await fetch(`${GITHUB_API}/repos/${REPO}/releases?per_page=20`, {
-    headers: githubHeaders(env, 'application/vnd.github+json'),
-  })
-  if (!response.ok) {
-    console.error('github_releases_failed', response.status)
-    return null
+  const all = []
+  for (let page = 1; page <= RELEASES_MAX_PAGES; page++) {
+    const response = await fetch(`${GITHUB_API}/repos/${REPO}/releases?per_page=${RELEASES_PAGE_SIZE}&page=${page}`, {
+      headers: githubHeaders(env, 'application/vnd.github+json'),
+    })
+    if (!response.ok) {
+      console.error('github_releases_failed', response.status)
+      return null
+    }
+    const batch = await response.json()
+    if (!Array.isArray(batch)) break
+    all.push(...batch)
+    if (batch.length < RELEASES_PAGE_SIZE) break
   }
-  const state = buildState(await response.json())
+  const state = buildState(all)
   const stored = new Response(JSON.stringify(state), {
     headers: { 'Content-Type': 'application/json', 'Cache-Control': `public, max-age=${STATE_TTL_SECONDS}` },
   })
@@ -183,15 +240,34 @@ async function handleLatest(request, env, ctx) {
   return new Response(body, { status: 200, headers })
 }
 
-// ---- /download/<key> -------------------------------------------------------------------------
+// ---- /releases.json --------------------------------------------------------------------------
 
-async function handleDownload(request, env, ctx, key) {
+async function handleReleases(request, env, ctx) {
+  if (tokenMissing(env)) return json({ error: 'not_configured' }, 500)
+  const state = await loadState(env, ctx)
+  if (state === null) return json({ error: 'upstream_unavailable' }, 502)
+  const headers = {
+    'Content-Type': 'application/json; charset=utf-8',
+    'Cache-Control': `public, max-age=${STATE_TTL_SECONDS}`,
+  }
+  const body = request.method === 'HEAD' ? null : JSON.stringify(releasesFrom(state))
+  return new Response(body, { status: 200, headers })
+}
+
+// ---- /download/<key>[/<version>] -----------------------------------------------------------------------------------------------------------------------------------
+
+async function handleDownload(request, env, ctx, rest) {
+  const parts = rest.split('/')
+  if (parts.length > 2) return notPublished()
+  const key = parts[0]
+  const version = parts.length === 2 ? parts[1] : undefined
+  if (version !== undefined && !SEMVER.test(version)) return notPublished()
   const platform = Object.hasOwn(PLATFORMS, key) ? PLATFORMS[key] : null
   if (!platform) return notPublished()
   if (tokenMissing(env)) return json({ error: 'not_configured' }, 500)
   const state = await loadState(env, ctx)
   if (state === null) return json({ error: 'upstream_unavailable' }, 502)
-  const entry = state[key]
+  const entry = findAsset(state, key, version)
   if (!entry) return notPublished()
 
   const filename = `Maqo-${entry.version}.${platform.ext}`

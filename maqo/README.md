@@ -4,8 +4,15 @@ Cloudflare Worker `maqo-download`: the public download page and update manifest 
 
 - `GET /latest.json` — newest published version per platform (`android`, `macos`, `windows`), cached 10 min.
   A platform with nothing published is absent. Shape per key: `version`, `url`, `size`, `sha256`, `publishedAt`.
+- `GET|HEAD /releases.json` — every published release, newest version first (then `desktop` before `android`), cached 10 min:
+  `{"releases":[{"platform","version","publishedAt","notes","assets":[{"key","size","sha256"}]}]}`. `platform` is `desktop`
+  or `android`; a desktop release lists its `macos` and `windows` assets in one entry; `notes` is the GitHub release body
+  (empty string when none). Drafts, prereleases, tags that are not `desktop-vX.Y.Z` / `android-vX.Y.Z` and releases
+  without an uploaded matching asset are left out. The GitHub list is read in pages of 100 (at most 10 pages).
 - `GET|HEAD /download/{android|macos|windows}` — streams the current binary from the private releases repo;
   cached at the edge by asset id, so GitHub sees one download per new version. Unknown key: `404 {"error":"not_published"}`.
+- `GET|HEAD /download/{android|macos|windows}/{version}` — the same for one exact version (`X.Y.Z`), file name
+  `Maqo-X.Y.Z.<ext>`. Unknown key, malformed version or a version without that asset: `404 {"error":"not_published"}`.
 - Everything else is the static page in `public/` (served through the `[assets]` binding).
 
 The release repo is read with a fine-grained token; the token, the repo name and GitHub URLs never appear in

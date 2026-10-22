@@ -66,6 +66,13 @@
       }
       if (usable) present.push(key);
     });
+    // No published release yet: the file table and the install steps would show only their headings.
+    ['files', 'first-run'].forEach(function (id) {
+      var sec = document.getElementById(id);
+      if (sec) sec.hidden = !present.length;
+      var link = document.querySelector('.pg-nav a[href="#' + id + '"]');
+      if (link) link.hidden = !present.length;
+    });
     if (!present.length) return;
 
     // The visitor's own platform is highlighted; the heading follows it, otherwise the newest published version.

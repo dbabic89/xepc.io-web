@@ -42,6 +42,8 @@ a{color:inherit;text-decoration:none}
 .pg{background:#fff;color:var(--ink);min-height:100%}
 .pg h1,.pg h2,.pg h3,.pg p{margin:0}
 .pg-nav{display:flex;align-items:center;gap:22px;padding:16px 40px;border-bottom:1px solid #edf0f5}
+.pg-nav .back{display:flex;align-items:center;gap:2px;margin-left:-6px;padding-right:16px;border-right:1px solid #edf0f5;font-size:14px;color:var(--body);white-space:nowrap}
+.pg-nav .back svg{width:18px;height:18px;flex:none}
 .pg-nav .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;white-space:nowrap}
 .pg-nav .brand svg{width:30px;height:30px;flex:none}
 .pg-nav nav{display:flex;gap:20px;font-size:14px;color:var(--body);white-space:nowrap}

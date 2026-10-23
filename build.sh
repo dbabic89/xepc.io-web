@@ -21,13 +21,17 @@ done
 # Static EN/DE variants + sitemap with hreflang alternates.
 node scripts/build-locales.mjs
 
-# Content-hash query on CSS references: /assets/* is immutable for a year, so a
-# changed stylesheet needs a new URL to reach returning visitors.
+# Content-hashed CSS file names: /assets/* is immutable for a year, so a changed
+# stylesheet needs a new URL. The hash goes in the file name, not a query string:
+# static assets ignore the query, so during a rollout an edge still on the old
+# version answered "site.css?v=<new>" with the old file and browsers kept it for
+# a year. A new file name the old version lacks 404s instead of caching stale CSS.
 for css in dist/assets/*.css; do
   [ -f "$css" ] || continue
-  name=$(basename "$css")
+  name=$(basename "$css" .css)
   hash=$(shasum -a 256 "$css" | cut -c1-8)
-  find dist -name '*.html' -exec sed -i.bak "s|${name}\"|${name}?v=${hash}\"|g" {} +
+  mv "$css" "dist/assets/${name}.${hash}.css"
+  find dist -name '*.html' -exec sed -i.bak "s|assets/${name}\.css\"|assets/${name}.${hash}.css\"|g" {} +
   find dist -name '*.html.bak' -delete
 done
 

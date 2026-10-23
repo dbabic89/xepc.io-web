@@ -1,15 +1,17 @@
 (function () {
   'use strict';
   var KEYS = ['android', 'macos', 'windows'];
-  var NAMES = { android: 'Android', macos: 'macOS', windows: 'Windows' };
+  var NAMES = { android: 'Android', ios: 'iOS', macos: 'macOS', windows: 'Windows' };
+  // iOS ships through the App Store only: its cards are static (data-static) and always say Coming soon.
+  var ORDER = ['android', 'ios', 'macos', 'windows'];
 
   function detectOs() {
     var uad = navigator.userAgentData;
     var ua = navigator.userAgent || '';
     var p = uad && uad.platform ? uad.platform : ua;
     if (/android/i.test(p) || /android/i.test(ua)) return 'android';
-    // iPhone / iPad (also iPadOS posing as a Mac) have no build: no card is highlighted
-    if (/iphone|ipad|ipod/i.test(ua) || (/mac/i.test(p) && navigator.maxTouchPoints > 1)) return '';
+    // iPhone / iPad (also iPadOS posing as a Mac): the static iOS card is highlighted
+    if (/iphone|ipad|ipod/i.test(ua) || (/mac/i.test(p) && navigator.maxTouchPoints > 1)) return 'ios';
     if (/mac/i.test(p)) return 'macos';
     if (/win/i.test(p)) return 'windows';
     return '';
@@ -62,7 +64,7 @@
       links[i].textContent = label;
     }
     // No real file yet: no size to show, and no publish date in the panel.
-    var smalls = document.querySelectorAll('.pg-it small');
+    var smalls = document.querySelectorAll('.pg-it[data-card]:not([data-static]) small');
     for (var j = 0; j < smalls.length; j++) smalls[j].textContent = smalls[j].textContent.split(' ')[0];
     var date = document.querySelector('.pg-dl .lab [data-head="date"]');
     if (date && date.parentNode) date.parentNode.hidden = true;
@@ -98,7 +100,7 @@
     var head = present.indexOf(os) >= 0 ? os : present.slice().sort(function (a, b) {
       return cmp(data[b].version, data[a].version);
     })[0];
-    if (present.indexOf(os) >= 0) {
+    if (present.indexOf(os) >= 0 || os === 'ios') {
       var mine = document.querySelectorAll('[data-card="' + os + '"]');
       for (var i = 0; i < mine.length; i++) mine[i].classList.add('rec');
     }
@@ -108,7 +110,7 @@
 
     var sub = document.querySelector('.pg-dl .sub');
     if (sub) {
-      var names = present.map(function (k) { return NAMES[k]; });
+      var names = ORDER.filter(function (k) { return k === 'ios' || present.indexOf(k) >= 0; }).map(function (k) { return NAMES[k]; });
       var list = names.length > 1
         ? names.slice(0, -1).join(', ') + (sub.getAttribute('data-and') || ', ') + names[names.length - 1]
         : names[0];

@@ -66,14 +66,25 @@
     // No real file yet: no size to show, and no publish date in the panel.
     var smalls = document.querySelectorAll('.pg-it[data-card]:not([data-static]) small');
     for (var j = 0; j < smalls.length; j++) smalls[j].textContent = smalls[j].textContent.split(' ')[0];
+    var hide = document.querySelectorAll('.pg-get .sz, .pg-sha');
+    for (var k = 0; k < hide.length; k++) hide[k].hidden = true;
     var date = document.querySelector('.pg-dl .lab [data-head="date"]');
     if (date && date.parentNode) date.parentNode.hidden = true;
   }
 
+  // The visitor's own platform is highlighted; the hero panel then shows only that card (CSS :has).
+  function markOwn(os, on) {
+    var mine = os ? document.querySelectorAll('[data-card="' + os + '"]') : [];
+    for (var i = 0; i < mine.length; i++) mine[i].classList.toggle('rec', on);
+  }
+
+  var os = detectOs();
+  // Marked before the manifest arrives, so the hero panel does not collapse from four cards to one after load.
+  markOwn(os, true);
+
   function fill(data) {
     var soon = !hasRelease(data);
     if (soon) data = { android: { version: PLACEHOLDER_VERSION }, macos: { version: PLACEHOLDER_VERSION }, windows: { version: PLACEHOLDER_VERSION } };
-    var os = detectOs();
     var present = [];
     KEYS.forEach(function (key) {
       var entry = data && data[key];
@@ -88,22 +99,19 @@
         var date = entry.publishedAt && fmtDate(entry.publishedAt);
         if (date) setAll(c, 'date', date);
         if (typeof entry.sha256 === 'string' && entry.sha256.length >= 8) {
-          var sha = entry.sha256;
-          setAll(c, 'sha', sha.slice(0, 4) + '…' + sha.slice(-4), sha);
+          setAll(c, 'sha', entry.sha256);
         }
       }
       if (usable) present.push(key);
     });
     if (soon) markSoon();
 
-    // The visitor's own platform is highlighted; the heading follows it, otherwise the newest published version.
+    // The heading follows the visitor's platform, otherwise the newest published version.
     var head = present.indexOf(os) >= 0 ? os : present.slice().sort(function (a, b) {
       return cmp(data[b].version, data[a].version);
     })[0];
-    if (present.indexOf(os) >= 0 || os === 'ios') {
-      var mine = document.querySelectorAll('[data-card="' + os + '"]');
-      for (var i = 0; i < mine.length; i++) mine[i].classList.add('rec');
-    }
+    // No build for the visitor's platform: drop the highlight so the panel lists every platform again.
+    if (present.indexOf(os) < 0 && os !== 'ios') markOwn(os, false);
     setHead('ver', data[head].version);
     var headDate = data[head].publishedAt && fmtDate(data[head].publishedAt);
     if (headDate) setHead('date', headDate);

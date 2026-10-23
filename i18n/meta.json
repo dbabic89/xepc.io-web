@@ -128,6 +128,10 @@
       "@id": "https://xepc.io/en#website",
       "url": "https://xepc.io/en",
       "name": "xepc.io",
+      "alternateName": [
+       "xepcio",
+       "Xepcio"
+      ],
       "publisher": {
        "@id": "https://xepc.io/#org"
       },
@@ -277,6 +281,10 @@
       "@id": "https://xepc.io/de#website",
       "url": "https://xepc.io/de",
       "name": "xepc.io",
+      "alternateName": [
+       "xepcio",
+       "Xepcio"
+      ],
       "publisher": {
        "@id": "https://xepc.io/#org"
       },

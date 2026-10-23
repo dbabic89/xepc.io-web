@@ -236,8 +236,7 @@ a{color:inherit;text-decoration:none}
 .pg-get h3{margin:0 0 14px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
 .pg-get .row{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #e5eaf2;border-radius:12px;padding:14px;margin-bottom:12px;min-height:72px;box-sizing:border-box}
 .pg-get .row:last-child{margin-bottom:0}
-.pg-get .row:has(.chip){position:relative}
-.pg-get .chip{position:absolute;top:10px;right:10px;font-size:11px;font-weight:700;color:#5b6b80;background:#eef2f7;border-radius:999px;padding:3px 9px;white-space:nowrap}
+.pg-get .chip{font-size:11px;font-weight:700;color:#5b6b80;background:#eef2f7;border-radius:999px;padding:3px 9px;white-space:nowrap}
 .pg-get .row.rec{border-color:var(--atl);box-shadow:0 0 0 1px var(--atl)}
 .pg-get .bd{width:44px;height:44px;border-radius:10px;background:var(--sky3);color:var(--atl);display:grid;place-items:center;flex:none}
 .pg-get .t{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
@@ -250,8 +249,13 @@ a{color:inherit;text-decoration:none}
 .pg-get .btn{flex:none;display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:13px;padding:9px 14px;border-radius:9px;background:#fff;color:var(--atl);border:1.5px solid var(--atl);white-space:nowrap}
 .pg-get .btn svg{width:16px;height:16px;flex:none}
 .pg-get .row.rec .btn{background:var(--atl);color:#fff}
-/* official store badges: under the QR code on computers, alone on phones (a phone cannot scan its own screen) */
-.pg-get .get{flex:none;display:flex;flex-direction:column;align-items:center;gap:8px}
+/* phone tiles: QR code, official store badge, status; the badge already names the platform.
+   QR hidden on phones (a phone cannot scan its own screen); 170px keeps the 40px badge whole, below that tiles stack */
+.pg-get .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.pg-get .tile{display:flex;flex-direction:column;align-items:center;gap:10px;background:#fff;border:1px solid #e5eaf2;border-radius:12px;padding:16px 12px}
+.pg-get .tile.rec{border-color:var(--atl);box-shadow:0 0 0 1px var(--atl)}
+.pg-get .tile .btn{align-self:stretch;justify-content:center}
+.pg-get .tile.rec .btn{background:var(--atl);color:#fff}
 .pg-get .store{display:block;flex:none;line-height:0;border-radius:7px}
 .pg-get .store img{display:block;width:auto;height:40px}
 .pg-sha{margin-top:16px;font-size:13px}
@@ -265,9 +269,5 @@ a{color:inherit;text-decoration:none}
   .pg-get .col{padding:16px}
   .pg-get .qr,.pg-get .bd,.pg-get .you{display:none}
   .pg-get .row{min-height:0;flex-wrap:wrap;row-gap:12px}
-  .pg-get .get{display:contents}
-  .pg-get .row:has(.store) .t{flex-basis:100%;order:1}
-  .pg-get .store{order:2}
-  .pg-get .row:has(.store) .btn{order:3;flex:1 1 0;justify-content:center}
   .pg-sha dl>div{flex-direction:column;gap:2px}
 }

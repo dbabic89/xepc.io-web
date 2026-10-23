@@ -44,7 +44,33 @@
     for (var i = 0; i < nodes.length; i++) nodes[i].textContent = text;
   }
 
+  // Shown until the first real release exists: every platform at 1.0.0, with the download buttons disabled.
+  var PLACEHOLDER_VERSION = '1.0.0';
+  var SOON = { hr: 'Uskoro', en: 'Coming soon', de: 'Demnächst' };
+
+  function hasRelease(data) {
+    return KEYS.some(function (key) { return data && data[key] && typeof data[key].version === 'string' && data[key].version; });
+  }
+
+  function markSoon() {
+    var label = SOON[document.documentElement.lang] || SOON.hr;
+    var links = document.querySelectorAll('[data-card] a[href^="/download/"]');
+    for (var i = 0; i < links.length; i++) {
+      links[i].removeAttribute('href');
+      links[i].setAttribute('aria-disabled', 'true');
+      links[i].classList.add('soon');
+      links[i].textContent = label;
+    }
+    // No real file yet: no size to show, and no publish date in the panel.
+    var smalls = document.querySelectorAll('.pg-it small');
+    for (var j = 0; j < smalls.length; j++) smalls[j].textContent = smalls[j].textContent.split(' ')[0];
+    var date = document.querySelector('.pg-dl .lab [data-head="date"]');
+    if (date && date.parentNode) date.parentNode.hidden = true;
+  }
+
   function fill(data) {
+    var soon = !hasRelease(data);
+    if (soon) data = { android: { version: PLACEHOLDER_VERSION }, macos: { version: PLACEHOLDER_VERSION }, windows: { version: PLACEHOLDER_VERSION } };
     var os = detectOs();
     var present = [];
     KEYS.forEach(function (key) {
@@ -66,14 +92,7 @@
       }
       if (usable) present.push(key);
     });
-    // No published release yet: the file table and the install steps would show only their headings.
-    ['files', 'first-run'].forEach(function (id) {
-      var sec = document.getElementById(id);
-      if (sec) sec.hidden = !present.length;
-      var link = document.querySelector('.pg-nav a[href="#' + id + '"]');
-      if (link) link.hidden = !present.length;
-    });
-    if (!present.length) return;
+    if (soon) markSoon();
 
     // The visitor's own platform is highlighted; the heading follows it, otherwise the newest published version.
     var head = present.indexOf(os) >= 0 ? os : present.slice().sort(function (a, b) {

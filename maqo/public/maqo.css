@@ -250,3 +250,4 @@ a{color:inherit;text-decoration:none}
 .shot .li .pl{font-size:.95em}
 
 [hidden]{display:none!important}
+[data-card] a.soon{background:#eef2f7!important;color:#5b6b80!important;border-color:#dbe3ee!important;box-shadow:none!important;pointer-events:none;cursor:default}

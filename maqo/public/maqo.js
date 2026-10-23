@@ -68,6 +68,13 @@
     for (var j = 0; j < smalls.length; j++) smalls[j].textContent = smalls[j].textContent.split(' ')[0];
     var hide = document.querySelectorAll('.pg-get .sz, .pg-sha');
     for (var k = 0; k < hide.length; k++) hide[k].hidden = true;
+    // Phone rows say Coming soon with a chip; only the desktop rows keep a disabled button.
+    var chips = document.querySelectorAll('.pg-get .chip[hidden]');
+    for (var m = 0; m < chips.length; m++) {
+      chips[m].hidden = false;
+      var btn = chips[m].parentNode.querySelector('.btn');
+      if (btn) btn.hidden = true;
+    }
     var date = document.querySelector('.pg-dl .lab [data-head="date"]');
     if (date && date.parentNode) date.parentNode.hidden = true;
   }

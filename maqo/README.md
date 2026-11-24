@@ -13,6 +13,8 @@ Cloudflare Worker `maqo-download`: the public download page and update manifest 
   cached at the edge by asset id, so GitHub sees one download per new version. Unknown key: `404 {"error":"not_published"}`.
 - `GET|HEAD /download/{android|macos|windows}/{version}` — the same for one exact version (`X.Y.Z`), file name
   `Maqo-X.Y.Z.<ext>`. Unknown key, malformed version or a version without that asset: `404 {"error":"not_published"}`.
+- `GET|HEAD /get/{android|ios|desktop}` — invite e-mail links: `302` to `https://maqo.xepc.io/#download` (the page
+  shows every platform's current status). Unknown target: `404 {"error":"not_found"}`.
 - Everything else is the static page in `public/` (served through the `[assets]` binding).
 
 The release repo is read with a fine-grained token; the token, the repo name and GitHub URLs never appear in

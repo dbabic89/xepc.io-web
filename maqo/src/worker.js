@@ -3,6 +3,7 @@
 //   GET /releases.json                -> { releases: [ { platform, version, publishedAt, notes, assets } ] }
 //   GET|HEAD /download/<key>          -> streams the current binary of that platform
 //   GET|HEAD /download/<key>/<version> -> streams that exact version's binary
+//   GET|HEAD /get/<android|ios|desktop> -> 302 to the download section of the page (invite e-mail links)
 // Everything else is served from the static assets binding (the download page).
 // The GitHub token, the repository name and GitHub URLs never appear in a response or a log line.
 
@@ -33,6 +34,9 @@ const RELEASES_PAGE_SIZE = 100
 const RELEASES_MAX_PAGES = 10
 // Order of releases that share a version in /releases.json.
 const PLATFORM_ORDER = ['desktop', 'android']
+// Invite e-mails link /get/<target>; the page's download section offers every platform with its current status.
+const GET_TARGETS = new Set(['android', 'ios', 'desktop'])
+const GET_DESTINATION = '/#download'
 // Bumped whenever the shape of the cached state changes, so an old cached shape is never read.
 const STATE_CACHE_PATH = '/_cache/release-state-v2'
 
@@ -49,6 +53,10 @@ export default {
         if (!isReadMethod(request)) return methodNotAllowed()
         return await handleReleases(request, env, ctx)
       }
+      if (path.startsWith('/get/')) {
+        if (!isReadMethod(request)) return methodNotAllowed()
+        return handleGet(path.slice('/get/'.length))
+      }
       if (path === '/download' || path.startsWith('/download/')) {
         if (!isReadMethod(request)) return methodNotAllowed()
         return await handleDownload(request, env, ctx, path.slice('/download/'.length))
@@ -60,6 +68,14 @@ export default {
     if (env.ASSETS) return env.ASSETS.fetch(request)
     return json({ error: 'not_found' }, 404)
   },
+}
+
+function handleGet(target) {
+  if (!GET_TARGETS.has(target.replace(/\/$/, ''))) return json({ error: 'not_found' }, 404)
+  return new Response(null, {
+    status: 302,
+    headers: { Location: `${PUBLIC_ORIGIN}${GET_DESTINATION}`, 'Cache-Control': 'public, max-age=300' },
+  })
 }
 
 function isReadMethod(request) {

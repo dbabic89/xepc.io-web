@@ -77,6 +77,26 @@ beforeEach(() => {
   installStubs()
 })
 
+describe('/get invite links', () => {
+  for (const target of ['android', 'ios', 'desktop']) {
+    it(`redirects /get/${target} to the download section`, async () => {
+      const response = await call(`/get/${target}`)
+      assert.equal(response.status, 302)
+      assert.equal(response.headers.get('Location'), 'https://maqo.xepc.io/#download')
+    })
+  }
+
+  it('answers 404 for an unknown target', async () => {
+    const response = await call('/get/windows-phone')
+    assert.equal(response.status, 404)
+  })
+
+  it('refuses a writing method', async () => {
+    const response = await call('/get/android', { method: 'POST' })
+    assert.equal(response.status, 405)
+  })
+})
+
 describe('latest.json', () => {
   it('lists the newest non-draft release per platform prefix', async () => {
     const response = await call('/latest.json')

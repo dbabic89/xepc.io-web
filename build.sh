@@ -11,7 +11,7 @@ cp -r assets dist/
 # Discovered instead of listed, so a new page never gets left out of dist/.
 for d in */; do
   case "$d" in
-    dist/|assets/|maqo/|.git/) continue ;;
+    dist/|assets/|maqo/|kanchie/|.git/) continue ;;
   esac
   [ -f "$d/index.html" ] || continue
   mkdir -p "dist/$d"

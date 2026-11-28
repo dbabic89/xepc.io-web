@@ -2,23 +2,14 @@
    FastFood/memory/audits/2026-11-27/kanchie-web.html (A1 tab). */
 @font-face{font-family:Figtree;font-style:normal;font-display:swap;font-weight:300 900;src:url(figtree.ttf) format("truetype")}
 
-/* Light theme (mockup body.L) */
+/* Dark only (owner decision): the page ignores the system theme. Values from the mockup's body.D. */
 :root{
   --acc:#ED2939;--accsoft:rgba(237,41,57,.15);--onacc:#fff;--y:#ED2939;--yink:#fff;
-  --bg:#FAF6EE;--card:#FFFFFF;--line:#EAE3D6;--soft:#F1EADD;--plate:#FFFFFF;--ink:#17140F;--mu:#7D7568;
-  --accink:#D61F2F;--ok:#168A55;--oksoft:#DDF3EA;--wa:#B86B00;--wasoft:#FBEBD0;--cr:#C8202B;--crsoft:#FBE0E0;
-  /* Comparison block stays dark in both themes (mockup note: "tamna usporedba ostaje ista"). */
+  --bg:#14110D;--card:#1E1A15;--line:#2F2920;--soft:#25201A;--plate:#362F25;--ink:#F5F3EE;--mu:#9B978F;
+  --accink:#FF5A66;--ok:#3DD68C;--oksoft:rgba(61,214,140,.15);--wa:#F5B53F;--wasoft:rgba(245,181,63,.16);
+  --cr:#FF5C5C;--crsoft:rgba(255,92,92,.16);
   --cmpbg:#17140F;--cmpink:#F5F3EE;--cmpcol:#25201A;--cmpline:#3a3226;
-  color-scheme:light;
-}
-/* Dark theme (mockup body.D) */
-@media (prefers-color-scheme:dark){
-  :root{
-    --bg:#14110D;--card:#1E1A15;--line:#2F2920;--soft:#25201A;--plate:#362F25;--ink:#F5F3EE;--mu:#9B978F;
-    --accink:#FF5A66;--ok:#3DD68C;--oksoft:rgba(61,214,140,.15);--wa:#F5B53F;--wasoft:rgba(245,181,63,.16);
-    --cr:#FF5C5C;--crsoft:rgba(255,92,92,.16);
-    color-scheme:dark;
-  }
+  color-scheme:dark;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}

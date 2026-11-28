@@ -1,5 +1,5 @@
 #!/bin/sh
-# Assembles kanchie.xepc.io into kanchie/dist/ (deployed by kanchie/wrangler.toml).
+# Assembles getkanchie.xepc.io into kanchie/dist/ (deployed by kanchie/wrangler.toml).
 # Every file in assets/ gets a content hash in its file name: /assets/* is cached
 # immutable for a year, so a changed file needs a new URL. Never a query string
 # (see the root build.sh for why).

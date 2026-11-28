@@ -1,4 +1,4 @@
-/* Kanchie promo landing (kanchie.xepc.io). Mirrors the approved A1 "Bold food" mockup:
+/* Kanchie promo landing (getkanchie.xepc.io). Mirrors the approved A1 "Bold food" mockup:
    FastFood/memory/audits/2026-11-27/kanchie-web.html (A1 tab). */
 @font-face{font-family:Figtree;font-style:normal;font-display:swap;font-weight:300 900;src:url(figtree.ttf) format("truetype")}
 
@@ -62,6 +62,9 @@ h2{font-size:40px;line-height:1.05;letter-spacing:.2px;margin-bottom:14px}
 .hd nav a:hover,.hd .login:hover{opacity:.75}
 .hd .sp{flex:1}
 .hd .login{font-weight:800;font-size:14px}
+/* Not live yet: the Kanchie app is not released. Drop .soon when it is. */
+.soon{opacity:.55;cursor:default;pointer-events:none}
+.soon em{font-style:normal;font-size:.72em;letter-spacing:.4px;text-transform:uppercase;margin-left:8px;padding:2px 7px;border-radius:99px;border:1px solid currentColor}
 .menu{display:none;background:none;border:0;font-size:22px;font-weight:900;cursor:pointer;width:40px;height:40px;border-radius:12px}
 .hd .mnav{display:none}
 

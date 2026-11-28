@@ -2,7 +2,7 @@ name = "kanchie-web"
 compatibility_date = "2026-07-01"
 
 # Custom domain: attached to this Worker on the first deploy.
-routes = [{ pattern = "kanchie.xepc.io", custom_domain = true }]
+routes = [{ pattern = "getkanchie.xepc.io", custom_domain = true }]
 
 # Static assets only. build.sh assembles dist/ from site/ (hashed asset names).
 [assets]

@@ -116,9 +116,8 @@ h2{font-size:40px;line-height:1.05;letter-spacing:.2px;margin-bottom:14px}
 .cmp .col{border-radius:22px;padding:28px;background:var(--cmpcol);border:1.5px solid var(--cmpline)}
 .cmp .col.us{background:var(--y);color:var(--yink);border-color:var(--y)}
 .cmp .col h3{font-size:14px;letter-spacing:.6px;margin-bottom:14px;opacity:.85}
-.cmp .big{font-size:64px;font-weight:900;line-height:1;margin-bottom:10px}
+.cmp .big{font-size:48px;font-weight:900;line-height:1.05;margin-bottom:18px;text-transform:uppercase;letter-spacing:-.5px}
 .cmp .row2{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(128,120,104,.35);font-size:15px;gap:12px}
-.cmp .sm{font-size:12px;opacity:.65;margin-top:14px;line-height:1.45}
 
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;list-style:none}
@@ -199,7 +198,7 @@ details p{margin-top:10px;font-size:14px;line-height:1.55;color:var(--mu)}
   .hero .btns{margin:20px 0 26px}
   .hero .btns .cta{width:100%}
   #mogucnosti{padding-top:90px}
-  .cmp .big{font-size:48px}
+  .cmp .big{font-size:34px}
   .band h2{font-size:30px}
   .contact{gap:24px}
   .pg-foot{flex-direction:column;padding:20px 16px}
@@ -219,6 +218,5 @@ details p{margin-top:10px;font-size:14px;line-height:1.55;color:var(--mu)}
 .ph .r .em{background:var(--acc);color:var(--onacc)}
 .ph .r .em .i{font-size:26px;stroke-width:2.2}
 .ph .nav div .i{display:block;font-size:18px;margin:0 auto 3px}
-.cmp .cap{font-size:13px;opacity:.75;margin:0 0 14px}
 .cmp .row2 b{text-align:right}
 .ph .r img.em{display:block;object-fit:cover;background:var(--soft)}

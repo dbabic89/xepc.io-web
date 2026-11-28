@@ -64,50 +64,44 @@
     for (var i = 0; i < links.length; i++) {
       links[i].removeAttribute('href');
       links[i].setAttribute('aria-disabled', 'true');
-      links[i].classList.add('soon');
       links[i].textContent = label;
     }
-    // No real file yet: no size to show, and no publish date in the panel.
-    var smalls = document.querySelectorAll('.pg-it[data-card]:not([data-static]) small');
-    for (var j = 0; j < smalls.length; j++) smalls[j].textContent = smalls[j].textContent.split(' ')[0];
-    var hide = document.querySelectorAll('.pg-get .sz, .pg-sha');
+    // No real file yet: no size to show, no checksums and no publish date.
+    var hide = document.querySelectorAll('.dl .sz, .dl .sha');
     for (var k = 0; k < hide.length; k++) hide[k].hidden = true;
-    // Phone tiles say Coming soon with a chip; only the desktop rows keep a disabled button.
-    var chips = document.querySelectorAll('.pg-get .chip[hidden]');
+    // Phone rows say Coming soon with a chip; only the desktop rows keep a disabled button.
+    var chips = document.querySelectorAll('.dl .chip[hidden]');
     for (var m = 0; m < chips.length; m++) {
       chips[m].hidden = false;
       var btn = chips[m].parentNode.querySelector('.btn');
       if (btn) btn.hidden = true;
     }
-    var date = document.querySelector('.pg-dl .lab [data-head="date"]');
+    var date = document.querySelector('.dl .vline [data-head="date"]');
     if (date && date.parentNode) date.parentNode.hidden = true;
   }
 
-  // One card of a not yet published platform: disabled Coming soon button, no size, no checksum entry.
+  // One row of a not yet published platform: disabled Coming soon button, no size, no checksum entry.
   function markCardSoon(card) {
     var label = SOON[document.documentElement.lang] || SOON.hr;
     var links = card.querySelectorAll('a[href^="/download/"]');
     for (var i = 0; i < links.length; i++) {
       links[i].removeAttribute('href');
       links[i].setAttribute('aria-disabled', 'true');
-      links[i].classList.add('soon');
       links[i].textContent = label;
     }
-    var smalls = card.matches('.pg-it') ? card.querySelectorAll('small') : [];
-    for (var j = 0; j < smalls.length; j++) smalls[j].textContent = smalls[j].textContent.split(' ')[0];
     var sizes = card.querySelectorAll('.sz');
     for (var k = 0; k < sizes.length; k++) sizes[k].hidden = true;
     if (card.parentNode && card.parentNode.tagName === 'DL') card.hidden = true;
   }
 
-  // The visitor's own platform is highlighted; the hero panel then shows only that card (CSS :has).
+  // The visitor's own platform is highlighted; its rows get the "your device" pill.
   function markOwn(os, on) {
     var mine = os ? document.querySelectorAll('[data-card="' + os + '"]') : [];
     for (var i = 0; i < mine.length; i++) mine[i].classList.toggle('rec', on);
   }
 
   var os = detectOs();
-  // Marked before the manifest arrives, so the hero panel does not collapse from four cards to one after load.
+  // Marked before the manifest arrives, so the pill does not pop in after load.
   markOwn(os, true);
 
   function fill(data) {
@@ -142,13 +136,13 @@
     var head = present.indexOf(os) >= 0 ? os : present.slice().sort(function (a, b) {
       return cmp(data[b].version, data[a].version);
     })[0];
-    // No build for the visitor's platform: drop the highlight so the panel lists every platform again.
+    // No build for the visitor's platform: drop the highlight.
     if (present.indexOf(os) < 0 && os !== 'ios') markOwn(os, false);
     setHead('ver', data[head].version);
     var headDate = data[head].publishedAt && fmtDate(data[head].publishedAt);
     if (headDate) setHead('date', headDate);
 
-    var sub = document.querySelector('.pg-dl .sub');
+    var sub = document.querySelector('.dl .sub');
     if (sub) {
       var names = ORDER.filter(function (k) { return k === 'ios' || present.indexOf(k) >= 0; }).map(function (k) { return NAMES[k]; });
       var list = names.length > 1

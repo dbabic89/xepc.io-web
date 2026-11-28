@@ -1,30 +1,25 @@
-// Hero plate: scattered icon pattern, laptop and phone mock and the platform pill. Screen text follows <html lang>.
+// Hero plate: scattered icon pattern around the hero illustration, plus the platform pill. Pill titles follow <html lang>.
 (function () {
   'use strict';
-  // Prefix every class in a markup string with hx- so the screens cannot collide with the page's own classes.
-  function px(h) { return h.replace(/class="([^"]*)"/g, function (m, c) { return 'class="' + c.split(' ').map(function (x) { return 'hx-' + x; }).join(' ') + '"'; }); }
   var TXT = {
-    hr: { nav: ['Pregled', 'Zalihe', 'Radni nalozi', 'Ponude', 'Računi', 'Kupci', 'Plaće'], title: 'Pregled poslovanja', phone: 'Pregled', fresh: 'novo', rows: ['Vijak M8', 'Ploča 18 mm', 'Ljepilo'], st: ['Dovoljno', 'Pri kraju', 'Nema'], plats: ['macOS i iOS', 'Windows', 'Linux', 'Android'] },
-    en: { nav: ['Overview', 'Stock', 'Work orders', 'Quotes', 'Invoices', 'Customers', 'Payroll'], title: 'Business overview', phone: 'Overview', fresh: 'new', rows: ['Screw M8', 'Board 18 mm', 'Glue'], st: ['In stock', 'Running low', 'Out'], plats: ['macOS and iOS', 'Windows', 'Linux', 'Android'] },
-    de: { nav: ['Übersicht', 'Bestände', 'Arbeitsaufträge', 'Angebote', 'Rechnungen', 'Kunden', 'Lohn'], title: 'Geschäftsübersicht', phone: 'Übersicht', fresh: 'neu', rows: ['Schraube M8', 'Platte 18 mm', 'Kleber'], st: ['Vorrätig', 'Knapp', 'Leer'], plats: ['macOS und iOS', 'Windows', 'Linux', 'Android'] }
+    hr: ['macOS i iOS', 'Windows', 'Linux', 'Android'],
+    en: ['macOS and iOS', 'Windows', 'Linux', 'Android'],
+    de: ['macOS und iOS', 'Windows', 'Linux', 'Android']
   };
   var T = TXT[document.documentElement.lang] || TXT.hr;
   var HX = {
     m: {
       icons: ['bars', 'note', 'pie', 'pencil', 'line', 'calc', 'box', 'receipt', 'cal'],
-      plats: [['p-apple', T.plats[0]], ['p-win', T.plats[1]], ['p-linux', T.plats[2]], ['p-android', T.plats[3]]],
-      lap: '<div class="ms"><div class="sd">' + T.nav.map(function (n, i) { return '<em' + (i ? '' : ' class="on"') + '>' + n + '</em>'; }).join('') + '</div><div class="mn"><div class="h">' + T.title + '</div><div class="kp"><div><b>48,2 k</b><small>+4 %</small></div><div><b>17</b><small>+2</small></div><div><b>5</b><small>' + T.fresh + '</small></div><div><b>92 %</b><small>+1 %</small></div></div><div class="br"><i style="height:40%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:80%"></i><i class="on" style="height:95%"></i></div><div><div class="tr"><span>' + T.rows[0] + '</span><b>2 400</b><span class="st ok">' + T.st[0] + '</span></div><div class="tr"><span>' + T.rows[1] + '</span><b>36</b><span class="st lo">' + T.st[1] + '</span></div><div class="tr"><span>' + T.rows[2] + '</span><b>9</b><span class="st no">' + T.st[2] + '</span></div></div></div></div>',
-      ph: '<div class="mp"><b style="font-size:8.5px">' + T.phone + '</b><div class="kp"><div><b>48,2 k</b><small>+4 %</small></div><div><b>92 %</b><small>+1 %</small></div></div><div class="br"><i style="height:45%"></i><i style="height:60%"></i><i style="height:52%"></i><i class="on" style="height:90%"></i></div><div class="tr"><span>' + T.rows[0] + '</span><span></span><span class="st ok">' + T.st[0] + '</span></div><div class="tr"><span>' + T.rows[1] + '</span><span></span><span class="st lo">' + T.st[1] + '</span></div><div class="tr"><span>' + T.rows[2] + '</span><span></span><span class="st no">' + T.st[2] + '</span></div></div>'
+      plats: [['p-apple', T[0]], ['p-win', T[1]], ['p-linux', T[2]], ['p-android', T[3]]]
     }
   };
   function icon(id, x, y, s, r, extra) {
     return '<span class="hx-ic' + (extra || '') + '" style="--x:' + x + '%;--y:' + y + '%;--s:' + s + 'px;--r:' + r + 'deg"><svg><use href="#hx-' + id + '"/></svg></span>';
   }
   function build(tile) {
-    var p = HX[tile.dataset.p], dev = tile.querySelector('.hx-dev'), pat = '';
-    if (!p || !dev) return;
+    var p = HX[tile.dataset.p], pat = '';
+    if (!p) return;
     // The pattern itself is built by fit() once the plate has a size.
-    dev.innerHTML = '<div class="hx-lap"><div class="hx-scr"><div>' + px(p.lap) + '</div></div><div class="hx-base"></div></div><div class="hx-ph"><span class="hx-nt"></span>' + px(p.ph) + '</div>';
     tile.insertAdjacentHTML('afterbegin', '<div class="hx-deco"><div class="hx-pat">' + pat + '</div></div>');
     tile.insertAdjacentHTML('beforeend', '<div class="hx-plats hx-tr-pill">' + p.plats.map(function (q) { return '<span title="' + q[1] + '"><svg><use href="#hx-' + q[0] + '"/></svg></span>'; }).join('') + '</div>');
   }
@@ -57,7 +52,7 @@
         }
         patEl.innerHTML = pat; patEl.dataset.k = key;
       }
-      var blocks = (txt ? textRects(txt) : []).concat([t.querySelector('.hx-lap'), t.querySelector('.hx-ph'), t.querySelector('.hx-plats')]
+      var blocks = (txt ? textRects(txt) : []).concat([t.querySelector('.hero-sh'), t.querySelector('.hx-plats')]
         .filter(Boolean).map(function (el) { return el.getBoundingClientRect(); }));
       // Narrow (phone) plates: tighter clearance so icons can sit in the gaps between text lines.
       var narrow = tr.width < 560, m = narrow ? 3 : 8;

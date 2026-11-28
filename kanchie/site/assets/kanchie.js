@@ -1,4 +1,4 @@
-// Phone menu toggle and the inert contact form (no backend yet).
+// Phone menu toggle.
 (() => {
   const btn = document.querySelector('.menu');
   const nav = document.getElementById('mnav');
@@ -9,6 +9,4 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
     document.addEventListener('click', (e) => { if (!e.target.closest('.hd')) set(false); });
   }
-  const form = document.getElementById('contact-form');
-  if (form) form.addEventListener('submit', (e) => e.preventDefault());
 })();

@@ -134,11 +134,11 @@ h2{font-size:40px;line-height:1.05;letter-spacing:.2px;margin-bottom:14px}
 
 /* pricing */
 #cijene{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;align-items:stretch}
-.plan{background:var(--bg);border:1.5px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px;align-items:stretch}
+.plan{background:var(--bg);border:1.5px solid var(--line);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px}
 .plan.hot{border-color:var(--y);border-width:2.5px}
 .plan h3{font-size:16px;letter-spacing:.5px;display:flex;align-items:center;gap:8px;justify-content:space-between}
-.plan .price{font-size:38px;font-weight:900;line-height:1}
+.plan .price{font-size:34px;font-weight:900;line-height:1}
 .plan .price.q{font-size:28px;padding:5px 0}
 .plan .price small{font-size:14px;font-weight:800;color:var(--mu)}
 .plan ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin:8px 0 16px;font-size:14px;flex:1}
@@ -161,25 +161,19 @@ details p{margin-top:10px;font-size:14px;line-height:1.55;color:var(--mu)}
 
 /* contact */
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
-.form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.field{width:100%;height:50px;border-radius:13px;background:var(--card);border:1.5px solid var(--line);padding:0 14px;font-size:14px;font-weight:600;color:var(--ink)}
-.field::placeholder{color:var(--mu);opacity:1}
-.field:focus{outline:none;border-color:var(--accink)}
-.field.full{grid-column:1/-1}
-textarea.field{height:110px;padding-top:14px;resize:vertical}
-.form .cta{grid-column:1/-1;margin-top:4px}
-.fine{font-size:12px;color:var(--mu);grid-column:1/-1;line-height:1.45}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* footer */
-footer{padding:36px 0;border-top:1px solid var(--line);font-size:13px;color:var(--mu)}
-footer .wrap{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
-footer .sp{flex:1}
-footer a:hover{color:var(--ink)}
-footer b{color:var(--ink)}
+.mails{list-style:none;display:flex;flex-direction:column;gap:14px;margin:0;padding:0;font-size:18px;font-weight:700}
+.mails li{display:flex;align-items:center;gap:12px}
+.mails .i{font-size:24px;color:var(--accink);stroke-width:1.8}
+.mails a:hover{color:var(--accink)}
+.pg-foot{display:flex;justify-content:space-between;gap:12px;max-width:1180px;margin:0 auto;padding:26px 40px;border-top:1px solid var(--line);font-size:13px;color:var(--mu)}
+.pg-foot span{white-space:nowrap}.pg-foot a{color:var(--accink);font-weight:600}
 
 /* In-between widths: the mockup only defines desktop (1280) and phone; scale the hero down so it never overflows. */
 @media (max-width:1100px){
+  .plans{grid-template-columns:repeat(2,1fr)}
   .hero h1{font-size:60px}
   .hd nav{margin-left:10px;gap:18px}
 }
@@ -205,7 +199,7 @@ footer b{color:var(--ink)}
   .mnav a:hover{background:var(--soft)}
   section{padding:48px 0}
   h2{font-size:28px}.lead{font-size:15px}
-  .g3,.steps,.plans,.contact,.cmp .two,.form{grid-template-columns:1fr}
+  .g3,.steps,.plans,.contact,.cmp .two{grid-template-columns:1fr}
   .g3{gap:10px;margin-top:22px}
   .hero h1{font-size:42px}
   .hero .btns{margin:20px 0 26px}
@@ -214,7 +208,7 @@ footer b{color:var(--ink)}
   .cmp .big{font-size:48px}
   .band h2{font-size:30px}
   .contact{gap:24px}
-  footer .wrap{flex-direction:column;align-items:flex-start;gap:10px}
+  .pg-foot{flex-direction:column;padding:20px 16px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cta{transition:none}.cta:hover{transform:none}}
 

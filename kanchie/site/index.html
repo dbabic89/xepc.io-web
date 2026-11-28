@@ -31,6 +31,7 @@
   <symbol id="i-burger" viewBox="0 0 24 24"><path d="M4 11a8 6 0 0 1 16 0z"/><path d="M3.5 14.5h17M5 17.5h14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/></symbol>
   <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20.5a2 2 0 0 0 4 0"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.4-4.4"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 7 8.5-7"/></symbol>
   <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></symbol>
   <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6M9 16h3"/></symbol>
   <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></symbol>
@@ -59,7 +60,7 @@
       <div class="stage" aria-hidden="true">
         <div class="ph">
           <div class="body">
-            <div class="loc"><div><b>Pero Zdero</b><small>Ferhadija 8 · do 23:00</small></div><div class="av"><svg class="i"><use href="#i-bell"/></svg></div></div>
+            <div class="loc"><div><b>Pizzeria Lastavica</b><small>Obala 8 · do 23:00</small></div><div class="av"><svg class="i"><use href="#i-bell"/></svg></div></div>
             <div class="search"><svg class="i"><use href="#i-search"/></svg>Jelo ili piće</div>
             <div class="chips"><div class="chip on">Sve</div><div class="chip"><svg class="i"><use href="#i-pizza"/></svg>Pizze</div><div class="chip"><svg class="i"><use href="#i-burger"/></svg>Burgeri</div></div>
             <div class="sec">Popularno</div>
@@ -75,9 +76,9 @@
           <div class="body">
             <div class="ttl">Narudžbe</div>
             <div class="sec">U tijeku</div>
-            <div class="r col"><div class="top"><b>Pero Zdero</b><span class="pill wa">u pripremi</span></div><small>2 jela · 14,50 € · danas 19:12</small></div>
+            <div class="r col"><div class="top"><b>Pizzeria Lastavica</b><span class="pill wa">u pripremi</span></div><small>2 jela · 14,50 € · danas 19:12</small></div>
             <div class="sec">Prije</div>
-            <div class="r col"><div class="top"><b>Pero Zdero</b><span class="pill">dostavljeno</span></div><small>3 jela · 21,00 € · jučer</small></div>
+            <div class="r col"><div class="top"><b>Burger kutak Mrav</b><span class="pill">dostavljeno</span></div><small>3 jela · 21,00 € · jučer</small></div>
           </div>
           <div class="nav"><div><svg class="i"><use href="#i-home"/></svg>Početna</div><div><svg class="i"><use href="#i-search"/></svg>Traži</div><div class="on"><svg class="i"><use href="#i-receipt"/></svg>Narudžbe</div><div><svg class="i"><use href="#i-user"/></svg>Profil</div></div>
         </div>
@@ -132,12 +133,17 @@
   <div class="wrap">
     <div class="eyebrow">Cijene</div>
     <h2>Paketi</h2>
+    <p class="lead">Svaki paket uključuje sve iz manjeg. Kreni od onoga što ti treba i nadogradi kad poželiš.</p>
     <div class="plans">
-      <div class="plan"><h3>Osnovni <span class="ex">primjer</span></h3><div class="price">29 € <small>/ mjesec</small></div><ul><li>Aplikacija za goste</li><li>Ekran za kuhinju</li><li>Admin portal</li><li>Podrška e-poštom</li></ul><a class="cta gh" href="#kontakt">Isprobaj besplatno</a></div>
-      <div class="plan hot"><h3>Premium <span class="ex">primjer</span></h3><div class="price">59 € <small>/ mjesec</small></div><ul><li>Sve iz paketa Osnovni</li><li>Konobari i dostavljači</li><li>Klub vjernosti</li><li>Vlastiti naziv i boje</li></ul><a class="cta yel" href="#kontakt">Isprobaj besplatno</a></div>
-      <div class="plan"><h3>Vlastita aplikacija <span class="ex">primjer</span></h3><div class="price q">Na upit</div><ul><li>Aplikacija u tvom imenu u trgovinama</li><li>Sve iz paketa Premium</li><li>Posebne prilagodbe</li><li>Osobni kontakt</li></ul><a class="cta gh" href="#kontakt">Zakaži demo</a></div>
+      <div class="plan"><h3>Sastojci</h3><div class="price">19 € <small>/ mjesec</small></div><ul><li>Admin portal</li><li>Stanje sastojaka i zaliha</li></ul><a class="cta gh" href="#kontakt">Isprobaj besplatno</a></div>
+      <div class="plan"><h3>Kuhinja</h3><div class="price">29 € <small>/ mjesec</small></div><ul><li>Sve iz paketa Sastojci</li><li>Ekran za kuhinju</li></ul><a class="cta gh" href="#kontakt">Isprobaj besplatno</a></div>
+      <div class="plan"><h3>Tablet</h3><div class="price">49 € <small>/ mjesec</small></div><ul><li>Sve iz paketa Kuhinja</li><li>Tablet za naručivanje u lokalu</li></ul><a class="cta gh" href="#kontakt">Isprobaj besplatno</a></div>
+      <div class="plan hot"><h3>Kanchie platforma</h3><div class="price">69 € <small>/ mjesec</small></div><ul><li>Sve iz paketa Tablet</li><li>Gosti naručuju u aplikaciji Kanchie</li><li>Klub vjernosti</li></ul><a class="cta yel" href="#kontakt">Isprobaj besplatno</a></div>
+      <div class="plan"><h3>Dostava</h3><div class="price">99 € <small>/ mjesec</small></div><ul><li>Sve iz paketa Kanchie platforma</li><li>Aplikacija za dostavljače</li></ul><a class="cta gh" href="#kontakt">Isprobaj besplatno</a></div>
+      <div class="plan"><h3>Restoran</h3><div class="price">129 € <small>/ mjesec</small></div><ul><li>Sve iz paketa Dostava</li><li>Aplikacija za konobare</li><li>Stolovi</li></ul><a class="cta gh" href="#kontakt">Isprobaj besplatno</a></div>
+      <div class="plan"><h3>Vlastita aplikacija</h3><div class="price q">Na upit</div><ul><li>Sve iz paketa Restoran</li><li>Aplikacija u tvom imenu u trgovinama</li></ul><a class="cta gh" href="#kontakt">Zakaži demo</a></div>
     </div>
-    <p class="note">Sve cijene na ovoj stranici su primjer. Konačni cjenik još nije određen.</p>
+    <p class="note">Uz godišnje plaćanje dva mjeseca su besplatna. Cijene su okvirne, konačni cjenik još nije određen.</p>
   </div>
 </section>
 
@@ -161,30 +167,13 @@
 <section id="kontakt">
   <div class="wrap">
     <div class="contact">
-      <div><div class="eyebrow">Kontakt</div><h2>Javi nam se</h2><p class="lead">Ostavi podatke i javit ćemo ti se s prijedlogom termina za demo.</p></div>
-      <!-- Fields only: there is no backend yet, so the form does not submit anywhere. -->
-      <form class="form" id="contact-form" novalidate>
-        <label class="vh" for="f-restaurant">Naziv restorana</label><input class="field" id="f-restaurant" name="restaurant" placeholder="Naziv restorana" autocomplete="organization">
-        <label class="vh" for="f-city">Grad</label><input class="field" id="f-city" name="city" placeholder="Grad" autocomplete="address-level2">
-        <label class="vh" for="f-name">Ime i prezime</label><input class="field" id="f-name" name="name" placeholder="Ime i prezime" autocomplete="name">
-        <label class="vh" for="f-phone">Telefon</label><input class="field" id="f-phone" name="phone" type="tel" placeholder="Telefon" autocomplete="tel">
-        <label class="vh" for="f-email">E-pošta</label><input class="field full" id="f-email" name="email" type="email" placeholder="E-pošta" autocomplete="email">
-        <label class="vh" for="f-message">Poruka</label><textarea class="field full" id="f-message" name="message" placeholder="Poruka"></textarea>
-        <button class="cta pri" type="submit">Pošalji upit</button>
-        <p class="fine">Podatke koristimo samo za odgovor na tvoj upit.</p>
-      </form>
+      <div><div class="eyebrow">Kontakt</div><h2>Javi nam se</h2><p class="lead">Na upite odgovaramo u najkraćem mogućem roku. Za demo napiši naziv restorana i grad.</p></div>
+      <ul class="mails"><li><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:contact@xepc.io">contact@xepc.io</a></li><li><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:support@xepc.io">support@xepc.io</a></li></ul>
     </div>
   </div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span class="logo"><img src="/assets/kanchie-mark.svg" width="26" height="26" alt=""><span class="wm">Kan<span>chie</span></span></span>
-    <span class="sp"></span>
-    <a href="#mogucnosti">Mogućnosti</a><a href="#cijene">Cijene</a><a href="#kontakt">Kontakt</a><a href="https://kanchie.xepc.io/app">Prijava</a>
-    <span>© 2026 <b>Kanchie</b></span>
-  </div>
-</footer>
+<footer class="pg-foot"><span>Kanchie je proizvod studija <a href="https://xepc.io">xepc.io</a></span><span>© 2026 xepc.io</span></footer>
 </body>
 </html>

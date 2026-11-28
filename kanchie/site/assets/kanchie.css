@@ -52,6 +52,9 @@ h2{font-size:40px;line-height:1.05;letter-spacing:.2px;margin-bottom:14px}
 .hd nav{display:flex;gap:26px;margin-left:30px;font-weight:800;font-size:14px}
 .hd nav a:hover,.hd .login:hover{opacity:.75}
 .hd .sp{flex:1}
+/* Studio link, same pattern as maqo.xepc.io's header. */
+.hd .xl{padding-right:20px;margin-right:-8px;border-right:1px solid rgba(255,255,255,.35);font-weight:800;font-size:16px;letter-spacing:-.01em;white-space:nowrap}
+.hd .xl:hover{opacity:.75}
 .hd .login{font-weight:800;font-size:14px}
 /* Not live yet: the Kanchie app is not released. Drop .soon when it is. */
 .soon{opacity:.55;cursor:default;pointer-events:none}
@@ -184,6 +187,8 @@ details p{margin-top:10px;font-size:14px;line-height:1.55;color:var(--mu)}
   .wrap{padding:0 16px}
   .hd{height:60px;gap:12px}
   .hd .login{display:none}
+  /* No room beside logo, CTA and menu at phone width: the studio link moves into the menu. */
+  .hd>.xl{display:none}
   .menu{display:grid;place-items:center;color:inherit}
   .logo.top{font-size:16px}
   .hd .mnav{position:absolute;top:56px;right:0;left:0;z-index:20;flex-direction:column;background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-radius:16px;padding:8px;box-shadow:0 18px 40px rgba(0,0,0,.25)}

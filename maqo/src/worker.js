@@ -1,7 +1,7 @@
 // maqo-download: public update manifest + download proxy for a private GitHub releases repo.
-//   GET /latest.json                  -> { android|macos|windows: { version, url, size, sha256, publishedAt } }
+//   GET /latest.json                  -> { android|macos|windows|linux: { version, url, size, sha256, publishedAt } }
 //   GET /releases.json                -> { releases: [ { platform, version, publishedAt, notes, assets } ] }
-//   GET|HEAD /download/<key>          -> streams the current binary of that platform
+//   GET|HEAD /download/<key>          -> streams the current binary of that platform (key: android|macos|windows|linux)
 //   GET|HEAD /download/<key>/<version> -> streams that exact version's binary
 //   GET|HEAD /get/<android|ios|desktop> -> 302 to the download section of the page (invite e-mail links)
 // Everything else is served from the static assets binding (the download page).
@@ -18,9 +18,10 @@ const PLATFORMS = {
   android: { prefix: 'android-v', ext: 'apk' },
   macos: { prefix: 'desktop-v', ext: 'dmg' },
   windows: { prefix: 'desktop-v', ext: 'msi' },
+  linux: { prefix: 'desktop-v', ext: 'deb' },
 }
 
-// Tag families: PLATFORMS grouped by tag prefix (macos + windows share `desktop-v`).
+// Tag families: PLATFORMS grouped by tag prefix (macos + windows + linux share `desktop-v`).
 const PLATFORM_FAMILIES = [
   { prefix: 'android-v', platform: 'android' },
   { prefix: 'desktop-v', platform: 'desktop' },
@@ -111,7 +112,7 @@ function githubHeaders(env, accept) {
 // Every published release (no draft, no prerelease, tag `<prefix>X.Y.Z`, at least one matching uploaded asset):
 //   { releases: [ { platform, version, publishedAt, notes, assets: [ { key, assetId, size, sha256 } ] } ] }
 // sorted newest version first, then by PLATFORM_ORDER. `platform` is the tag family (desktop|android), `key` the
-// download key (macos|windows|android). The asset ids stay in the state only; /releases.json does not expose them.
+// download key (macos|windows|linux|android). The asset ids stay in the state only; /releases.json does not expose them.
 export function buildState(releases) {
   const entries = []
   for (const release of Array.isArray(releases) ? releases : []) {

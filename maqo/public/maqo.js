@@ -1,9 +1,11 @@
 (function () {
   'use strict';
-  var KEYS = ['android', 'macos', 'windows'];
-  var NAMES = { android: 'Android', ios: 'iOS', macos: 'macOS', windows: 'Windows' };
+  var KEYS = ['android', 'macos', 'windows', 'linux'];
+  var NAMES = { android: 'Android', ios: 'iOS', macos: 'macOS', windows: 'Windows', linux: 'Linux' };
   // iOS ships through the App Store only: its cards are static (data-static) and always say Coming soon.
-  var ORDER = ['android', 'ios', 'macos', 'windows'];
+  var ORDER = ['android', 'ios', 'macos', 'windows', 'linux'];
+  // Platforms whose build may trail the others: while the manifest lacks them their cards say Coming soon instead of vanishing.
+  var LATE = ['linux'];
 
   function detectOs() {
     var uad = navigator.userAgentData;
@@ -14,6 +16,8 @@
     if (/iphone|ipad|ipod/i.test(ua) || (/mac/i.test(p) && navigator.maxTouchPoints > 1)) return 'ios';
     if (/mac/i.test(p)) return 'macos';
     if (/win/i.test(p)) return 'windows';
+    // Android returned above and ChromeOS reports 'Chrome OS' / CrOS (no 'linux'), so this is a Linux desktop.
+    if (/linux/i.test(p)) return 'linux';
     return '';
   }
 
@@ -79,6 +83,23 @@
     if (date && date.parentNode) date.parentNode.hidden = true;
   }
 
+  // One card of a not yet published platform: disabled Coming soon button, no size, no checksum entry.
+  function markCardSoon(card) {
+    var label = SOON[document.documentElement.lang] || SOON.hr;
+    var links = card.querySelectorAll('a[href^="/download/"]');
+    for (var i = 0; i < links.length; i++) {
+      links[i].removeAttribute('href');
+      links[i].setAttribute('aria-disabled', 'true');
+      links[i].classList.add('soon');
+      links[i].textContent = label;
+    }
+    var smalls = card.matches('.pg-it') ? card.querySelectorAll('small') : [];
+    for (var j = 0; j < smalls.length; j++) smalls[j].textContent = smalls[j].textContent.split(' ')[0];
+    var sizes = card.querySelectorAll('.sz');
+    for (var k = 0; k < sizes.length; k++) sizes[k].hidden = true;
+    if (card.parentNode && card.parentNode.tagName === 'DL') card.hidden = true;
+  }
+
   // The visitor's own platform is highlighted; the hero panel then shows only that card (CSS :has).
   function markOwn(os, on) {
     var mine = os ? document.querySelectorAll('[data-card="' + os + '"]') : [];
@@ -91,15 +112,18 @@
 
   function fill(data) {
     var soon = !hasRelease(data);
-    if (soon) data = { android: { version: PLACEHOLDER_VERSION }, macos: { version: PLACEHOLDER_VERSION }, windows: { version: PLACEHOLDER_VERSION } };
+    if (soon) data = { android: { version: PLACEHOLDER_VERSION }, macos: { version: PLACEHOLDER_VERSION }, windows: { version: PLACEHOLDER_VERSION }, linux: { version: PLACEHOLDER_VERSION } };
     var present = [];
     KEYS.forEach(function (key) {
       var entry = data && data[key];
       var cards = document.querySelectorAll('[data-card="' + key + '"]');
       var usable = entry && typeof entry.version === 'string' && entry.version;
+      // Some platforms are published while a late one is not yet: that one shows the disabled Coming soon state.
+      var pending = !usable && !soon && LATE.indexOf(key) >= 0;
+      if (pending) entry = { version: PLACEHOLDER_VERSION };
       for (var i = 0; i < cards.length; i++) {
         var c = cards[i];
-        if (!usable) { c.hidden = true; continue; }
+        if (!usable && !pending) { c.hidden = true; continue; }
         c.hidden = false;
         setAll(c, 'ver', entry.version);
         if (typeof entry.size === 'number' && entry.size > 0) setAll(c, 'size', String(Math.round(entry.size / 1048576)));
@@ -108,6 +132,7 @@
         if (typeof entry.sha256 === 'string' && entry.sha256.length >= 8) {
           setAll(c, 'sha', entry.sha256);
         }
+        if (pending) markCardSoon(c);
       }
       if (usable) present.push(key);
     });

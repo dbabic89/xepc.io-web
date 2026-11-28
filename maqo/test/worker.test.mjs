@@ -18,7 +18,7 @@ const RELEASES = [
   release('android-v1.2.0', '2026-10-10T10:00:00Z', [asset(2, 'Maqo-1.2.0.apk')]),
   release('android-v1.3.0', null, [asset(3, 'Maqo-1.3.0.apk')], { draft: true }),
   release('desktop-v2.0.0', '2026-10-05T10:00:00Z', [asset(4, 'Maqo-2.0.0.dmg'), asset(5, 'Maqo-2.0.0.msi')]),
-  release('desktop-v2.1.0', '2026-10-12T10:00:00Z', [asset(6, 'Maqo-2.1.0.dmg'), asset(7, 'Maqo-2.1.0.msi')]),
+  release('desktop-v2.1.0', '2026-10-12T10:00:00Z', [asset(6, 'Maqo-2.1.0.dmg'), asset(7, 'Maqo-2.1.0.msi'), asset(8, 'Maqo-2.1.0.deb')]),
 ]
 
 let calls
@@ -103,10 +103,12 @@ describe('latest.json', () => {
     assert.equal(response.status, 200)
     assert.match(response.headers.get('Cache-Control'), /max-age=600/)
     const manifest = await response.json()
-    assert.deepEqual(Object.keys(manifest).sort(), ['android', 'macos', 'windows'])
+    assert.deepEqual(Object.keys(manifest).sort(), ['android', 'linux', 'macos', 'windows'])
     assert.equal(manifest.android.version, '1.2.0')
     assert.equal(manifest.macos.version, '2.1.0')
     assert.equal(manifest.windows.version, '2.1.0')
+    assert.equal(manifest.linux.version, '2.1.0')
+    assert.equal(manifest.linux.url, 'https://maqo.xepc.io/download/linux')
     assert.equal(manifest.android.url, 'https://maqo.xepc.io/download/android')
     assert.equal(manifest.android.sha256, SHA)
     assert.equal(manifest.android.size, 5)
@@ -117,6 +119,14 @@ describe('latest.json', () => {
     releases = [RELEASES[1]]
     const manifest = await (await call('/latest.json')).json()
     assert.deepEqual(Object.keys(manifest), ['android'])
+  })
+
+  it('leaves out linux when the desktop release has no .deb asset', async () => {
+    releases = [RELEASES[3]]
+    const manifest = await (await call('/latest.json')).json()
+    assert.deepEqual(Object.keys(manifest).sort(), ['macos', 'windows'])
+    const { releases: list } = await (await call('/releases.json')).json()
+    assert.deepEqual(list[0].assets.map((a) => a.key), ['macos', 'windows'])
   })
 
   it('leaves out a platform whose release has no matching asset', async () => {
@@ -185,8 +195,28 @@ describe('download', () => {
     assert.equal(calls.some((c) => c.url.includes('/releases/assets/')), false)
   })
 
+  it('serves the Linux .deb like the other desktop assets (HEAD, then GET)', async () => {
+    const head = await call('/download/linux', { method: 'HEAD' })
+    assert.equal(head.status, 200)
+    assert.equal(head.headers.get('Content-Disposition'), 'attachment; filename="Maqo-2.1.0.deb"')
+    const response = await call('/download/linux')
+    assert.equal(response.status, 200)
+    assert.equal(response.headers.get('Content-Disposition'), 'attachment; filename="Maqo-2.1.0.deb"')
+    assert.ok(calls.some((c) => c.url.endsWith('/releases/assets/8')))
+  })
+
+  it('answers 404 not_published for linux while the desktop release has no .deb', async () => {
+    releases = [RELEASES[3]]
+    for (const path of ['/download/linux', '/download/linux/2.0.0']) {
+      const response = await call(path)
+      assert.equal(response.status, 404, path)
+      assert.deepEqual(await response.json(), { error: 'not_published' })
+    }
+    assert.equal((await call('/download/windows')).status, 200)
+  })
+
   it('answers 404 not_published for an unknown key', async () => {
-    for (const path of ['/download/linux', '/download/', '/download', '/download/toString']) {
+    for (const path of ['/download/freebsd', '/download/', '/download', '/download/toString']) {
       const response = await call(path)
       assert.equal(response.status, 404, path)
       assert.deepEqual(await response.json(), { error: 'not_published' })
@@ -225,6 +255,7 @@ describe('releases.json', () => {
       assets: [
         { key: 'macos', size: 5, sha256: SHA },
         { key: 'windows', size: 5, sha256: SHA },
+        { key: 'linux', size: 5, sha256: SHA },
       ],
     })
     assert.deepEqual(Object.keys(list[1].assets[0]), ['key', 'size', 'sha256'])
@@ -336,6 +367,12 @@ describe('versioned download', () => {
     assert.equal(calls.filter((c) => c.url.endsWith('/releases/assets/1')).length, 1)
   })
 
+  it('serves the .deb of an exact desktop version when that release has one', async () => {
+    const response = await call('/download/linux/2.1.0')
+    assert.equal(response.headers.get('Content-Disposition'), 'attachment; filename="Maqo-2.1.0.deb"')
+    assert.ok(calls.some((c) => c.url.endsWith('/releases/assets/8')))
+  })
+
   it('picks the asset of the requested key within a desktop release', async () => {
     const response = await call('/download/windows/2.0.0')
     assert.equal(response.headers.get('Content-Disposition'), 'attachment; filename="Maqo-2.0.0.msi"')
@@ -350,7 +387,7 @@ describe('versioned download', () => {
   })
 
   it('answers 404 not_published for an unknown version', async () => {
-    for (const path of ['/download/android/9.9.9', '/download/android/1.3.0', '/download/windows/1.0.0']) {
+    for (const path of ['/download/android/9.9.9', '/download/android/1.3.0', '/download/windows/1.0.0', '/download/linux/2.0.0']) {
       const response = await call(path)
       assert.equal(response.status, 404, path)
       assert.deepEqual(await response.json(), { error: 'not_published' })

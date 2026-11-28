@@ -2,16 +2,16 @@
 
 Cloudflare Worker `maqo-download`: the public download page and update manifest for Maqo.
 
-- `GET /latest.json` — newest published version per platform (`android`, `macos`, `windows`), cached 10 min.
+- `GET /latest.json` — newest published version per platform (`android`, `macos`, `windows`, `linux`), cached 10 min.
   A platform with nothing published is absent. Shape per key: `version`, `url`, `size`, `sha256`, `publishedAt`.
 - `GET|HEAD /releases.json` — every published release, newest version first (then `desktop` before `android`), cached 10 min:
   `{"releases":[{"platform","version","publishedAt","notes","assets":[{"key","size","sha256"}]}]}`. `platform` is `desktop`
-  or `android`; a desktop release lists its `macos` and `windows` assets in one entry; `notes` is the GitHub release body
+  or `android`; a desktop release lists its `macos`, `windows` and `linux` assets in one entry; `notes` is the GitHub release body
   (empty string when none). Drafts, prereleases, tags that are not `desktop-vX.Y.Z` / `android-vX.Y.Z` and releases
   without an uploaded matching asset are left out. The GitHub list is read in pages of 100 (at most 10 pages).
-- `GET|HEAD /download/{android|macos|windows}` — streams the current binary from the private releases repo;
+- `GET|HEAD /download/{android|macos|windows|linux}` — streams the current binary from the private releases repo;
   cached at the edge by asset id, so GitHub sees one download per new version. Unknown key: `404 {"error":"not_published"}`.
-- `GET|HEAD /download/{android|macos|windows}/{version}` — the same for one exact version (`X.Y.Z`), file name
+- `GET|HEAD /download/{android|macos|windows|linux}/{version}` — the same for one exact version (`X.Y.Z`), file name
   `Maqo-X.Y.Z.<ext>`. Unknown key, malformed version or a version without that asset: `404 {"error":"not_published"}`.
 - `GET|HEAD /get/{android|ios|desktop}` — invite e-mail links: `302` to `https://maqo.xepc.io/#download` (the page
   shows every platform's current status). Unknown target: `404 {"error":"not_found"}`.
@@ -19,7 +19,8 @@ Cloudflare Worker `maqo-download`: the public download page and update manifest 
 
 The release repo is read with a fine-grained token; the token, the repo name and GitHub URLs never appear in
 any response or log line. Tag/asset naming it relies on: `android-vX.Y.Z` (`Maqo-X.Y.Z.apk`) and
-`desktop-vX.Y.Z` (`Maqo-X.Y.Z.dmg`, `Maqo-X.Y.Z.msi`).
+`desktop-vX.Y.Z` (`Maqo-X.Y.Z.dmg`, `Maqo-X.Y.Z.msi`, `Maqo-X.Y.Z.deb`).
+A platform without an asset yet (Linux, until the first `.deb` is attached) is absent from `/latest.json`; the page then shows its card as Coming soon.
 
 This folder is not part of the main site: `build.sh` skips `maqo/`, and it deploys with its own `wrangler.toml`.
 

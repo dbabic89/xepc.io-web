@@ -33,6 +33,10 @@
   <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></symbol>
   <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6M9 16h3"/></symbol>
   <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></symbol>
+  <!-- Platform marks, same artwork as maqo.xepc.io. -->
+  <symbol id="i-android" viewBox="0 0 24 24"><g fill="currentColor"><path d="M5.5 11a6.5 6.5 0 0 1 13 0z"/><rect x="5.5" y="12" width="13" height="8" rx="2"/><circle cx="9.3" cy="8.6" r=".9" fill="#1E1A15"/><circle cx="14.7" cy="8.6" r=".9" fill="#1E1A15"/></g><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="8" y1="3.5" x2="9.3" y2="5.4"/><line x1="16" y1="3.5" x2="14.7" y2="5.4"/></g></symbol>
+  <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" d="M15.6 3c.1 1.2-.4 2.4-1.1 3.2-.8.9-1.900 1.4-3 1.3-.1-1.100.4-2.3 1.1-3.1.8-.8 2-1.4 3-1.4zM19.4 17.2c-.5 1.2-.8 1.7-1.5 2.8-1 1.4-2.3 3.2-4 3.2-1.5 0-1.9-1-3.9-1s-2.5 1-3.9 1c-1.700 0-3-1.6-4-3C-.6 16.2 0 9.7 4.6 8.7c1.4-.3 2.6.7 3.7.7 1.1 0 2.3-.9 4-.8 1.3.1 2.9.6 3.9 2-3.4 1.900-2.8 6.8 3.2 6.6z" transform="translate(1.5 0) scale(.92)"/></symbol>
+  <symbol id="i-web" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.8 5.2 3.8 8.5s-1.2 6.1-3.8 8.5c-2.6-2.4-3.8-5.2-3.8-8.5s1.2-6.1 3.8-8.5z"/></g></symbol>
 </svg>
 
 <header class="hero">
@@ -52,6 +56,15 @@
         <h1>Tvoj restoran. Tvoje narudžbe.</h1>
         <p class="lead">Od jelovnika do dostave: aplikacija za goste, ekran za kuhinju i portal za tebe.</p>
         <div class="btns"><span class="cta ink soon" aria-disabled="true">Isprobaj <em>uskoro</em></span><a class="cta gh" href="#kontakt">Zakaži demo</a></div>
+        <!-- Platform card, same format as maqo.xepc.io's download card. Rows switch from "Uskoro" to links at release. -->
+        <aside class="pf" aria-label="Platforme">
+          <div class="lab"><span class="cur">Uskoro</span></div>
+          <h2>Kanchie</h2>
+          <p class="sub">Za Android, iOS i web</p>
+          <div class="it"><span class="bd"><svg class="pi"><use href="#i-android"/></svg></span><div><b>Android</b><small>Google Play</small></div><span class="go">Uskoro</span></div>
+          <div class="it"><span class="bd"><svg class="pi"><use href="#i-apple"/></svg></span><div><b>iOS</b><small>App Store</small></div><span class="go">Uskoro</span></div>
+          <div class="it"><span class="bd"><svg class="pi"><use href="#i-web"/></svg></span><div><b>Web</b><small>U pregledniku</small></div><span class="go">Uskoro</span></div>
+        </aside>
       </div>
       <div class="stage" aria-hidden="true">
         <div class="ph">

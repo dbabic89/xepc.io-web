@@ -68,6 +68,20 @@ h2{font-size:40px;line-height:1.05;letter-spacing:.2px;margin-bottom:14px}
 .hero .lead{color:var(--yink);opacity:.8}
 .hero .btns{display:flex;gap:12px;margin:26px 0 38px;flex-wrap:wrap}
 .hero .tag{display:inline-block;background:var(--yink);color:var(--y);font-weight:900;text-transform:uppercase;font-size:12px;letter-spacing:.7px;padding:7px 13px;border-radius:999px}
+/* Platform card: maqo.xepc.io's download card (.pg-dl / .pg-it) in Kanchie's dark palette. */
+.pf{background:var(--bg);color:var(--ink);border-radius:18px;padding:20px;max-width:420px;margin:0 0 38px}
+.hero .btns:has(+ .pf){margin-bottom:22px}
+.pf .lab{margin-bottom:8px}
+.pf .cur{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--wa);background:var(--wasoft);border-radius:999px;padding:3px 9px}
+.pf .cur::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--wa)}
+.pf h2{font-size:28px;line-height:1.1;margin:0 0 2px}
+.pf .sub{font-size:13px;color:var(--mu);margin:0 0 14px}
+.pf .it{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-top:8px}
+.pf .bd{width:40px;height:40px;border-radius:10px;background:var(--accsoft);color:var(--accink);display:grid;place-items:center}
+.pf .pi{width:22px;height:22px}
+.pf b{display:block;font-size:14px}
+.pf small{display:block;font-size:12px;color:var(--mu)}
+.pf .go{font-size:13px;font-weight:700;white-space:nowrap;padding:7px 12px;border-radius:9px;color:var(--mu);background:var(--soft);border:1px solid var(--line)}
 .stage{display:flex;justify-content:center;align-items:flex-end;padding-top:20px;margin-bottom:-90px}
 .stage .ph{border-color:#17140F;box-shadow:0 24px 50px rgba(0,0,0,.28)}
 .stage .ph:first-child{transform:rotate(-5deg) translateX(18px);z-index:1}

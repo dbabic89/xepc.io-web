@@ -92,7 +92,7 @@ h3{font-size:17px;letter-spacing:-.01em;font-weight:600}
 .big-mail{font-size:22px;font-weight:700;letter-spacing:-.02em;margin-top:6px;word-break:break-all}
 .big-mail a:hover{text-decoration:underline;text-underline-offset:3px}
 .sub{opacity:.75;margin-top:6px}
-.ftr{display:flex;justify-content:space-between;gap:10px;padding:10px 26px 20px;font:12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--mu);flex-wrap:wrap}
+.ftr{grid-column:1/-1;display:flex;justify-content:space-between;gap:10px;padding:10px 26px 20px;font:12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--mu);flex-wrap:wrap}
 
 /* phone width */
 @media (max-width:700px){

@@ -2,9 +2,9 @@
  "index": {
   "en": {
    "title": "Custom Software and App Development | xepc.io, Žepče",
-   "desc": "Software studio from Žepče. Custom software, websites, mobile apps and AI integration for companies in Bosnia and Herzegovina and Croatia. We reply as soon as possible.",
-   "ogDesc": "Software studio from Žepče. Custom software, websites, mobile apps and AI integration for companies in Bosnia and Herzegovina and Croatia. We reply as soon as possible.",
-   "twDesc": "Software studio from Žepče. Custom software, websites, mobile apps and AI integration for companies in Bosnia and Herzegovina and Croatia. We reply as soon as possible.",
+   "desc": "Software studio from Žepče. Custom software, websites, mobile apps and AI integration for companies. We reply as soon as possible.",
+   "ogDesc": "Software studio from Žepče. Custom software, websites, mobile apps and AI integration for companies. We reply as soon as possible.",
+   "twDesc": "Software studio from Žepče. Custom software, websites, mobile apps and AI integration for companies. We reply as soon as possible.",
    "jsonld": {
     "@context": "https://schema.org",
     "@graph": [
@@ -22,7 +22,7 @@
       "logo": "https://xepc.io/assets/icon-512.png",
       "image": "https://xepc.io/assets/og.png",
       "email": "contact@xepc.io",
-      "description": "Custom software, websites, mobile apps and AI integration for companies in Bosnia and Herzegovina and Croatia. Own product: Maqo.",
+      "description": "Custom software, websites, mobile apps and AI integration for companies. Own product: Maqo.",
       "address": {
        "@type": "PostalAddress",
        "addressLocality": "Žepče",
@@ -155,9 +155,9 @@
   },
   "de": {
    "title": "Individuelle Softwareentwicklung und Apps | xepc.io, Žepče",
-   "desc": "Softwarestudio aus Žepče. Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen in Bosnien und Herzegowina und Kroatien. Antwort so schnell wie möglich.",
-   "ogDesc": "Softwarestudio aus Žepče. Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen in Bosnien und Herzegowina und Kroatien. Antwort so schnell wie möglich.",
-   "twDesc": "Softwarestudio aus Žepče. Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen in Bosnien und Herzegowina und Kroatien. Antwort so schnell wie möglich.",
+   "desc": "Softwarestudio aus Žepče. Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen. Antwort so schnell wie möglich.",
+   "ogDesc": "Softwarestudio aus Žepče. Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen. Antwort so schnell wie möglich.",
+   "twDesc": "Softwarestudio aus Žepče. Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen. Antwort so schnell wie möglich.",
    "jsonld": {
     "@context": "https://schema.org",
     "@graph": [
@@ -175,7 +175,7 @@
       "logo": "https://xepc.io/assets/icon-512.png",
       "image": "https://xepc.io/assets/og.png",
       "email": "contact@xepc.io",
-      "description": "Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen in Bosnien und Herzegowina und Kroatien. Eigenes Produkt: Maqo.",
+      "description": "Individuelle Software, Webseiten, mobile Apps und KI-Integration für Firmen. Eigenes Produkt: Maqo.",
       "address": {
        "@type": "PostalAddress",
        "addressLocality": "Žepče",

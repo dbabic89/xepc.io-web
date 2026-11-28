@@ -19,8 +19,11 @@ svg.i{width:18px;height:18px;flex:none}
 [id]{scroll-margin-top:12px}
 
 /* Not live yet: the Kanchie app is not released. Drop .soon when it is. */
-.soon{opacity:.55;cursor:default;pointer-events:none}
-.soon em{font-style:normal;font-size:.8em;letter-spacing:.4px;text-transform:uppercase;margin-left:8px;padding:2px 7px;border-radius:99px;border:1px solid currentColor}
+.soon{cursor:default;pointer-events:none}
+.soon em{font-style:normal;font-size:.8em;letter-spacing:.4px;text-transform:uppercase;margin-left:8px;padding:2px 7px;border-radius:99px;background:var(--acc);color:var(--accInk)}
+.btn.soon,.btn.gh.soon{background:rgba(255,255,255,.08);color:var(--ink);box-shadow:none}
+.acc .btn.soon,.pk7 .hot .btn.soon{background:rgba(255,255,255,.16);color:var(--accInk)}
+.acc .soon em,.pk7 .hot .soon em{background:var(--accInk);color:var(--acc)}
 
 /* ---------- bento base ---------- */
 .page{max-width:1200px;margin:0 auto;padding-bottom:6px}
@@ -146,7 +149,7 @@ h3{font-size:17px;letter-spacing:-.01em;font-weight:900;text-transform:uppercase
 .pk7 .btn{margin-top:auto;justify-content:center;flex-wrap:wrap;white-space:normal;text-align:center;gap:2px 6px;font-size:11.5px;padding:8px 10px}
 .pk7 .soon em{margin-left:0;font-size:.85em}
 .pk7 .hot{background:var(--acc);color:var(--accInk)}.pk7 .hot ul,.pk7 .hot em small{color:inherit;opacity:.85}
-.pk7 .hot .btn{background:var(--accInk);color:var(--acc);box-shadow:none}
+.pk7 .hot .btn:not(.soon){background:var(--accInk);color:var(--acc);box-shadow:none}
 .note{color:var(--mu);font-size:13px;margin-top:14px}
 .pr>p.mu{margin-top:6px}
 

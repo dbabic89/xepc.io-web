@@ -252,6 +252,8 @@ async function handleLatest(request, env, ctx) {
   const headers = {
     'Content-Type': 'application/json; charset=utf-8',
     'Cache-Control': `public, max-age=${STATE_TTL_SECONDS}`,
+    // Public data: the xepc.io home page reads it cross-origin to show its Download button only once a build is live.
+    'Access-Control-Allow-Origin': '*',
   }
   const body = request.method === 'HEAD' ? null : JSON.stringify(manifestFrom(state))
   return new Response(body, { status: 200, headers })

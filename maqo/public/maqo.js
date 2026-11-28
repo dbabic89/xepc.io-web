@@ -50,45 +50,38 @@
     for (var i = 0; i < nodes.length; i++) nodes[i].textContent = text;
   }
 
-  // Shown until the first real release exists: every platform at 1.0.0, with the download buttons disabled.
+  // Shown until the first real release exists: every platform at 1.0.0, with Coming soon chips instead of download buttons.
   var PLACEHOLDER_VERSION = '1.0.0';
-  var SOON = { hr: 'Uskoro', en: 'Coming soon', de: 'Demnächst' };
 
   function hasRelease(data) {
     return KEYS.some(function (key) { return data && data[key] && typeof data[key].version === 'string' && data[key].version; });
   }
 
-  function markSoon() {
-    var label = SOON[document.documentElement.lang] || SOON.hr;
-    var links = document.querySelectorAll('[data-card] a[href^="/download/"]');
-    for (var i = 0; i < links.length; i++) {
-      links[i].removeAttribute('href');
-      links[i].setAttribute('aria-disabled', 'true');
-      links[i].textContent = label;
-    }
-    // No real file yet: no size to show, no checksums and no publish date.
-    var hide = document.querySelectorAll('.dl .sz, .dl .sha');
-    for (var k = 0; k < hide.length; k++) hide[k].hidden = true;
-    // Phone rows say Coming soon with a chip; only the desktop rows keep a disabled button.
-    var chips = document.querySelectorAll('.dl .chip[hidden]');
+  // A row without a published build swaps its download button for the Coming soon chip.
+  function showSoonChips(root) {
+    var chips = root.querySelectorAll('.chip[hidden]');
     for (var m = 0; m < chips.length; m++) {
       chips[m].hidden = false;
       var btn = chips[m].parentNode.querySelector('.btn');
-      if (btn) btn.hidden = true;
+      if (btn) {
+        btn.removeAttribute('href');
+        btn.hidden = true;
+      }
     }
+  }
+
+  function markSoon() {
+    showSoonChips(document.querySelector('.dl') || document);
+    // No real file yet: no size to show, no checksums and no publish date.
+    var hide = document.querySelectorAll('.dl .sz, .dl .sha');
+    for (var k = 0; k < hide.length; k++) hide[k].hidden = true;
     var date = document.querySelector('.dl .vline [data-head="date"]');
     if (date && date.parentNode) date.parentNode.hidden = true;
   }
 
-  // One row of a not yet published platform: disabled Coming soon button, no size, no checksum entry.
+  // One row of a not yet published platform: Coming soon chip, no size, no checksum entry.
   function markCardSoon(card) {
-    var label = SOON[document.documentElement.lang] || SOON.hr;
-    var links = card.querySelectorAll('a[href^="/download/"]');
-    for (var i = 0; i < links.length; i++) {
-      links[i].removeAttribute('href');
-      links[i].setAttribute('aria-disabled', 'true');
-      links[i].textContent = label;
-    }
+    showSoonChips(card);
     var sizes = card.querySelectorAll('.sz');
     for (var k = 0; k < sizes.length; k++) sizes[k].hidden = true;
     if (card.parentNode && card.parentNode.tagName === 'DL') card.hidden = true;
@@ -131,6 +124,11 @@
       if (usable) present.push(key);
     });
     if (soon) markSoon();
+    else {
+      // Download calls to action (the hero button) appear only once at least one build is published.
+      var live = document.querySelectorAll('[data-live]');
+      for (var n = 0; n < live.length; n++) live[n].hidden = false;
+    }
 
     // The heading follows the visitor's platform, otherwise the newest published version.
     var head = present.indexOf(os) >= 0 ? os : present.slice().sort(function (a, b) {

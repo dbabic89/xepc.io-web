@@ -102,6 +102,7 @@ describe('latest.json', () => {
     const response = await call('/latest.json')
     assert.equal(response.status, 200)
     assert.match(response.headers.get('Cache-Control'), /max-age=600/)
+    assert.equal(response.headers.get('Access-Control-Allow-Origin'), '*')
     const manifest = await response.json()
     assert.deepEqual(Object.keys(manifest).sort(), ['android', 'linux', 'macos', 'windows'])
     assert.equal(manifest.android.version, '1.2.0')

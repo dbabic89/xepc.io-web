@@ -55,6 +55,11 @@ h3{font-size:17px;letter-spacing:-.01em;font-weight:900;text-transform:uppercase
 .hd nav a{font-size:14px;padding:6px 12px;border-radius:99px;color:var(--mu)}
 .hd nav a:hover{background:var(--soft);color:var(--ink)}
 .login{font-size:14px;padding:6px 12px;color:var(--mu)}
+/* language switcher */
+.lng{display:flex;gap:2px;padding:3px;border-radius:99px;background:var(--soft);font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mu)}
+.lng b,.lng a{padding:3px 7px;border-radius:99px}
+.lng b{background:rgba(255,255,255,.16);color:var(--ink)}
+.lng a:hover{color:var(--ink)}
 
 /* hero plate */
 .hero{grid-column:span 6}
@@ -231,7 +236,9 @@ h3{font-size:17px;letter-spacing:-.01em;font-weight:900;text-transform:uppercase
   .grid>.t,.grid>.secth,.grid>.steps{grid-column:1/-1}
   .hd nav{display:none}
   .hd .btn .tx{display:none}
-  .hd .login em{display:none}
+  .hd .login{display:none}
+  .t.hd{gap:8px;padding:12px}
+  .brand{gap:8px;min-width:0}
   h1{font-size:40px}
   .secth{flex-direction:column;gap:2px}
   .steps{grid-template-columns:minmax(0,1fr)}

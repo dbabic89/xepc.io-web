@@ -77,7 +77,14 @@ h3{font-size:17px;letter-spacing:-.01em;font-weight:600}
 .op b{font-size:20px;letter-spacing:-.02em;margin-top:auto;font-weight:700}
 .op small{color:var(--mu);font-size:14px}
 .op .st{font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:99px;width:fit-content;background:var(--soft);color:var(--mu)}
-.op .st.live{background:#dff5e9;color:#16804a}
+.op .st.soon{background:var(--ink);color:var(--bg)}
+.op2 b{margin-top:14px}
+.oph{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.opi{width:42px;height:42px;border-radius:12px;background:var(--soft);display:grid;place-items:center;color:var(--ink)}
+.opi svg{width:22px;height:22px}
+.op2 ul{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:8px;padding-top:12px;border-top:1px solid var(--line);font-size:14px}
+.op2 li{display:flex;gap:8px;align-items:baseline}
+.op2 li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--mu);flex:none;transform:translateY(-2px)}
 .secth{grid-column:span 6;display:flex;align-items:baseline;gap:14px;padding:18px 8px 0}
 .secth h2,.secth h3{font-size:30px;line-height:1.08;letter-spacing:-.025em;font-weight:700}
 

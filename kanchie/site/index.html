@@ -21,6 +21,20 @@
 </head>
 <body>
 <a class="skip" href="#main">Preskoči na sadržaj</a>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-app" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3M9.5 8.5h5M9.5 11.5h5M9.5 14.5h3"/></symbol>
+  <symbol id="i-kitchen" viewBox="0 0 24 24"><path d="M7 15a4 4 0 1 1 1.6-7.7 4 4 0 0 1 6.8 0A4 4 0 1 1 17 15v5H7z"/><path d="M7 17.5h10"/></symbol>
+  <symbol id="i-scooter" viewBox="0 0 24 24"><circle cx="6" cy="17" r="2.6"/><circle cx="18" cy="17" r="2.6"/><path d="M8.6 17h6.8l2.6-6.5h-2.5M15.5 10.5 13.5 5h-2.5"/><rect x="4" y="8" width="6.5" height="5" rx="1.2"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.2l2.7 5.5 6 .9-4.4 4.2 1 6L12 17l-5.4 2.8 1-6-4.3-4.2 6-.9z"/></symbol>
+  <symbol id="i-admin" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2.5"/><path d="M9 21h6M12 17v4M8 13.5v-2.5M12 13.5V8M16 13.5v-4"/></symbol>
+  <symbol id="i-pizza" viewBox="0 0 24 24"><path d="M4 6.5c5-3 11-3 16 0L12 21z"/><path d="M5.6 9.3c4-2 8.8-2 12.8 0"/><circle cx="10.5" cy="12" r="1"/><circle cx="14" cy="13.5" r="1"/></symbol>
+  <symbol id="i-burger" viewBox="0 0 24 24"><path d="M4 11a8 6 0 0 1 16 0z"/><path d="M3.5 14.5h17M5 17.5h14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20.5a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.4-4.4"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6M9 16h3"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></symbol>
+</svg>
 
 <header class="hero">
   <div class="wrap">
@@ -45,17 +59,17 @@
       <div class="stage" aria-hidden="true">
         <div class="ph">
           <div class="body">
-            <div class="loc"><div><b>Pero Zdero</b><small>Ferhadija 8 · do 23:00</small></div><div class="av">🔔</div></div>
-            <div class="search">🔍 Jelo ili piće</div>
-            <div class="chips"><div class="chip on">Sve</div><div class="chip">🍕 Pizze</div><div class="chip">🍔 Burgeri</div></div>
+            <div class="loc"><div><b>Pero Zdero</b><small>Ferhadija 8 · do 23:00</small></div><div class="av"><svg class="i"><use href="#i-bell"/></svg></div></div>
+            <div class="search"><svg class="i"><use href="#i-search"/></svg>Jelo ili piće</div>
+            <div class="chips"><div class="chip on">Sve</div><div class="chip"><svg class="i"><use href="#i-pizza"/></svg>Pizze</div><div class="chip"><svg class="i"><use href="#i-burger"/></svg>Burgeri</div></div>
             <div class="sec">Popularno</div>
-            <div class="r"><div class="em">🍕</div><div><b>Capricciosa</b><small>9,50 €</small><span class="pill ac">novo</span></div></div>
-            <div class="r"><div class="em">🍔</div><div><b>Cheeseburger</b><small>8,50 €</small></div></div>
-            <div class="r"><div class="em">🍟</div><div><b>Pomfrit</b><small>3,00 €</small></div></div>
-            <div class="r"><div class="em">🍰</div><div><b>Tiramisu</b><small>5,00 €</small></div></div>
+            <div class="r"><img class="em" src="/assets/dish-pizza.webp" alt="" width="48" height="48"><div><b>Capricciosa</b><small>9,50 €</small><span class="pill ac">novo</span></div></div>
+            <div class="r"><img class="em" src="/assets/dish-burger.webp" alt="" width="48" height="48"><div><b>Cheeseburger</b><small>8,50 €</small></div></div>
+            <div class="r"><img class="em" src="/assets/dish-fries.webp" alt="" width="48" height="48"><div><b>Pomfrit</b><small>3,00 €</small></div></div>
+            <div class="r"><img class="em" src="/assets/dish-tiramisu.webp" alt="" width="48" height="48"><div><b>Tiramisu</b><small>5,00 €</small></div></div>
           </div>
           <div class="cartb"><span>Košarica · 2</span><span>14,50 €</span></div>
-          <div class="nav"><div class="on"><i>🏠</i>Početna</div><div><i>🔍</i>Traži</div><div><i>🧾</i>Narudžbe</div><div><i>👤</i>Profil</div></div>
+          <div class="nav"><div class="on"><svg class="i"><use href="#i-home"/></svg>Početna</div><div><svg class="i"><use href="#i-search"/></svg>Traži</div><div><svg class="i"><use href="#i-receipt"/></svg>Narudžbe</div><div><svg class="i"><use href="#i-user"/></svg>Profil</div></div>
         </div>
         <div class="ph">
           <div class="body">
@@ -65,7 +79,7 @@
             <div class="sec">Prije</div>
             <div class="r col"><div class="top"><b>Pero Zdero</b><span class="pill">dostavljeno</span></div><small>3 jela · 21,00 € · jučer</small></div>
           </div>
-          <div class="nav"><div><i>🏠</i>Početna</div><div><i>🔍</i>Traži</div><div class="on"><i>🧾</i>Narudžbe</div><div><i>👤</i>Profil</div></div>
+          <div class="nav"><div><svg class="i"><use href="#i-home"/></svg>Početna</div><div><svg class="i"><use href="#i-search"/></svg>Traži</div><div class="on"><svg class="i"><use href="#i-receipt"/></svg>Narudžbe</div><div><svg class="i"><use href="#i-user"/></svg>Profil</div></div>
         </div>
       </div>
     </div>
@@ -79,11 +93,11 @@
     <h2>Sve što restoran treba</h2>
     <p class="lead">Pet alata, jedan sustav. Svaki radi sam, a zajedno rade bez dodatnog posla.</p>
     <div class="g3">
-      <div class="tile"><div class="ic" aria-hidden="true">📱</div><h3>Aplikacija za goste</h3><p>Jelovnik, košarica i praćenje narudžbe u aplikaciji s imenom tvog restorana.</p></div>
-      <div class="tile"><div class="ic" aria-hidden="true">🍳</div><h3>Ekran za kuhinju</h3><p>Nove narudžbe stižu odmah, a kuhinja ih vodi kroz pripremu jednim dodirom.</p></div>
-      <div class="tile"><div class="ic" aria-hidden="true">🛵</div><h3>Konobari i dostavljači</h3><p>Zasebni ekrani za poslužbu stolova i dostavu, svatko vidi samo svoje.</p></div>
-      <div class="tile"><div class="ic" aria-hidden="true">⭐</div><h3>Klub vjernosti</h3><p>Gosti skupljaju bodove i vraćaju se. Ti vidiš tko dolazi najčešće.</p></div>
-      <div class="tile"><div class="ic" aria-hidden="true">🧾</div><h3>Admin portal</h3><p>Jelovnik, cijene, radno vrijeme i izvještaji na jednom mjestu, s računala ili mobitela.</p></div>
+      <div class="tile"><div class="ic" aria-hidden="true"><svg class="i"><use href="#i-app"/></svg></div><h3>Aplikacija za goste</h3><p>Jelovnik, košarica i praćenje narudžbe u aplikaciji s imenom tvog restorana.</p></div>
+      <div class="tile"><div class="ic" aria-hidden="true"><svg class="i"><use href="#i-kitchen"/></svg></div><h3>Ekran za kuhinju</h3><p>Nove narudžbe stižu odmah, a kuhinja ih vodi kroz pripremu jednim dodirom.</p></div>
+      <div class="tile"><div class="ic" aria-hidden="true"><svg class="i"><use href="#i-scooter"/></svg></div><h3>Konobari i dostavljači</h3><p>Zasebni ekrani za poslužbu stolova i dostavu, svatko vidi samo svoje.</p></div>
+      <div class="tile"><div class="ic" aria-hidden="true"><svg class="i"><use href="#i-star"/></svg></div><h3>Klub vjernosti</h3><p>Gosti skupljaju bodove i vraćaju se. Ti vidiš tko dolazi najčešće.</p></div>
+      <div class="tile"><div class="ic" aria-hidden="true"><svg class="i"><use href="#i-admin"/></svg></div><h3>Admin portal</h3><p>Jelovnik, cijene, radno vrijeme i izvještaji na jednom mjestu, s računala ili mobitela.</p></div>
       <div class="tile hot"><div class="ic">0 %</div><h3>Bez provizije</h3><p>Plaćaš paket, ne postotak od svake narudžbe.</p></div>
     </div>
   </div>
@@ -92,13 +106,13 @@
 <section class="cmp" aria-labelledby="cmp-h">
   <div class="wrap">
     <div class="eyebrow">Usporedba</div>
-    <h2 id="cmp-h">Narudžba od 20 €</h2>
-    <p class="lead">Što ostaje tebi kad gost naruči preko platforme za dostavu, a što kad naruči iz tvoje aplikacije.</p>
+    <h2 id="cmp-h">Plaćaš pretplatu, ne proviziju</h2>
+    <p class="lead">Platforme za dostavu uzimaju postotak od svake narudžbe. S Kanchiejem plaćaš fiksnu mjesečnu pretplatu, a sve što gost plati ostaje tebi.</p>
     <div class="two">
-      <div class="col"><h3>Platforme za dostavu</h3><div class="big">14 €</div><div class="row2"><span>Provizija od narudžbe</span><b>6 €</b></div><div class="row2"><span>Gost je tvoj</span><b>ne</b></div><div class="row2"><span>Podaci o gostima</span><b>kod platforme</b></div></div>
-      <div class="col us"><h3>Kanchie</h3><div class="big">20 €</div><div class="row2"><span>Provizija od narudžbe</span><b>0 €</b></div><div class="row2"><span>Gost je tvoj</span><b>da</b></div><div class="row2"><span>Podaci o gostima</span><b>kod tebe</b></div></div>
+      <div class="col"><h3>Platforme za dostavu</h3><div class="big">14 €</div><p class="cap">ostaje tebi od narudžbe od 20 €</p><div class="row2"><span>Kako plaćaš</span><b>postotak od svake narudžbe</b></div><div class="row2"><span>Provizija na ovu narudžbu</span><b>6 €</b></div><div class="row2"><span>Gost i podaci o gostima</span><b>kod platforme</b></div></div>
+      <div class="col us"><h3>Kanchie</h3><div class="big">20 €</div><p class="cap">ostaje tebi od narudžbe od 20 €</p><div class="row2"><span>Kako plaćaš</span><b>fiksna mjesečna pretplata</b></div><div class="row2"><span>Provizija na ovu narudžbu</span><b>0 €</b></div><div class="row2"><span>Gost i podaci o gostima</span><b>kod tebe</b></div></div>
     </div>
-    <p class="sm">Primjer izračuna uz pretpostavljenu proviziju od 30 %. Stvarne provizije ovise o platformi i ugovoru.</p>
+    <p class="sm">Primjer izračuna uz pretpostavljenu proviziju od 30 %. Stvarne provizije ovise o platformi i ugovoru. Pretplata je ista bez obzira koliko narudžbi primiš.</p>
   </div>
 </section>
 

@@ -217,3 +217,20 @@ footer b{color:var(--ink)}
   footer .wrap{flex-direction:column;align-items:flex-start;gap:10px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cta{transition:none}.cta:hover{transform:none}}
+
+/* Inline SVG icons (sprite in index.html) */
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.tile .ic{background:var(--acc);color:var(--onacc)}
+.tile .ic .i{font-size:28px;stroke-width:2.2}
+.ph .av{color:var(--accink)}
+.ph .av .i{font-size:17px}
+.ph .search .i{font-size:16px}
+.ph .chip{display:inline-flex;align-items:center;gap:5px}
+.ph .chip .i{font-size:14px}
+.ph .r .em{background:var(--acc);color:var(--onacc)}
+.ph .r .em .i{font-size:26px;stroke-width:2.2}
+.ph .nav div .i{display:block;font-size:18px;margin:0 auto 3px}
+.cmp .cap{font-size:13px;opacity:.75;margin:0 0 14px}
+.cmp .row2 b{text-align:right}
+.ph .r img.em{display:block;object-fit:cover;background:var(--soft)}

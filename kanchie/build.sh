@@ -10,7 +10,7 @@ cp -R site dist
 
 # Fonts and images first: kanchie.css references them, so its own hash must be
 # computed after those references are rewritten.
-for pass in "ttf svg" "css js"; do
+for pass in "ttf svg webp" "css js"; do
   for ext in $pass; do
     for f in dist/assets/*."$ext"; do
       [ -f "$f" ] || continue
@@ -26,7 +26,7 @@ for pass in "ttf svg" "css js"; do
 done
 
 # Fail if any unhashed asset reference survived.
-if grep -REn '/assets/[a-z-]+\.(css|js|svg|ttf)"|url\([a-z-]+\.(ttf|svg)\)' dist; then
+if grep -REn '/assets/[a-z-]+\.(css|js|svg|ttf|webp)"|url\([a-z-]+\.(ttf|svg|webp)\)' dist; then
   echo "unhashed asset reference left in dist/" >&2; exit 1
 fi
 echo "kanchie/dist ready: $(find dist -type f | wc -l | tr -d ' ') files"

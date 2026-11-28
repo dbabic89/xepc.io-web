@@ -1,26 +1,9 @@
-// Hero plate: scattered food icons, a laptop and a phone showing generic app screens (skeleton bars only).
+// Hero plate: scattered food icons, with the static laptop and phone illustration in the markup.
 (function () {
   var tile = document.querySelector('.hx[data-p]');
   if (!tile) return;
-  var dev = tile.querySelector('.hx-dev');
   var icons = ['burger', 'pizza', 'drink', 'pasta', 'rice', 'fries', 'coffee', 'drum', 'pizza'];
-  // Illustration labels per page language (document.documentElement.lang).
-  var LBL = {
-    hr: { menu: 'Jelovnik', orders: 'Narudžbe', kitchen: 'Kuhinja', club: 'Klub', reports: 'Izvještaji', cart: 'Košarica', all: 'Sve' },
-    en: { menu: 'Menu', orders: 'Orders', kitchen: 'Kitchen', club: 'Club', reports: 'Reports', cart: 'Cart', all: 'All' },
-    de: { menu: 'Speisekarte', orders: 'Bestellungen', kitchen: 'Küche', club: 'Club', reports: 'Berichte', cart: 'Warenkorb', all: 'Alle' }
-  };
-  var T = LBL[document.documentElement.lang] || LBL.hr;
   var plats = [['p-android', 'Android'], ['p-apple', 'iOS'], ['p-web', 'Web']];
-  function sk(w, cls) { return '<s' + (cls ? ' class="hx-' + cls + '"' : '') + (w ? ' style="width:' + w + '"' : '') + '></s>'; }
-  function tr(w) { return '<div class="hx-tr">' + sk(w) + sk('', 'n') + '<span class="hx-sw"></span></div>'; }
-  var lap = '<div class="hx-ks"><div class="hx-sd"><em class="hx-on">' + T.menu + '</em><em>' + T.orders + '</em><em>' + T.kitchen + '</em><em>' + T.club + '</em><em>' + T.reports + '</em></div><div class="hx-mn">' +
-    '<div class="hx-h">' + T.kitchen + '</div><div class="hx-kd"><div>' + sk('55%', 'hd') + sk('80%') + '</div><div class="hx-r">' + sk('50%', 'hd') + sk('70%') + '</div><div>' + sk('45%', 'hd') + sk('75%') + '</div></div>' +
-    '<div class="hx-h" style="margin-top:3px">' + T.menu + '</div><div>' + tr('70%') + tr('55%') + tr('85%') + tr('45%').replace('hx-sw', 'hx-sw hx-on') + '</div></div></div>';
-  function mi(w) { return '<div class="hx-mi"><i></i>' + sk(w) + sk('', 'n') + '</div>'; }
-  var ph = '<div class="hx-kp2">' + sk('50%', 'hd') + '<div class="hx-cats"><span class="hx-on">' + T.all + '</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>' +
-    mi('70%') + mi('60%') + mi('75%') + mi('55%') + '<div class="hx-cart"><span>' + T.cart + '</span></div></div>';
-  dev.innerHTML = '<div class="hx-lap"><div class="hx-scr"><div>' + lap + '</div></div><div class="hx-base"></div></div><div class="hx-ph"><span class="hx-nt"></span>' + ph + '</div>';
   tile.insertAdjacentHTML('afterbegin', '<div class="hx-deco" aria-hidden="true"><div class="hx-pat"></div></div>');
   tile.insertAdjacentHTML('beforeend', '<div class="hx-plats hx-tr-pill" aria-hidden="true">' + plats.map(function (q) { return '<span><svg><use href="#hx-' + q[0] + '"/></svg></span>'; }).join('') + '</div>');
 
@@ -52,7 +35,7 @@
       }
       patEl.innerHTML = pat; patEl.dataset.k = key;
     }
-    var blocks = (txt ? textRects(txt) : []).concat([tile.querySelector('.hx-lap'), tile.querySelector('.hx-ph'), tile.querySelector('.hx-plats')]
+    var blocks = (txt ? textRects(txt) : []).concat([tile.querySelector('.nh-lap'), tile.querySelector('.nh-dev > .nk-ph'), tile.querySelector('.hx-plats')]
       .filter(Boolean).map(function (el) { return el.getBoundingClientRect(); }));
     var narrow = tr0.width < 560, m = narrow ? 3 : 8;
     var free = [];

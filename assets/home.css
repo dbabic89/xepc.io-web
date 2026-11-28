@@ -7,6 +7,7 @@
 @font-face{font-family:"Bricolage Grotesque";font-style:normal;font-display:swap;font-weight:700;src:url(fonts/bricolage-grotesque-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF}
 
 /* xepc.io home page: bento layout. Loaded by index.html only; landing pages use site.css. */
+[hidden]{display:none!important}
 :root{--bg:#F3F2EE;--tile:#fff;--ink:#16171b;--mu:#5c5d63;--line:#dcdad3;--soft:#efeee9;--acc:#16171b;--accInk:#F3F2EE;--ff:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 *{box-sizing:border-box;min-width:0}
 html{-webkit-text-size-adjust:100%}
@@ -61,8 +62,7 @@ h3{font-size:17px;letter-spacing:-.01em;font-weight:600}
 
 /* product tiles */
 .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.16)}
-.pill i{width:7px;height:7px;border-radius:50%;background:#46d98a}
-.pill.soon i{background:#FFE14D}
+.pill.soon{background:#F5B53F;color:#16171b;font-size:11.5px;padding:3px 9px}
 .prod{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;padding:30px;min-height:330px}
 .prod h2{font-size:44px;letter-spacing:-.04em;margin-top:14px}
 .prod p{opacity:.86;margin-top:8px;max-width:440px}
@@ -77,7 +77,7 @@ h3{font-size:17px;letter-spacing:-.01em;font-weight:600}
 .op b{font-size:20px;letter-spacing:-.02em;margin-top:auto;font-weight:700}
 .op small{color:var(--mu);font-size:14px}
 .op .st{font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:99px;width:fit-content;background:var(--soft);color:var(--mu)}
-.op .st.soon{background:var(--ink);color:var(--bg)}
+.op .st.soon{background:#F5B53F;color:#16171b}
 .op2 b{margin-top:14px}
 .oph{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .opi{width:42px;height:42px;border-radius:12px;background:var(--soft);display:grid;place-items:center;color:var(--ink)}
